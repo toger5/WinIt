@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		25DB247D1D29C3E70050B2D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB247C1D29C3E70050B2D8 /* AppDelegate.swift */; };
+		25DB247F1D29C3E70050B2D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB247E1D29C3E70050B2D8 /* ViewController.swift */; };
+		25DB24821D29C3E70050B2D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25DB24801D29C3E70050B2D8 /* Main.storyboard */; };
+		25DB24841D29C3E70050B2D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25DB24831D29C3E70050B2D8 /* Assets.xcassets */; };
+		25DB24871D29C3E70050B2D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25DB24851D29C3E70050B2D8 /* LaunchScreen.storyboard */; };
+		25DB24921D29C3E70050B2D8 /* WinItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB24911D29C3E70050B2D8 /* WinItTests.swift */; };
+		25DB249D1D29C3E70050B2D8 /* WinItUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB249C1D29C3E70050B2D8 /* WinItUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		25DB248E1D29C3E70050B2D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 25DB24711D29C3E70050B2D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 25DB24781D29C3E70050B2D8;
+			remoteInfo = WinIt;
+		};
+		25DB24991D29C3E70050B2D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 25DB24711D29C3E70050B2D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 25DB24781D29C3E70050B2D8;
+			remoteInfo = WinIt;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		25DB24791D29C3E70050B2D8 /* WinIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WinIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		25DB247C1D29C3E70050B2D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		25DB247E1D29C3E70050B2D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		25DB24811D29C3E70050B2D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		25DB24831D29C3E70050B2D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		25DB24861D29C3E70050B2D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		25DB24881D29C3E70050B2D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		25DB248D1D29C3E70050B2D8 /* WinItTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WinItTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		25DB24911D29C3E70050B2D8 /* WinItTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinItTests.swift; sourceTree = "<group>"; };
+		25DB24931D29C3E70050B2D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		25DB24981D29C3E70050B2D8 /* WinItUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WinItUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		25DB249C1D29C3E70050B2D8 /* WinItUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinItUITests.swift; sourceTree = "<group>"; };
+		25DB249E1D29C3E70050B2D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		25DB24761D29C3E70050B2D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25DB248A1D29C3E70050B2D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25DB24951D29C3E70050B2D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		25DB24701D29C3E70050B2D8 = {
+			isa = PBXGroup;
+			children = (
+				25DB247B1D29C3E70050B2D8 /* WinIt */,
+				25DB24901D29C3E70050B2D8 /* WinItTests */,
+				25DB249B1D29C3E70050B2D8 /* WinItUITests */,
+				25DB247A1D29C3E70050B2D8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		25DB247A1D29C3E70050B2D8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				25DB24791D29C3E70050B2D8 /* WinIt.app */,
+				25DB248D1D29C3E70050B2D8 /* WinItTests.xctest */,
+				25DB24981D29C3E70050B2D8 /* WinItUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		25DB247B1D29C3E70050B2D8 /* WinIt */ = {
+			isa = PBXGroup;
+			children = (
+				25DB247C1D29C3E70050B2D8 /* AppDelegate.swift */,
+				25DB247E1D29C3E70050B2D8 /* ViewController.swift */,
+				25DB24801D29C3E70050B2D8 /* Main.storyboard */,
+				25DB24831D29C3E70050B2D8 /* Assets.xcassets */,
+				25DB24851D29C3E70050B2D8 /* LaunchScreen.storyboard */,
+				25DB24881D29C3E70050B2D8 /* Info.plist */,
+			);
+			path = WinIt;
+			sourceTree = "<group>";
+		};
+		25DB24901D29C3E70050B2D8 /* WinItTests */ = {
+			isa = PBXGroup;
+			children = (
+				25DB24911D29C3E70050B2D8 /* WinItTests.swift */,
+				25DB24931D29C3E70050B2D8 /* Info.plist */,
+			);
+			path = WinItTests;
+			sourceTree = "<group>";
+		};
+		25DB249B1D29C3E70050B2D8 /* WinItUITests */ = {
+			isa = PBXGroup;
+			children = (
+				25DB249C1D29C3E70050B2D8 /* WinItUITests.swift */,
+				25DB249E1D29C3E70050B2D8 /* Info.plist */,
+			);
+			path = WinItUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		25DB24781D29C3E70050B2D8 /* WinIt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25DB24A11D29C3E70050B2D8 /* Build configuration list for PBXNativeTarget "WinIt" */;
+			buildPhases = (
+				25DB24751D29C3E70050B2D8 /* Sources */,
+				25DB24761D29C3E70050B2D8 /* Frameworks */,
+				25DB24771D29C3E70050B2D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WinIt;
+			productName = WinIt;
+			productReference = 25DB24791D29C3E70050B2D8 /* WinIt.app */;
+			productType = "com.apple.product-type.application";
+		};
+		25DB248C1D29C3E70050B2D8 /* WinItTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25DB24A41D29C3E70050B2D8 /* Build configuration list for PBXNativeTarget "WinItTests" */;
+			buildPhases = (
+				25DB24891D29C3E70050B2D8 /* Sources */,
+				25DB248A1D29C3E70050B2D8 /* Frameworks */,
+				25DB248B1D29C3E70050B2D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				25DB248F1D29C3E70050B2D8 /* PBXTargetDependency */,
+			);
+			name = WinItTests;
+			productName = WinItTests;
+			productReference = 25DB248D1D29C3E70050B2D8 /* WinItTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		25DB24971D29C3E70050B2D8 /* WinItUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25DB24A71D29C3E70050B2D8 /* Build configuration list for PBXNativeTarget "WinItUITests" */;
+			buildPhases = (
+				25DB24941D29C3E70050B2D8 /* Sources */,
+				25DB24951D29C3E70050B2D8 /* Frameworks */,
+				25DB24961D29C3E70050B2D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				25DB249A1D29C3E70050B2D8 /* PBXTargetDependency */,
+			);
+			name = WinItUITests;
+			productName = WinItUITests;
+			productReference = 25DB24981D29C3E70050B2D8 /* WinItUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		25DB24711D29C3E70050B2D8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Timo;
+				TargetAttributes = {
+					25DB24781D29C3E70050B2D8 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					25DB248C1D29C3E70050B2D8 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 25DB24781D29C3E70050B2D8;
+					};
+					25DB24971D29C3E70050B2D8 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 25DB24781D29C3E70050B2D8;
+					};
+				};
+			};
+			buildConfigurationList = 25DB24741D29C3E70050B2D8 /* Build configuration list for PBXProject "WinIt" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 25DB24701D29C3E70050B2D8;
+			productRefGroup = 25DB247A1D29C3E70050B2D8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				25DB24781D29C3E70050B2D8 /* WinIt */,
+				25DB248C1D29C3E70050B2D8 /* WinItTests */,
+				25DB24971D29C3E70050B2D8 /* WinItUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		25DB24771D29C3E70050B2D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25DB24871D29C3E70050B2D8 /* LaunchScreen.storyboard in Resources */,
+				25DB24841D29C3E70050B2D8 /* Assets.xcassets in Resources */,
+				25DB24821D29C3E70050B2D8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25DB248B1D29C3E70050B2D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25DB24961D29C3E70050B2D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		25DB24751D29C3E70050B2D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25DB247F1D29C3E70050B2D8 /* ViewController.swift in Sources */,
+				25DB247D1D29C3E70050B2D8 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25DB24891D29C3E70050B2D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25DB24921D29C3E70050B2D8 /* WinItTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		25DB24941D29C3E70050B2D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25DB249D1D29C3E70050B2D8 /* WinItUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		25DB248F1D29C3E70050B2D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 25DB24781D29C3E70050B2D8 /* WinIt */;
+			targetProxy = 25DB248E1D29C3E70050B2D8 /* PBXContainerItemProxy */;
+		};
+		25DB249A1D29C3E70050B2D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 25DB24781D29C3E70050B2D8 /* WinIt */;
+			targetProxy = 25DB24991D29C3E70050B2D8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		25DB24801D29C3E70050B2D8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				25DB24811D29C3E70050B2D8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		25DB24851D29C3E70050B2D8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				25DB24861D29C3E70050B2D8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		25DB249F1D29C3E70050B2D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		25DB24A01D29C3E70050B2D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		25DB24A21D29C3E70050B2D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WinIt/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = to.WinIt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		25DB24A31D29C3E70050B2D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WinIt/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = to.WinIt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		25DB24A51D29C3E70050B2D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WinItTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = to.WinItTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WinIt.app/WinIt";
+			};
+			name = Debug;
+		};
+		25DB24A61D29C3E70050B2D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WinItTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = to.WinItTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WinIt.app/WinIt";
+			};
+			name = Release;
+		};
+		25DB24A81D29C3E70050B2D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WinItUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = to.WinItUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WinIt;
+			};
+			name = Debug;
+		};
+		25DB24A91D29C3E70050B2D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WinItUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = to.WinItUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WinIt;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		25DB24741D29C3E70050B2D8 /* Build configuration list for PBXProject "WinIt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25DB249F1D29C3E70050B2D8 /* Debug */,
+				25DB24A01D29C3E70050B2D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		25DB24A11D29C3E70050B2D8 /* Build configuration list for PBXNativeTarget "WinIt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25DB24A21D29C3E70050B2D8 /* Debug */,
+				25DB24A31D29C3E70050B2D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		25DB24A41D29C3E70050B2D8 /* Build configuration list for PBXNativeTarget "WinItTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25DB24A51D29C3E70050B2D8 /* Debug */,
+				25DB24A61D29C3E70050B2D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		25DB24A71D29C3E70050B2D8 /* Build configuration list for PBXNativeTarget "WinItUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25DB24A81D29C3E70050B2D8 /* Debug */,
+				25DB24A91D29C3E70050B2D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 25DB24711D29C3E70050B2D8 /* Project object */;
+}
