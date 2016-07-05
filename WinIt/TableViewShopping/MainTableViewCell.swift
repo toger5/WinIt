@@ -6,4 +6,12 @@
 //  Copyright © 2016 Timo. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class MainTableViewCell: UITableViewCell{
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var imageViewProduct: UIImageView!
+    
+    @IBOutlet weak var descriptionLabel: UILabel!
+}
