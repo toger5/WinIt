@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>762628153600-flc7trpr5g1r6aapuhg6ov8q5lskd4p4.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.762628153600-flc7trpr5g1r6aapuhg6ov8q5lskd4p4</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAwcF41tE_bL7KclwBKpWqO7HtbdCm3QOI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>762628153600</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>net.widap.winit</string>
+	<key>PROJECT_ID</key>
+	<string>winit-2941c</string>
+	<key>STORAGE_BUCKET</key>
+	<string>winit-2941c.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:762628153600:ios:cd043a0aa1e8a121</string>
+	<key>DATABASE_URL</key>
+	<string>https://winit-2941c.firebaseio.com</string>
+</dict>
+</plist>

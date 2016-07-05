@@ -6,4 +6,8 @@
 //  Copyright © 2016 Timo. All rights reserved.
 //
 
-import Foundation
+//import Foundation
+import UIKit
+
+class MainTableView: UITableView{
+}
