@@ -8,6 +8,7 @@ target 'WinIt' do
   # Pods for WinIt
   pod ‘Firebase’
   pod ‘Firebase/Database’
+  pod ‘Firebase/Auth’
 
   target 'WinItTests' do
     inherit! :search_paths

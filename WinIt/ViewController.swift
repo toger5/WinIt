@@ -9,10 +9,12 @@
 import UIKit
 import Firebase
 class ViewController: UIViewController {
-    
+    var currentUser = ""
     let rootRef = FIRDatabase.database().reference()
     
-    let dataListOfOffers = [Offer(),Offer(name: "computer", picture:nil, description:"anAlmostBrokenComputer", shippingCostIncluded: false)]
+    var postList: [AnyObject] = []
+    
+//    let dataListOfOffers = [Offer(),Offer(name: "computer", picture:nil, description:"anAlmostBrokenComputer", shippingCostIncluded: false)]
     @IBOutlet weak var tableView: MainTableView!
     override func viewDidLoad() {
         
@@ -22,23 +24,34 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     override func viewDidAppear(animated: Bool) {
-        rootRef.child("test0").setValue("baccccc")
-        
+//        print(FirebaseHelper.getOfferCount())
+//        rootRef.child("test0").setValue("baccccc")
+        super.viewDidAppear(animated)
+        FirebaseHelper.addPost(Post(name: "haus", picture: nil, description: "meinHaus", shippingCostIncluded: false, key: "", time: "10.2", user:  currentUser))
+        FirebaseHelper.fillpostList(0,rangeMax: 20,callback: { (offerArray) in
+            self.postList = offerArray
+            self.tableView.reloadData()
+        })
     }
 
 }
 
 extension ViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataListOfOffers.count
+//        return dataListOfOffers.count
+        print(postList.count)
+        return postList.count
+        
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! MainTableViewCell
         
-        return populateCell(cell,offer: dataListOfOffers[indexPath.row])
+        let offer = postList[indexPath.row]
+        
+        return populateCell(cell, offer: offer as! Post)
     }
     
-    func populateCell(cell: MainTableViewCell, offer:Offer) -> MainTableViewCell{
+    func populateCell(cell: MainTableViewCell, offer:Post) -> MainTableViewCell{
         
         cell.nameLabel.text = offer.name
         cell.descriptionLabel.text = offer.description

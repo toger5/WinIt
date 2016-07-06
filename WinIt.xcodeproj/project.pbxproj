@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		250E554C1D2C72B4006C3A22 /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E554B1D2C72B4006C3A22 /* FirebaseHelper.swift */; };
+		250E554E1D2CAD2B006C3A22 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E554D1D2CAD2B006C3A22 /* LoginViewController.swift */; };
+		250E55501D2CB66B006C3A22 /* UserRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E554F1D2CB66B006C3A22 /* UserRegisterViewController.swift */; };
 		25DB247D1D29C3E70050B2D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB247C1D29C3E70050B2D8 /* AppDelegate.swift */; };
 		25DB247F1D29C3E70050B2D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB247E1D29C3E70050B2D8 /* ViewController.swift */; };
 		25DB24821D29C3E70050B2D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25DB24801D29C3E70050B2D8 /* Main.storyboard */; };
@@ -16,7 +19,7 @@
 		25DB249D1D29C3E70050B2D8 /* WinItUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB249C1D29C3E70050B2D8 /* WinItUITests.swift */; };
 		25DB24AB1D29D3A80050B2D8 /* MainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB24AA1D29D3A80050B2D8 /* MainTableView.swift */; };
 		25DB24AD1D29D6840050B2D8 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB24AC1D29D6840050B2D8 /* MainTableViewCell.swift */; };
-		25DB24B21D2C33DD0050B2D8 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB24B11D2C33DD0050B2D8 /* Offer.swift */; };
+		25DB24B21D2C33DD0050B2D8 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB24B11D2C33DD0050B2D8 /* Post.swift */; };
 		25DB24B41D2C4FF50050B2D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25DB24B31D2C4FF50050B2D8 /* GoogleService-Info.plist */; };
 		5FAA63333FEA3D4BCD6697C0 /* Pods_WinItUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9F23DE59BC2A81513BCE18 /* Pods_WinItUITests.framework */; };
 		B5E4F769C9AAE99126E23A4B /* Pods_WinItTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B75B5978AA09B6C111D698 /* Pods_WinItTests.framework */; };
@@ -42,6 +45,9 @@
 
 /* Begin PBXFileReference section */
 		2155D184F652733215929F5E /* Pods-WinIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinIt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WinIt/Pods-WinIt.debug.xcconfig"; sourceTree = "<group>"; };
+		250E554B1D2C72B4006C3A22 /* FirebaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseHelper.swift; path = Helper/FirebaseHelper.swift; sourceTree = "<group>"; };
+		250E554D1D2CAD2B006C3A22 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		250E554F1D2CB66B006C3A22 /* UserRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRegisterViewController.swift; sourceTree = "<group>"; };
 		25DB24791D29C3E70050B2D8 /* WinIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WinIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25DB247C1D29C3E70050B2D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25DB247E1D29C3E70050B2D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,7 +63,7 @@
 		25DB249E1D29C3E70050B2D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25DB24AA1D29D3A80050B2D8 /* MainTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTableView.swift; path = TableViewShopping/MainTableView.swift; sourceTree = "<group>"; };
 		25DB24AC1D29D6840050B2D8 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTableViewCell.swift; path = TableViewShopping/MainTableViewCell.swift; sourceTree = "<group>"; };
-		25DB24B11D2C33DD0050B2D8 /* Offer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
+		25DB24B11D2C33DD0050B2D8 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		25DB24B31D2C4FF50050B2D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		46B75B5978AA09B6C111D698 /* Pods_WinItTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WinItTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75F1B09707F1A42668133BBE /* Pods-WinIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinIt.release.xcconfig"; path = "Pods/Target Support Files/Pods-WinIt/Pods-WinIt.release.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +103,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		250E554A1D2C7282006C3A22 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				250E554B1D2C72B4006C3A22 /* FirebaseHelper.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
 		25DB24701D29C3E70050B2D8 = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +137,7 @@
 		25DB247B1D29C3E70050B2D8 /* WinIt */ = {
 			isa = PBXGroup;
 			children = (
+				250E554A1D2C7282006C3A22 /* Helper */,
 				25DB24B01D2C33DD0050B2D8 /* Offers */,
 				25DB247C1D29C3E70050B2D8 /* AppDelegate.swift */,
 				25DB247E1D29C3E70050B2D8 /* ViewController.swift */,
@@ -132,6 +147,8 @@
 				25DB24881D29C3E70050B2D8 /* Info.plist */,
 				25DB24AA1D29D3A80050B2D8 /* MainTableView.swift */,
 				25DB24AC1D29D6840050B2D8 /* MainTableViewCell.swift */,
+				250E554D1D2CAD2B006C3A22 /* LoginViewController.swift */,
+				250E554F1D2CB66B006C3A22 /* UserRegisterViewController.swift */,
 			);
 			path = WinIt;
 			sourceTree = "<group>";
@@ -157,7 +174,7 @@
 		25DB24B01D2C33DD0050B2D8 /* Offers */ = {
 			isa = PBXGroup;
 			children = (
-				25DB24B11D2C33DD0050B2D8 /* Offer.swift */,
+				25DB24B11D2C33DD0050B2D8 /* Post.swift */,
 			);
 			path = Offers;
 			sourceTree = "<group>";
@@ -448,10 +465,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25DB24B21D2C33DD0050B2D8 /* Offer.swift in Sources */,
+				250E554E1D2CAD2B006C3A22 /* LoginViewController.swift in Sources */,
+				25DB24B21D2C33DD0050B2D8 /* Post.swift in Sources */,
 				25DB24AB1D29D3A80050B2D8 /* MainTableView.swift in Sources */,
 				25DB247F1D29C3E70050B2D8 /* ViewController.swift in Sources */,
+				250E55501D2CB66B006C3A22 /* UserRegisterViewController.swift in Sources */,
 				25DB24AD1D29D6840050B2D8 /* MainTableViewCell.swift in Sources */,
+				250E554C1D2C72B4006C3A22 /* FirebaseHelper.swift in Sources */,
 				25DB247D1D29C3E70050B2D8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

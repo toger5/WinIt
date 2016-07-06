@@ -10,8 +10,8 @@ import UIKit
 import Firebase
 class Post{
     
-    
     var key: String
+    var user: String
     var name: String
     var time: String
     var picture:UIImage?
@@ -22,15 +22,17 @@ class Post{
         time = ""
         key = ""
         name = "unknown"
+        user = "user"
         picture = nil
         description = "unknown"
         shippingCostIncluded = false
     }
     
-    init(name: String, picture:UIImage?, description:String, shippingCostIncluded: Bool, key:String = "", time: String){
+    init(name: String, picture:UIImage?, description:String, shippingCostIncluded: Bool, key:String = "", time: String, user: String){
         self.key = key
         self.time = time
         self.name = name
+        self.user = user
         self.description = description
         self.picture = picture
         self.shippingCostIncluded = shippingCostIncluded
@@ -39,6 +41,7 @@ class Post{
     init(snapshot: FIRDataSnapshot){
         self.time = snapshot.value!["time"] as! String
         self.key = snapshot.key
+        self.user = ""
         self.name = snapshot.value!["name"] as! String
         self.description = ""
         self.picture = nil
@@ -48,6 +51,7 @@ class Post{
     func toDict() -> [String:String]{
         let dictionary: [String:String] = [
             "name" : name,
+            "user" : user,
             "time" : time,
             "description" : description
         ]
