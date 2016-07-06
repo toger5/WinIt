@@ -27,7 +27,7 @@ class ViewController: UIViewController {
 //        print(FirebaseHelper.getOfferCount())
 //        rootRef.child("test0").setValue("baccccc")
         super.viewDidAppear(animated)
-        FirebaseHelper.addPost(Post(name: "haus", picture: nil, description: "meinHaus", shippingCostIncluded: false, key: "", time: "10.2", user:  currentUser))
+        FirebaseHelper.addPost(Post(name: "haus", picture: nil, description: "meinHaus", key: "", time: "10.2", user:  currentUser))
         FirebaseHelper.fillpostList(0,rangeMax: 20,callback: { (offerArray) in
             self.postList = offerArray
             self.tableView.reloadData()
