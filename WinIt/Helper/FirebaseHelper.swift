@@ -13,12 +13,10 @@ class FirebaseHelper {
     static let rootRef = FIRDatabase.database().reference()
     static func fillpostList(rangeMin: Int, rangeMax: Int, callback: ([Post]) -> Void){
         
-        rootRef.child("Posts").observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+        rootRef.child("posts").observeSingleEventOfType(.Value, withBlock: { (snapshot) in
             // Get the post list of all posts
-            
             var offerArray: [Post] = []
             for post in snapshot.children{
-
                 let offer = Post(snapshot: post as! FIRDataSnapshot)
                 offerArray.append(offer)
 

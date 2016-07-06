@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 class ViewController: UIViewController {
-    var currentUser = ""
+    let currentUser = FIRAuth.auth()!.currentUser
     let rootRef = FIRDatabase.database().reference()
     
     var postList: [AnyObject] = []
@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: MainTableView!
     override func viewDidLoad() {
 //        print(FIRUserInfo)
+        print("curretn Logged In user: \(currentUser)")
         super.viewDidLoad()
         tableView.dataSource = self
         
@@ -28,10 +29,11 @@ class ViewController: UIViewController {
 //        print(FirebaseHelper.getOfferCount())
 //        rootRef.child("test0").setValue("baccccc")
         super.viewDidAppear(animated)
-        FirebaseHelper.addPost(Post(name: "haus", picture: nil, description: "meinHaus", key: "", time: "10.2", user:  currentUser))
+//        FirebaseHelper.addPost(Post(name: "haus", picture: nil, description: "meinHaus", key: "", time: "10.2", user:  currentUser!.uid))
         FirebaseHelper.fillpostList(0,rangeMax: 20,callback: { (offerArray) in
             self.postList = offerArray
             self.tableView.reloadData()
+            print("test: \(self.postList)")
         })
     }
 
