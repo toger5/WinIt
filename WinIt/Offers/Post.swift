@@ -16,7 +16,6 @@ class Post{
     var time: String
     var picture:UIImage?
     var description:String
-    var shippingCostIncluded: Bool
     
     init(){
         time = ""
@@ -25,7 +24,6 @@ class Post{
         user = "user"
         picture = nil
         description = "unknown"
-        shippingCostIncluded = false
     }
     
     init(name: String, picture:UIImage?, description:String, shippingCostIncluded: Bool, key:String = "", time: String, user: String){
@@ -35,7 +33,6 @@ class Post{
         self.user = user
         self.description = description
         self.picture = picture
-        self.shippingCostIncluded = shippingCostIncluded
     }
     
     init(snapshot: FIRDataSnapshot){
@@ -45,7 +42,6 @@ class Post{
         self.name = snapshot.value!["name"] as! String
         self.description = ""
         self.picture = nil
-        self.shippingCostIncluded = false
     }
     
     func toDict() -> [String:String]{
