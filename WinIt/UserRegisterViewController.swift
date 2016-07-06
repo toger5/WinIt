@@ -16,23 +16,54 @@ class UserRegisterViewController: UIViewController {
     
     @IBOutlet weak var email: UITextField!
     
+    
+    
     let passwordOkay = "Your password is valid"
     let passwordToShort = "Your password is to short, at least 6 characters"
-    var user = FIRUser?()
+    
     @IBAction func registerButtonPressed(sender: AnyObject) {
-        if user == nil{
-            FIRAuth.auth()?.createUserWithEmail(email.text!, password: password.text!) { (user, error) in
-                print(error)
-                print(user)
-                self.user = user
-                if error == nil{
-                    print("account succesfully created")
-                    self.performSegueWithIdentifier("toApplicationSegue", sender: sender)
-                }else{
-                     self.loginFailed()
-                }
+        print(FIRAuth.auth()?.currentUser)
+        if FIRAuth.auth()?.currentUser != nil{
+            do {
+                try FIRAuth.auth()?.signOut()
+            } catch {
+                print("error")
             }
+            
         }
+            print("whats up")
+            if checkLoginData(){
+                FIRAuth.auth()?.createUserWithEmail(email.text!, password: password.text!) { (user, error) in
+                    print(error)
+                    print(user)
+                    
+                    if let user = user {
+                        let changeRequest = user.profileChangeRequest()
+                        
+                        changeRequest.displayName = self.username.text
+                        
+                        changeRequest.commitChangesWithCompletion() { error in
+                            if error != nil {
+                                // An error happened.
+                            } else {
+                                //it worked
+                                print("account succesfully created")
+                                FirebaseHelper.createAccount(self.username.text!, coins: 0)
+                                self.performSegueWithIdentifier("toApplicationSegue", sender: sender)
+                            }
+                        }
+                        
+                        
+                    }else{
+                        self.loginFailed()
+                    }
+                }
+                
+            }else{
+                self.loginFailed()
+            }
+ 
+        
     }
     @IBAction func passwordEditingUpdated(sender: AnyObject) {
         let pas = password.text ?? ""
@@ -46,6 +77,11 @@ class UserRegisterViewController: UIViewController {
         }
     }
     
+    func checkLoginData() -> Bool{
+        let pas = password.text ?? ""
+        let name = username.text ?? ""
+        return (name.characters.count > 0 && pas.characters.count > 5)
+    }
     func loginFailed(){
         let anim = CustomAnimation(obj: registerButton, repetutionAmount: 4, maxRotation: 0, maxPosition: 40, duration: 0.06)
         anim.shake()

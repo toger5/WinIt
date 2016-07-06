@@ -7,7 +7,7 @@
 //
 
 import Firebase
-
+import FirebaseAuth
 class FirebaseHelper {
     
     static let rootRef = FIRDatabase.database().reference()
@@ -35,5 +35,14 @@ class FirebaseHelper {
         print(post.toDict())
         
         rootRef.child("posts").childByAutoId().setValue(post.toDict())
+    }
+    
+    static func createAccount(username: String, coins: Int){
+        if let user = FIRAuth.auth()?.currentUser{
+            let userDict = ["coins":coins,
+                            "username": username]
+            rootRef.child("users").child(user.uid).setValue(userDict)
+        }
+        
     }
 }
