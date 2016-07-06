@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 class ViewController: UIViewController {
     var currentUser = ""
     let rootRef = FIRDatabase.database().reference()
@@ -17,7 +18,7 @@ class ViewController: UIViewController {
 //    let dataListOfOffers = [Offer(),Offer(name: "computer", picture:nil, description:"anAlmostBrokenComputer", shippingCostIncluded: false)]
     @IBOutlet weak var tableView: MainTableView!
     override func viewDidLoad() {
-        
+//        print(FIRUserInfo)
         super.viewDidLoad()
         tableView.dataSource = self
         
