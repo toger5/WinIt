@@ -39,15 +39,7 @@ class LoginViewController: UIViewController{
     }
     
 //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        var loginSuccess = false
-//        if segue.identifier == "logInSegue"{
-//            FIRAuth.auth()?.signInWithEmail(email.text!, password: password.text!) { (user, error) in
-//                print(error)
-//                if user != nil{
-//                    loginSuccess = true
-//                }
-//            }
-//        }
+
 //    }
     
 }
