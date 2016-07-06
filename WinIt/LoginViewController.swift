@@ -31,7 +31,7 @@ class LoginViewController: UIViewController{
     @IBAction func logInButtonPressed(sender: AnyObject) {
         FIRAuth.auth()?.signInWithEmail(email.text!, password: password.text!) { (user, error) in
             print(error)
-            if user != nil{
+            if error == nil{
                 self.performSegueWithIdentifier("logInSegue", sender: sender)
             }
         }
