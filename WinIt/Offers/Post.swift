@@ -26,7 +26,7 @@ class Post{
         description = "unknown"
     }
     
-    init(name: String, picture:UIImage?, description:String, shippingCostIncluded: Bool, key:String = "", time: String, user: String){
+    init(name: String, picture:UIImage?, description:String, key:String = "", time: String, user: String){
         self.key = key
         self.time = time
         self.name = name
