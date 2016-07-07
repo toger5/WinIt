@@ -11,26 +11,28 @@ import FirebaseAuth
 class FirebaseHelper {
     
     static let rootRef = FIRDatabase.database().reference()
+	
     static func fillpostList(rangeMin: Int, rangeMax: Int, callback: ([Post]) -> Void){
-        
+		
+		func postDownloadCallback(snapshot: FIRDataSnapshot)
+		{
+			// Get the post list of all posts
+			var posts: [Post] = []
+			for postDict in snapshot.children{
+				let post = Post(snapshot: postDict as! FIRDataSnapshot)
+				posts.append(post)
+			}
+			//refreshing the tableView
+			callback(posts)
+		}
+		
         let postQuery = rootRef.child("posts")
         print("filll post list")
         postQuery.queryLimitedToLast(UInt(rangeMax))
         print("aaa")
         postQuery.queryOrderedByChild("time")
         
-        postQuery.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
-            // Get the post list of all posts
-            var offerArray: [Post] = []
-            for post in snapshot.children{
-                let offer = Post(snapshot: post as! FIRDataSnapshot)
-                offerArray.append(offer)
-
-            }
-            //refreshing the tableView
-            callback(offerArray)
-            
-        }) { (error) in
+        postQuery.observeSingleEventOfType(.Value, withBlock: postDownloadCallback) { (error) in
             print(error.localizedDescription)
         }
     }
