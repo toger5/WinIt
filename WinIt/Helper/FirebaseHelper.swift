@@ -91,7 +91,7 @@ class FirebaseHelper {
 		}
 	}
 	
-	static func getLikes(whenDone: ([Post]) -> Void) {
+	static func getLikedPosts(whenDone: ([Post]) -> Void) {
 		
 		let userKey = (FIRAuth.auth()?.currentUser?.uid)!
 		
