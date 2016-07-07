@@ -36,10 +36,6 @@ class ViewController: UIViewController {
             print("test: \(self.postList)")
         })
     }
-	
-	@IBAction func unwindToVC(segue: UIStoryboardSegue) {
-		
-	}
 
 }
 
