@@ -43,15 +43,32 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rtz-gh-xbz">
-                                                    <rect key="frame" x="8" y="379" width="584" height="58"/>
+                                                    <rect key="frame" x="8" y="379" width="527" height="58"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ka8-jc-gJu">
+                                                    <rect key="frame" x="543" y="379" width="51" height="31"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="200" id="For-ZI-92F"/>
+                                                        <constraint firstAttribute="height" constant="31" id="JCh-vs-7zU"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="For-ZI-92F"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <connections>
+                                                        <action selector="likeTriggered:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="d4k-IR-evA"/>
+                                                    </connections>
+                                                </switch>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="MgD-h8-oMh" firstAttribute="top" secondItem="M9x-ir-2lm" secondAttribute="topMargin" id="Doq-Y9-IaL"/>
                                                 <constraint firstItem="MgD-h8-oMh" firstAttribute="leading" secondItem="M9x-ir-2lm" secondAttribute="leadingMargin" id="KFx-3I-yMa"/>
+                                                <constraint firstItem="Ka8-jc-gJu" firstAttribute="trailing" secondItem="M9x-ir-2lm" secondAttribute="trailingMargin" id="X1K-gp-W4j"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Ka8-jc-gJu" secondAttribute="bottom" constant="32.5" id="ZVv-jv-0IB"/>
                                                 <constraint firstItem="MgD-h8-oMh" firstAttribute="trailing" secondItem="M9x-ir-2lm" secondAttribute="trailingMargin" id="hcP-lT-Bi1"/>
                                             </constraints>
                                         </tableViewCellContentView>

@@ -15,16 +15,18 @@ class ViewController: UIViewController {
     
     var postList: [Post] = []
     
-//    let dataListOfOffers = [Offer(),Offer(name: "computer", picture:nil, description:"anAlmostBrokenComputer", shippingCostIncluded: false)]
+	//let dataListOfOffers = [Offer(),Offer(name: "computer", picture:nil, description:"anAlmostBrokenComputer", shippingCostIncluded: false)]
     @IBOutlet weak var tableView: MainTableView!
-    override func viewDidLoad() {
-//        print(FIRUserInfo)
+	
+	override func viewDidLoad() {
+		//print(FIRUserInfo)
         print("curretn Logged In user: \(currentUser)")
         super.viewDidLoad()
         tableView.dataSource = self
         
         // Do any additional setup after loading the view, typically from a nib.
-    }
+	}
+	
     override func viewDidAppear(animated: Bool) {
 //        print(FirebaseHelper.getOfferCount())
 //        rootRef.child("test0").setValue("baccccc")
@@ -45,17 +47,18 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UITableViewDataSource {
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return dataListOfOffers.count
+	
+	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		//return dataListOfOffers.count
         print(postList.count)
         return postList.count
-        
     }
+	
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
         //maybe It works as lazy load
         if indexPath.row >= postList.count {
-//            self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: self.comments.count-1, inSection: 1)], withRowAnimation: UITableViewRowAnimation.Automatic)
+		//self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: self.comments.count-1, inSection: 1)], withRowAnimation: UITableViewRowAnimation.Automatic)
         }
         
         
@@ -69,7 +72,7 @@ extension ViewController: UITableViewDataSource {
 		print("post list:")
 		print(postList)
 		
-        return populateCell(cell, offer: offer as! Post)
+        return populateCell(cell, offer: offer)
     }
     
     func populateCell(cell: MainTableViewCell, offer:Post) -> MainTableViewCell{
@@ -85,6 +88,12 @@ extension ViewController: UITableViewDataSource {
         
         return cell
     }
+	
+	@IBAction func likeTriggered(sender: AnyObject) {
+		
+		print("post liked")
+	}
+	
 }
 
 
