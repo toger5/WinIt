@@ -45,6 +45,7 @@ class Post{
         self.uploadTime = snapshot.value!["uploadTime"] as! Double
         self.eventTime = snapshot.value!["eventTime"] as! Double
         self.key = snapshot.key
+		print("user key: \(key)")
         self.user = ""
         self.name = snapshot.value!["name"] as! String
         self.description = ""
