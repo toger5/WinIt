@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     let currentUser = FIRAuth.auth()!.currentUser
     let rootRef = FIRDatabase.database().reference()
     
-    var postList: [AnyObject] = []
+    var postList: [Post] = []
     
 //    let dataListOfOffers = [Offer(),Offer(name: "computer", picture:nil, description:"anAlmostBrokenComputer", shippingCostIncluded: false)]
     @IBOutlet weak var tableView: MainTableView!
@@ -31,9 +31,10 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         FirebaseHelper.addPost(Post(name: "haus", picture: nil, description: "meinHaus", key: "", eventTime: 1000, user:  currentUser!.uid))
         FirebaseHelper.fillpostList(0,rangeMax: 20,callback: { (offerArray) in
-            self.postList.append(offerArray)
+			print("offer array: \(offerArray)")
+			self.postList = offerArray
             self.tableView.reloadData()
-            print("test: \(self.postList)")
+            //print("test: \(self.postList)")
         })
     }
 	
@@ -64,7 +65,10 @@ extension ViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! MainTableViewCell
         
         let offer = postList[indexPath.row]
-        
+		
+		print("post list:")
+		print(postList)
+		
         return populateCell(cell, offer: offer as! Post)
     }
     
