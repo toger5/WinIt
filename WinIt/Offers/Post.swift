@@ -17,7 +17,13 @@ class Post{
     let uploadTime: Double
     var picture: UIImage?
     var description: String
-	var liked: Bool
+	var liked: Bool {
+		didSet {
+			cell?.updateLiked()
+		}
+	}
+	
+	var cell: MainTableViewCell?
     
     init(){
         eventTime = 0

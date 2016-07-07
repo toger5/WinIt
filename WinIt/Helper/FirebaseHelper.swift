@@ -21,7 +21,8 @@ class FirebaseHelper {
 			var posts: [Post] = []
 			for postDict in snapshot.children{
 				let post = Post(snapshot: postDict as! FIRDataSnapshot)
-				//FirebaseHelper.setIfLiked(post)
+				FirebaseHelper.setIfLiked(post)
+				//post.liked=true
 				posts.append(post)
 			}
 			//refreshing the tableView
@@ -74,13 +75,10 @@ class FirebaseHelper {
 		
 		func postKeyDownloadCallback(snapshot: FIRDataSnapshot) {
 			
-			if snapshot.value == nil {
+			if snapshot.exists() {
 				
-				post.liked = false
-			
-			} else {
-			
-				post.liked=true
+				post.liked = true
+				print("post like downloaded")
 			}
 		}
 		

@@ -22,6 +22,7 @@ class MainTableViewCell: UITableViewCell{
 	func populate(post: Post) {
 		
 		self.post = post
+		post.cell = self
 		nameLabel.text = post.name
 		descriptionLabel.text = post.description
 		if let pic = post.picture{
@@ -30,7 +31,12 @@ class MainTableViewCell: UITableViewCell{
 			imageViewProduct.image = UIImage(named: "NoImage")
 		}
 		
-		likeSwitch.on = post.liked
+		updateLiked()
+	}
+	
+	func updateLiked() {
+		
+		likeSwitch.on = post?.liked ?? false
 	}
 	
 	@IBAction func likeTriggered(sender: AnyObject) {
