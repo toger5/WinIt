@@ -40,7 +40,7 @@ class UserRegisterViewController: UIViewController {
                     if let user = user {
                         let changeRequest = user.profileChangeRequest()
                         
-                        changeRequest.displayName = self.username.text
+                        changeRequest.displayName = self.username.text!
                         
                         changeRequest.commitChangesWithCompletion() { error in
                             if error != nil {

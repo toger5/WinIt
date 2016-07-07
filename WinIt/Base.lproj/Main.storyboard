@@ -450,7 +450,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="200" id="v8b-tL-hAW">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="likedPostCell" rowHeight="200" id="v8b-tL-hAW" customClass="LikedPostCell" customModule="WinIt" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v8b-tL-hAW" id="SGh-rj-pEv">
@@ -497,6 +497,12 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="33w-jO-fHl" secondAttribute="bottom" id="tdq-dC-9IH"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="countDownTimer" destination="Oba-3K-vrX" id="DKN-Sl-Pjn"/>
+                                            <outlet property="postImage" destination="33w-jO-fHl" id="nlL-1Y-yfR"/>
+                                            <outlet property="postName" destination="COV-dS-xvc" id="NxP-KT-HD0"/>
+                                            <outlet property="posterName" destination="bUG-bG-chz" id="Npl-hn-Jyp"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -511,6 +517,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Your Likes" id="q5p-kG-etj"/>
+                    <connections>
+                        <outlet property="tableVeiw" destination="AII-7A-hdy" id="zG8-Ff-gwj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RiV-fm-Ofj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

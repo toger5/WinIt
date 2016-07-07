@@ -116,6 +116,5 @@ class FirebaseHelper {
         }
         
     }
-    
 
 }

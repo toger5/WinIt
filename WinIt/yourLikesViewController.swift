@@ -10,9 +10,12 @@ import UIKit
 import Firebase
 
 class yourLikesViewController: UIViewController {
+    var likedPosts: [Post] = []
     
+    @IBOutlet weak var tableVeiw: UITableView!
     override func viewDidLoad(){
         super.viewDidLoad()
+        FirebaseHelper.getLikes(likesLoaded)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -20,14 +23,20 @@ class yourLikesViewController: UIViewController {
     }
     
     
-    
+    func likesLoaded(posts: [Post]){
+        likedPosts = posts
+        tableVeiw.reloadData()
+    }
 }
+
 extension yourLikesViewController: UITableViewDataSource{
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return likedPosts.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCellWithIdentifier("likedPostCell") as LikedPostCell
+        cell.populate(likedPosts[indexPath.row])
+        return cell
     }
 }
