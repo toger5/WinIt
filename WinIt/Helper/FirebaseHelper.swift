@@ -21,6 +21,7 @@ class FirebaseHelper {
 			var posts: [Post] = []
 			for postDict in snapshot.children{
 				let post = Post(snapshot: postDict as! FIRDataSnapshot)
+				//FirebaseHelper.setIfLiked(post)
 				posts.append(post)
 			}
 			//refreshing the tableView
@@ -63,7 +64,33 @@ class FirebaseHelper {
 		let postKey = post.key
 		
 		rootRef.child("likesByPost/\(postKey)/\(userKey)").removeValue()
-		rootRef.child("likesByPost/\(userKey)/\(postKey)").removeValue()
+		rootRef.child("likesByUser/\(userKey)/\(postKey)").removeValue()
+	}
+	
+	static func setIfLiked(post: Post) {
+		
+		let userKey = (FIRAuth.auth()?.currentUser?.uid)!
+		let postKey = post.key
+		
+		func postKeyDownloadCallback(snapshot: FIRDataSnapshot) {
+			
+			if snapshot.value == nil {
+				
+				post.liked = false
+			
+			} else {
+			
+				post.liked=true
+			}
+		}
+		
+		//func
+		
+		let postKeyQuery = rootRef.child("likesByUser/\(userKey)/\(postKey)")
+		
+		postKeyQuery.observeSingleEventOfType(.Value, withBlock: postKeyDownloadCallback) { (error) in
+			print(error.localizedDescription)
+		}
 	}
 	
 	static func getLikes(whenDone: ([Post]) -> Void) {
