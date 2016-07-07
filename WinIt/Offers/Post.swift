@@ -15,8 +15,9 @@ class Post{
     var name: String
     var eventTime: Double
     let uploadTime: Double
-    var picture:UIImage?
-    var description:String
+    var picture: UIImage?
+    var description: String
+	var liked: Bool
     
     init(){
         eventTime = 0
@@ -26,6 +27,7 @@ class Post{
         user = "user"
         picture = nil
         description = "unknown"
+		liked = false
     }
     
     init(name: String, picture:UIImage?, description: String, key:String = "", eventTime: Double, user: String){
@@ -37,6 +39,7 @@ class Post{
         self.user = user
         self.description = description
         self.picture = picture
+		liked = false
         print(getHoursMinutesSecondsArray())
     }
     
@@ -50,6 +53,7 @@ class Post{
         self.name = snapshot.value!["name"] as! String
         self.description = ""
         self.picture = nil
+		self.liked = false
     }
     
     func getTimeLeftInSeconds() -> Double{

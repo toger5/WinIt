@@ -28,8 +28,8 @@ class ViewController: UIViewController {
 	}
 	
     override func viewDidAppear(animated: Bool) {
-//        print(FirebaseHelper.getOfferCount())
-//        rootRef.child("test0").setValue("baccccc")
+		//print(FirebaseHelper.getOfferCount())
+		//rootRef.child("test0").setValue("baccccc")
         super.viewDidAppear(animated)
         FirebaseHelper.addPost(Post(name: "haus", picture: nil, description: "meinHaus", key: "", eventTime: 1000, user:  currentUser!.uid))
         FirebaseHelper.fillpostList(0,rangeMax: 20,callback: { (offerArray) in
@@ -67,33 +67,28 @@ extension ViewController: UITableViewDataSource {
         //maybe It works as lazy load
         let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! MainTableViewCell
         
-        let offer = postList[indexPath.row]
+        let post = postList[indexPath.row]
 		
 		print("post list:")
 		print(postList)
 		
-        return populateCell(cell, offer: offer)
+        return populateCell(cell, post: post)
     }
     
-    func populateCell(cell: MainTableViewCell, offer:Post) -> MainTableViewCell{
-        
-        
-        cell.nameLabel.text = offer.name
-        cell.descriptionLabel.text = offer.description
-        if let pic = offer.picture{
+    func populateCell(cell: MainTableViewCell, post:Post) -> MainTableViewCell{
+		
+        cell.nameLabel.text = post.name
+        cell.descriptionLabel.text = post.description
+        if let pic = post.picture{
             cell.imageViewProduct.image = pic
         }else{
             cell.imageViewProduct.image = UIImage(named: "NoImage")
         }
-        
+		
+		cell.likeSwitch.on=post.liked
+		
         return cell
     }
-	
-	@IBAction func likeTriggered(sender: AnyObject) {
-		
-		print("post liked")
-	}
-	
 }
 
 

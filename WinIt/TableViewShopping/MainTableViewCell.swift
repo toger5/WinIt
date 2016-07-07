@@ -14,4 +14,11 @@ class MainTableViewCell: UITableViewCell{
     @IBOutlet weak var imageViewProduct: UIImageView!
     
     @IBOutlet weak var descriptionLabel: UILabel!
+	
+	@IBOutlet weak var likeSwitch: UISwitch!
+	
+	@IBAction func likeTriggered(sender: AnyObject) {
+		
+		print("post liked")
+	}
 }

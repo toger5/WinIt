@@ -60,7 +60,7 @@
                                                         </mask>
                                                     </variation>
                                                     <connections>
-                                                        <action selector="likeTriggered:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="d4k-IR-evA"/>
+                                                        <action selector="likeTriggered:" destination="QnQ-ls-WAk" eventType="primaryActionTriggered" id="lJY-ii-rWr"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
@@ -75,6 +75,7 @@
                                         <connections>
                                             <outlet property="descriptionLabel" destination="Rtz-gh-xbz" id="wrs-vT-qpp"/>
                                             <outlet property="imageViewProduct" destination="MgD-h8-oMh" id="uaK-Fg-hvB"/>
+                                            <outlet property="likeSwitch" destination="Ka8-jc-gJu" id="xFE-Zd-n6G"/>
                                             <outlet property="nameLabel" destination="vT5-0U-TeB" id="cSE-pH-gte"/>
                                         </connections>
                                     </tableViewCell>
