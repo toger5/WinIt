@@ -43,7 +43,6 @@ class ViewController: UIViewController {
 	@IBAction func unwindToVC(segue: UIStoryboardSegue) {
 		
 	}
-
 }
 
 extension ViewController: UITableViewDataSource {
@@ -60,33 +59,13 @@ extension ViewController: UITableViewDataSource {
         if indexPath.row >= postList.count {
 		//self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: self.comments.count-1, inSection: 1)], withRowAnimation: UITableViewRowAnimation.Automatic)
         }
-        
-        
-        
-        
+		
         //maybe It works as lazy load
         let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! MainTableViewCell
         
         let post = postList[indexPath.row]
 		
-		cell.post=post
-		
-		print("post list:")
-		print(postList)
-		
-        return populateCell(cell, post: post)
-    }
-    
-    func populateCell(cell: MainTableViewCell, post:Post) -> MainTableViewCell{
-        cell.nameLabel.text = post.name
-        cell.descriptionLabel.text = post.description
-        if let pic = post.picture{
-            cell.imageViewProduct.image = pic
-        }else{
-            cell.imageViewProduct.image = UIImage(named: "NoImage")
-        }
-		
-		cell.likeSwitch.on = post.liked
+		cell.populate(post)
 		
         return cell
     }
