@@ -13,13 +13,13 @@ class Post{
     var key: String
     var user: String
     var name: String
-    var time: Double
+    var eventTime: Double
     let uploadTime: Double
     var picture:UIImage?
     var description:String
     
     init(){
-        time = 0
+        eventTime = 0
         uploadTime = 0
         key = ""
         name = "unknown"
@@ -28,38 +28,45 @@ class Post{
         description = "unknown"
     }
     
-    init(name: String, picture:UIImage?, description:String, key:String = "", time: Double, user: String){
+    init(name: String, picture:UIImage?, description: String, key:String = "", eventTime: Double, user: String){
+        print("new")
         self.uploadTime = NSDate().timeIntervalSince1970
         self.key = key
-        self.time = time
+        self.eventTime = NSDate().dateByAddingTimeInterval(eventTime).timeIntervalSince1970
         self.name = name
         self.user = user
         self.description = description
         self.picture = picture
+        print(getHoursMinutesSecondsArray())
     }
     
     init(snapshot: FIRDataSnapshot){
-        self.uploadTime = snapshot.value!["uploadTime"]
-        self.time = snapshot.value!["time"]
+        print("acces")
+        self.uploadTime = snapshot.value!["uploadTime"] as! Double
+        self.eventTime = snapshot.value!["eventTime"] as! Double
         self.key = snapshot.key
         self.user = ""
         self.name = snapshot.value!["name"] as! String
         self.description = ""
         self.picture = nil
     }
-    func getTimeLeftInHours(){
-        let timeBetween = NSDate().timeIntervalSinceDate(uploadTime)
-        return time - timeBetween
+    
+    func getTimeLeftInSeconds() -> Double{
+//        let timeBetween = NSDate().timeIntervalSinceDate(NSDate(timeIntervalSince1970: uploadTime))
+        return eventTime - uploadTime
     }
+    
     func getHoursMinutesSecondsArray() -> [Int]{
-        let timeLeft = getTimeLeftInHours()
-        var array = [Int(timeLeft),Int((timeLeft%1)*60),Int((timeLeft%(1/60)) * 60 * 60)]
+        let timeLeft = getTimeLeftInSeconds()
+        let array = [Int(timeLeft / 60 / 60),Int((timeLeft%(60 * 60)) / 60),Int(timeLeft%60)]
+        return array
     }
-    func toDict() -> [String:String]{
-        let dictionary: [String:String] = [
+    
+    func toDict() -> [String:AnyObject]{
+        let dictionary: [String:AnyObject] = [
             "name" : name,
             "user" : user,
-            "time" : time,
+            "eventTime" : eventTime,
             "uploadTime": uploadTime,
             "description" : description
         ]

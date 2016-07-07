@@ -12,10 +12,13 @@ class FirebaseHelper {
     
     static let rootRef = FIRDatabase.database().reference()
     static func fillpostList(rangeMin: Int, rangeMax: Int, callback: ([Post]) -> Void){
+        
         let postQuery = rootRef.child("posts")
-        postQuery.queryLimitedToFirst(UInt(rangeMin))
+        print("filll post list")
         postQuery.queryLimitedToLast(UInt(rangeMax))
+        print("aaa")
         postQuery.queryOrderedByChild("time")
+        
         postQuery.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
             // Get the post list of all posts
             var offerArray: [Post] = []
@@ -33,6 +36,7 @@ class FirebaseHelper {
     }
     
     static func addPost(post:Post){
+        print("try to add")
         print(post.toDict())
         
         rootRef.child("posts").childByAutoId().setValue(post.toDict())
