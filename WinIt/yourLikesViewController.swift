@@ -35,7 +35,7 @@ extension yourLikesViewController: UITableViewDataSource{
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("likedPostCell") as LikedPostCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("likedPostCell") as! LikedPostCell
         cell.populate(likedPosts[indexPath.row])
         return cell
     }
