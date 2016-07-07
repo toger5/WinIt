@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         FirebaseHelper.addPost(Post(name: "haus", picture: nil, description: "meinHaus", key: "", eventTime: 1000, user:  currentUser!.uid))
         FirebaseHelper.fillpostList(0,rangeMax: 20,callback: { (offerArray) in
-            self.postList = offerArray
+            self.postList.append(offerArray)
             self.tableView.reloadData()
             print("test: \(self.postList)")
         })
@@ -51,6 +51,16 @@ extension ViewController: UITableViewDataSource {
         
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+        
+        //maybe It works as lazy load
+        if indexPath.row >= postList.count {
+//            self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: self.comments.count-1, inSection: 1)], withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
+        
+        
+        
+        
+        //maybe It works as lazy load
         let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! MainTableViewCell
         
         let offer = postList[indexPath.row]
@@ -59,6 +69,7 @@ extension ViewController: UITableViewDataSource {
     }
     
     func populateCell(cell: MainTableViewCell, offer:Post) -> MainTableViewCell{
+        
         
         cell.nameLabel.text = offer.name
         cell.descriptionLabel.text = offer.description
