@@ -9,7 +9,9 @@
 import UIKit
 
 class MainTableViewCell: UITableViewCell{
-    
+	
+	var post: Post?
+	
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var imageViewProduct: UIImageView!
     
@@ -19,6 +21,7 @@ class MainTableViewCell: UITableViewCell{
 	
 	@IBAction func likeTriggered(sender: AnyObject) {
 		
+		post?.liked = !(post?.liked)!
 		print("post liked")
 	}
 }

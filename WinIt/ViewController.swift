@@ -69,6 +69,8 @@ extension ViewController: UITableViewDataSource {
         
         let post = postList[indexPath.row]
 		
+		cell.post=post
+		
 		print("post list:")
 		print(postList)
 		
@@ -76,7 +78,6 @@ extension ViewController: UITableViewDataSource {
     }
     
     func populateCell(cell: MainTableViewCell, post:Post) -> MainTableViewCell{
-		
         cell.nameLabel.text = post.name
         cell.descriptionLabel.text = post.description
         if let pic = post.picture{
@@ -85,7 +86,7 @@ extension ViewController: UITableViewDataSource {
             cell.imageViewProduct.image = UIImage(named: "NoImage")
         }
 		
-		cell.likeSwitch.on=post.liked
+		cell.likeSwitch.on = post.liked
 		
         return cell
     }
