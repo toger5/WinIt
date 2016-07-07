@@ -12,6 +12,7 @@
 		250E55501D2CB66B006C3A22 /* UserRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E554F1D2CB66B006C3A22 /* UserRegisterViewController.swift */; };
 		250E55521D2D8B5A006C3A22 /* CustomAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E55511D2D8B5A006C3A22 /* CustomAnimation.swift */; };
 		250E55551D2EBCD1006C3A22 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E55541D2EBCD1006C3A22 /* GameViewController.swift */; };
+		250E555A1D2EF8CD006C3A22 /* yourLikesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E55591D2EF8CD006C3A22 /* yourLikesViewController.swift */; };
 		25DB247D1D29C3E70050B2D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB247C1D29C3E70050B2D8 /* AppDelegate.swift */; };
 		25DB247F1D29C3E70050B2D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB247E1D29C3E70050B2D8 /* ViewController.swift */; };
 		25DB24821D29C3E70050B2D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25DB24801D29C3E70050B2D8 /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 		250E554F1D2CB66B006C3A22 /* UserRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRegisterViewController.swift; sourceTree = "<group>"; };
 		250E55511D2D8B5A006C3A22 /* CustomAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnimation.swift; sourceTree = "<group>"; };
 		250E55541D2EBCD1006C3A22 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		250E55591D2EF8CD006C3A22 /* yourLikesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yourLikesViewController.swift; sourceTree = "<group>"; };
 		25DB24791D29C3E70050B2D8 /* WinIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WinIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25DB247C1D29C3E70050B2D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25DB247E1D29C3E70050B2D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,33 @@
 			name = Game;
 			sourceTree = "<group>";
 		};
+		250E55561D2EF824006C3A22 /* AllPostView */ = {
+			isa = PBXGroup;
+			children = (
+				25DB247E1D29C3E70050B2D8 /* ViewController.swift */,
+				25DB24AA1D29D3A80050B2D8 /* MainTableView.swift */,
+				25DB24AC1D29D6840050B2D8 /* MainTableViewCell.swift */,
+			);
+			name = AllPostView;
+			sourceTree = "<group>";
+		};
+		250E55571D2EF87A006C3A22 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				250E554D1D2CAD2B006C3A22 /* LoginViewController.swift */,
+				250E554F1D2CB66B006C3A22 /* UserRegisterViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		250E55581D2EF890006C3A22 /* LikedPosts */ = {
+			isa = PBXGroup;
+			children = (
+				250E55591D2EF8CD006C3A22 /* yourLikesViewController.swift */,
+			);
+			name = LikedPosts;
+			sourceTree = "<group>";
+		};
 		25DB24701D29C3E70050B2D8 = {
 			isa = PBXGroup;
 			children = (
@@ -150,19 +179,17 @@
 		25DB247B1D29C3E70050B2D8 /* WinIt */ = {
 			isa = PBXGroup;
 			children = (
+				250E55581D2EF890006C3A22 /* LikedPosts */,
+				250E55571D2EF87A006C3A22 /* Login */,
+				250E55561D2EF824006C3A22 /* AllPostView */,
 				250E55531D2EBCC0006C3A22 /* Game */,
 				250E554A1D2C7282006C3A22 /* Helper */,
 				25DB24B01D2C33DD0050B2D8 /* Offers */,
 				25DB247C1D29C3E70050B2D8 /* AppDelegate.swift */,
-				25DB247E1D29C3E70050B2D8 /* ViewController.swift */,
 				25DB24801D29C3E70050B2D8 /* Main.storyboard */,
 				25DB24831D29C3E70050B2D8 /* Assets.xcassets */,
 				25DB24851D29C3E70050B2D8 /* LaunchScreen.storyboard */,
 				25DB24881D29C3E70050B2D8 /* Info.plist */,
-				25DB24AA1D29D3A80050B2D8 /* MainTableView.swift */,
-				25DB24AC1D29D6840050B2D8 /* MainTableViewCell.swift */,
-				250E554D1D2CAD2B006C3A22 /* LoginViewController.swift */,
-				250E554F1D2CB66B006C3A22 /* UserRegisterViewController.swift */,
 			);
 			path = WinIt;
 			sourceTree = "<group>";
@@ -488,6 +515,7 @@
 				250E55501D2CB66B006C3A22 /* UserRegisterViewController.swift in Sources */,
 				25DB24AD1D29D6840050B2D8 /* MainTableViewCell.swift in Sources */,
 				250E554C1D2C72B4006C3A22 /* FirebaseHelper.swift in Sources */,
+				250E555A1D2EF8CD006C3A22 /* yourLikesViewController.swift in Sources */,
 				25DB247D1D29C3E70050B2D8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
