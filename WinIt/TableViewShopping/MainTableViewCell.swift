@@ -35,7 +35,7 @@ class MainTableViewCell: UITableViewCell{
 	
 	@IBAction func likeTriggered(sender: AnyObject) {
 		
-		post?.liked = !(post?.liked)!
+		post?.setLiked(!(post?.liked)!)
 		print("post liked")
 	}
 }

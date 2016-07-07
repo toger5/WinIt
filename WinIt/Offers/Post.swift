@@ -77,4 +77,21 @@ class Post{
         ]
         return dictionary
     }
+	
+	func setLiked(liked: Bool) {
+		
+		if self.liked != liked {
+			
+			self.liked=liked
+			
+			if liked {
+				
+				FirebaseHelper.addLike(self)
+				
+			} else {
+				
+				FirebaseHelper.removeLike(self)
+			}
+		}
+	}
 }
