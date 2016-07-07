@@ -9,5 +9,5 @@
 import UIKit
 
 class ImageHelper: NSObject{
-    weak var 
+//    weak var 
 }
