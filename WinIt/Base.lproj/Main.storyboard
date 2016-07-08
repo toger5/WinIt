@@ -602,7 +602,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Your Likes" id="q5p-kG-etj"/>
                     <connections>
-                        <outlet property="tableVeiw" destination="AII-7A-hdy" id="OF7-Z6-rrq"/>
+                        <outlet property="tableVeiw" destination="AII-7A-hdy" id="75o-RG-GXR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RiV-fm-Ofj" userLabel="First Responder" sceneMemberID="firstResponder"/>

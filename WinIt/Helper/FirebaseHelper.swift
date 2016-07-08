@@ -94,16 +94,14 @@ class FirebaseHelper {
 				
 				likesLeft -= 1
 				
-				print("likesLeft is now \(likesLeft)")
-				
 				if likesLeft <= 0 {
+					
+					print("liked posts: \(posts)")
 					whenDone(posts)
 				}
 			}
 			
 			likesLeft=Int(snapshot.childrenCount)
-			
-			print("likesLeft set to \(likesLeft)")
 			
 			for postKeyDict in snapshot.children{
 				let postKey = (postKeyDict as! FIRDataSnapshot).key
