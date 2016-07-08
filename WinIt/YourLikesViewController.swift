@@ -13,14 +13,15 @@ class YourLikesViewController: UIViewController {
     var likedPosts: [Post] = []
 	
     @IBOutlet weak var tableVeiw: UITableView!
-    override func viewDidLoad(){
+	
+	override func viewDidLoad(){
         super.viewDidLoad()
 		tableVeiw.dataSource = self
-        FirebaseHelper.getLikedPosts(likesLoaded)
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+		FirebaseHelper.getLikedPosts(likesLoaded)
     }
     
     
@@ -38,7 +39,7 @@ extension YourLikesViewController: UITableViewDataSource{
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("likedPostCell") as! LikedPostCell
-        cell.populate(likedPosts[indexPath.row])
+        cell.populate(likedPosts[likedPosts.count-indexPath.row-1])
         return cell
     }
 }
