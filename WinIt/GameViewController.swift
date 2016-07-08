@@ -71,7 +71,7 @@ class GameViewController: UIViewController{
                 toUser.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
                     print(index)
 //                    let n = (FIRAuth.id ?? "could not find user name")!
-                    let n = (snapshot.value!["name"] ?? "could not find user name")!
+                    let n = (snapshot.value!["username"] ?? "could not find user name")!
                     (self.nameArray[index] as! UILabel).text = String(n)
                 })
             }

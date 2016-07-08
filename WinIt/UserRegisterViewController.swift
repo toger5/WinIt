@@ -31,7 +31,7 @@ class UserRegisterViewController: UIViewController {
             }
             
         }
-            print("whats up")
+        
             if checkLoginData(){
                 FIRAuth.auth()?.createUserWithEmail(email.text!, password: password.text!) { (user, error) in
                     print(error)
