@@ -162,9 +162,18 @@ class FirebaseHelper {
         
     }
     
-    static func removePost(post: Post){
-        FirebaseHelper.rootRef.child("posts").removeValue(post.key!)
-    }
+//    static func getWinnerNameOfPost(post: Post){
+//        let postQueryToWinningUsreID = FirebaseHelper.rootRef.child("gameByPost/\(post.key)").queryOrderedByValue().queryLimitedToFirst(1)
+//        postQueryToWinningUsreID.observeSingleEventOfType(.Value) { (snapshot) in
+//            let snap = snapshot[0] as! FIRDataSnapshot
+//            FirebaseHelper.rootRef.child("users/\(snap)")
+//            
+//        }
+//    }
+    
+//    static func removePost(post: Post){
+//        FirebaseHelper.rootRef.child("posts").removeValue(post.key!)
+//    }
     
     //Storage Stuff
     static func downloadImage(post: Post, callback: (UIImage) -> Void){
@@ -185,6 +194,7 @@ class FirebaseHelper {
         }
     }
     
+
     static func uploadImage(image: NSData, postID: String, uploadDone: (FIRStorageTaskSnapshot) -> Void){
 
         let storageRef = FirebaseHelper.storageRef

@@ -30,7 +30,8 @@ class LikedPostCell: UITableViewCell{
         if post.isCounting(){
             clock = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(LikedPostCell.countdown), userInfo: nil, repeats: true)
         }else if post.isEventDone(){
-            FirebaseHelper.removePost(post)
+            //FirebaseHelper.removePost(post)
+            
         }
     }
     func countdown(timer: NSTimer){

@@ -23,7 +23,7 @@ class Post{
 		}
 	}
     let eventLength = 60 //in seconds
-	
+	let outDatedTime = 60 * 10
 	var cell: MainTableViewCell?
     
     init(){
@@ -76,6 +76,13 @@ class Post{
     }
     func isEventDone() -> Bool{
         if (Int(NSDate().timeIntervalSince1970) - Int(eventTime)) > eventLength{
+            return true
+        }else{
+            return false
+        }
+    }
+    func isOutdated() -> Bool{
+        if (Int(NSDate().timeIntervalSince1970) - Int(eventTime)) > outDatedTime{
             return true
         }else{
             return false
