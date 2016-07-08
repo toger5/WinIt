@@ -83,7 +83,7 @@ class FirebaseHelper {
 		
 		let userKey = (FIRAuth.auth()?.currentUser?.uid)!
 		
-		var likesLeft: UInt = 0
+		var likesLeft = 0
 		var posts: [Post] = []
 		
 		func postKeyDownloadCallback(snapshot: FIRDataSnapshot) {
@@ -94,12 +94,16 @@ class FirebaseHelper {
 				
 				likesLeft -= 1
 				
-				if likesLeft == 0 {
+				print("likesLeft is now \(likesLeft)")
+				
+				if likesLeft <= 0 {
 					whenDone(posts)
 				}
 			}
 			
-			likesLeft=snapshot.childrenCount
+			likesLeft=Int(snapshot.childrenCount)
+			
+			print("likesLeft set to \(likesLeft)")
 			
 			for postKeyDict in snapshot.children{
 				let postKey = (postKeyDict as! FIRDataSnapshot).key
