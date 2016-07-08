@@ -198,7 +198,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hco-vz-4zA">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Title" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hco-vz-4zA">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="22"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -217,7 +217,6 @@
                                             <constraint firstAttribute="height" constant="100" id="LMk-wa-wcS"/>
                                             <constraint firstAttribute="height" constant="100" id="pDy-ae-yAJ"/>
                                         </constraints>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <variation key="default">
@@ -233,6 +232,7 @@
                                         <state key="normal" title="Upload"/>
                                         <connections>
                                             <action selector="postUploadButtonPressed:" destination="msm-TU-qZ1" eventType="touchUpInside" id="RkQ-Dc-NLp"/>
+                                            <segue destination="zij-u3-PaY" kind="unwind" unwindAction="unwindToVC:" id="gwi-Id-nrc"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -723,7 +723,7 @@
                                             <action selector="passwordEditingUpdated:" destination="ihC-TT-Hu6" eventType="editingChanged" id="DbX-aW-JRu"/>
                                         </connections>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MLC-Bg-JP2">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MLC-Bg-JP2">
                                         <rect key="frame" x="0.0" y="152" width="560" height="42"/>
                                         <color key="backgroundColor" red="0.26048443870467652" green="0.51242624362844047" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
