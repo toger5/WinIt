@@ -75,7 +75,7 @@ class GameViewController: UIViewController{
                     print(index)
 //                    let n = (FIRAuth.id ?? "could not find user name")!
                     let n = (snapshot.value!["username"] ?? "could not find user name")!
-                    (self.nameArray[index] as! UILabel).text = String(n)
+                    (self.nameArray[index] as! UILabel).text = "\(index). \(n)"
                 })
             }
         }
