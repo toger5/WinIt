@@ -31,7 +31,7 @@ class CreatePostViewController: UIViewController {
         let n = nameTextField.text ?? "keinNameEingegeben"
         let d = descriptionTextField.text ?? "keineDescriptionEingegeben"
         FirebaseHelper.addPost(Post(name: n, picture: imageView.image, description: d, eventTime: 60*60*24*5, user: String(FIRAuth.auth()!.currentUser!.uid)))
-        performSegueWithIdentifier("toMainViewSegue", sender: sender)
+//        performSegueWithIdentifier("toMainViewSegue", sender: sender)
     }
     
 }
