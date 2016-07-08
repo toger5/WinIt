@@ -162,6 +162,7 @@ class FirebaseHelper {
         
     }
     
+
 //    static func getWinnerNameOfPost(post: Post){
 //        let postQueryToWinningUsreID = FirebaseHelper.rootRef.child("gameByPost/\(post.key)").queryOrderedByValue().queryLimitedToFirst(1)
 //        postQueryToWinningUsreID.observeSingleEventOfType(.Value) { (snapshot) in
@@ -171,9 +172,30 @@ class FirebaseHelper {
 //        }
 //    }
     
-//    static func removePost(post: Post){
-//        FirebaseHelper.rootRef.child("posts").removeValue(post.key!)
-//    }
+
+    static func removePost(post: Post){
+		
+		let postKey = post.key
+		
+		func postDownloadCallback(snapshot: FIRDataSnapshot) {
+			
+			for userData in snapshot.children{
+				
+				let userKey: String = userData.key
+				
+				rootRef.child("likesByUser/\(userKey)/\(postKey)").removeValue()
+				rootRef.child("likesByPost/\(postKey)/\(userKey)").removeValue()
+			}
+		}
+		
+		let postKeyQuery = rootRef.child("likesByPost/\(postKey)")
+		
+		postKeyQuery.observeSingleEventOfType(.Value, withBlock: postDownloadCallback) { (error) in
+			print(error.localizedDescription)
+		}
+		
+		rootRef.child("posts/\(postKey)").removeValue()
+    }
     
     //Storage Stuff
     static func downloadImage(post: Post, callback: (UIImage) -> Void){
