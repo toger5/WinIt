@@ -67,7 +67,7 @@ class GameViewController: UIViewController{
                 print("val: \(s.value!)")
                 (self.labelArray[index] as! UILabel).text = String(s.value!)
 
-                let toUser = FirebaseHelper.rootRef.child("user/\(s.key)")
+                let toUser = FirebaseHelper.rootRef.child("users/\(s.key)")
                 toUser.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
                     print(index)
 //                    let n = (FIRAuth.id ?? "could not find user name")!
