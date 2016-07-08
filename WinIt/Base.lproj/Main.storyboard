@@ -807,25 +807,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hB5-cM-cqR">
-                                <rect key="frame" x="40" y="286" width="520" height="30"/>
+                                <rect key="frame" x="40" y="120" width="520" height="30"/>
                                 <state key="normal" title="Create new account"/>
                                 <connections>
                                     <segue destination="ihC-TT-Hu6" kind="show" id="DZu-AX-4CN"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a6G-Mc-wtk">
-                                <rect key="frame" x="40" y="470" width="520" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uFa-aA-VpK">
-                                <rect key="frame" x="70" y="329" width="460" height="21"/>
+                                <rect key="frame" x="70" y="163" width="460" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5WV-tj-AtV">
-                                <rect key="frame" x="70" y="429" width="460" height="21"/>
+                                <rect key="frame" x="70" y="242" width="460" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -839,7 +834,12 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RwA-cC-Vvm">
-                                <rect key="frame" x="40" y="370" width="520" height="30"/>
+                                <rect key="frame" x="40" y="204" width="520" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a6G-Mc-wtk">
+                                <rect key="frame" x="40" y="283" width="520" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -859,10 +859,14 @@
                             <constraint firstItem="a6G-Mc-wtk" firstAttribute="leading" secondItem="EWb-Pw-6hX" secondAttribute="leadingMargin" constant="20" id="Op9-ej-05g"/>
                             <constraint firstItem="EKr-0p-q12" firstAttribute="leading" secondItem="EWb-Pw-6hX" secondAttribute="leadingMargin" constant="20" id="OrE-8X-Vzl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="uFa-aA-VpK" secondAttribute="trailing" constant="50" id="QVM-Ju-YD6"/>
+                            <constraint firstItem="5WV-tj-AtV" firstAttribute="top" secondItem="RwA-cC-Vvm" secondAttribute="bottom" constant="8" id="QmI-r6-kEQ"/>
                             <constraint firstItem="RwA-cC-Vvm" firstAttribute="top" secondItem="uFa-aA-VpK" secondAttribute="bottom" constant="20" id="abu-SF-cwv"/>
+                            <constraint firstItem="hB5-cM-cqR" firstAttribute="top" secondItem="zHJ-0Z-5BX" secondAttribute="bottom" constant="100" id="dZE-er-LqS"/>
                             <constraint firstItem="a6G-Mc-wtk" firstAttribute="top" secondItem="5WV-tj-AtV" secondAttribute="bottom" constant="20" id="gyJ-GH-sZ9"/>
+                            <constraint firstItem="5WV-tj-AtV" firstAttribute="top" secondItem="EWb-Pw-6hX" secondAttribute="topMargin" constant="-41" id="hLr-qh-VMW"/>
                             <constraint firstItem="RwA-cC-Vvm" firstAttribute="leading" secondItem="EWb-Pw-6hX" secondAttribute="leadingMargin" constant="20" id="lWp-ek-NO7"/>
                             <constraint firstItem="RwA-cC-Vvm" firstAttribute="trailing" secondItem="EWb-Pw-6hX" secondAttribute="trailingMargin" constant="20" id="nVl-L8-IEj"/>
+                            <constraint firstItem="5WV-tj-AtV" firstAttribute="top" secondItem="EWb-Pw-6hX" secondAttribute="topMargin" constant="20" id="oc1-tn-l6y"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EKr-0p-q12" secondAttribute="trailing" constant="20" id="tfk-mU-vht"/>
                             <constraint firstItem="5WV-tj-AtV" firstAttribute="leading" secondItem="EWb-Pw-6hX" secondAttribute="leadingMargin" constant="50" id="yZe-ee-I9N"/>
                             <constraint firstItem="Oe7-Vl-p4p" firstAttribute="top" secondItem="a6G-Mc-wtk" secondAttribute="bottom" constant="100" id="zXD-x9-E1Q"/>
@@ -870,7 +874,11 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="nVl-L8-IEj"/>
+                                <exclude reference="hLr-qh-VMW"/>
+                                <exclude reference="oc1-tn-l6y"/>
                                 <exclude reference="HUq-3c-OeC"/>
+                                <exclude reference="KIj-zQ-Wdw"/>
+                                <exclude reference="zXD-x9-E1Q"/>
                             </mask>
                         </variation>
                     </view>
@@ -882,7 +890,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eBb-iQ-K4K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1357" y="87"/>
+            <point key="canvasLocation" x="-1359" y="186"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="HCG-fr-isW">
@@ -904,6 +912,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="sg2-9Z-e5B"/>
+        <segue reference="j9P-lg-B48"/>
     </inferredMetricsTieBreakers>
 </document>
