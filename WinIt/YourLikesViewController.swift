@@ -9,13 +9,13 @@
 import UIKit
 import Firebase
 
-class yourLikesViewController: UIViewController {
+class YourLikesViewController: UIViewController {
     var likedPosts: [Post] = []
     
     @IBOutlet weak var tableVeiw: UITableView!
     override func viewDidLoad(){
         super.viewDidLoad()
-        FirebaseHelper.getLikes(likesLoaded)
+        FirebaseHelper.getLikedPosts(likesLoaded)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -29,7 +29,7 @@ class yourLikesViewController: UIViewController {
     }
 }
 
-extension yourLikesViewController: UITableViewDataSource{
+extension YourLikesViewController: UITableViewDataSource{
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return likedPosts.count
     }
