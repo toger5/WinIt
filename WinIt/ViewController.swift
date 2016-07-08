@@ -23,22 +23,31 @@ class ViewController: UIViewController {
         print("curretn Logged In user: \(currentUser)")
         super.viewDidLoad()
         tableView.dataSource = self
-        FirebaseHelper.fillpostList(0,rangeMax: 20,callback: { (offerArray) in
-            print("offer array: \(offerArray)")
-            for p in postList{
-                for t in offerArray{
-                    p.key == t.key
-                }
-            }
-            self.postList = offerArray
-            
-            self.tableView.reloadData()
-            //print("test: \(self.postList)")
-        })
+        
         // Do any additional setup after loading the view, typically from a nib.
 	}
 	
     override func viewDidAppear(animated: Bool) {
+        FirebaseHelper.fillpostList(0,rangeMax: 20,callback: { (offerArray) in
+            print("offer array: \(offerArray)")
+            var newPostArray: [Post] = []
+            for o in offerArray{
+                var exist = false
+                for p in self.postList{
+                    if o.key == p.key{
+                        exist = true
+                        newPostArray.append(p)
+                    }
+                }
+                if !exist{
+                    newPostArray.append(o)
+                }
+            }
+            self.postList = newPostArray
+            
+            self.tableView.reloadData()
+            //print("test: \(self.postList)")
+        })
 		//print(FirebaseHelper.getOfferCount())
 		//rootRef.child("test0").setValue("baccccc")
         super.viewDidAppear(animated)
