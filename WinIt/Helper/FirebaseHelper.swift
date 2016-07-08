@@ -56,7 +56,7 @@ class FirebaseHelper {
         post.key = newPostRef.key
         newPostRef.setValue(post.toDict())
         print("post and than user \(post.key)   \(post.user)")
-        FirebaseHelper.uploadImage(UIImageJPEGRepresentation(post.picture!,0.5)!, postID: post.key, uploadDone: FirebaseHelper.printSth)
+        FirebaseHelper.uploadImage(UIImageJPEGRepresentation(post.picture!,0.3)!, postID: post.key, uploadDone: FirebaseHelper.printSth)
     }
     static func printSth(t: FIRStorageTaskSnapshot){
         print("UPLOADED")
@@ -156,13 +156,13 @@ class FirebaseHelper {
     //Storage Stuff
     static func downloadImage(post: Post, callback: (UIImage) -> Void){
         let storageRef = FirebaseHelper.storageRef
-        storageRef.child("PostImages/\(post.key)")
-        print("is verified.... \(FIRAuth.auth()?.currentUser?.emailVerified)")
+        let s = storageRef.child("PostImages/\(post.key).jpg")
+        print("is verified.... \(FIRAuth.auth()?.currentUser?.uid)")
         print("BIIIIIIIIGTEEEEEEESSSSSR")
-        storageRef.dataWithMaxSize(1 * 1024 * 1024) { (data, error) -> Void in
+        s.dataWithMaxSize(INT64_MAX) { (data, error) -> Void in
             if (error != nil) {
                 let errorImage = UIImage(named: "NoImage")
-                print("error during download: \(error)")
+                print("error during download: \(error?.localizedDescription)")
                 callback(errorImage!)
             } else {
                 let imageFile = UIImage(data: data!)

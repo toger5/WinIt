@@ -64,9 +64,13 @@ extension ViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! MainTableViewCell
         
         let post = postList[postList.count-indexPath.row-1]
-		FirebaseHelper.downloadImage(post) { (productImage) in
-//            print(productImage)
-            cell.imageViewProduct.image = productImage
+        if post.picture == nil{
+            FirebaseHelper.downloadImage(post) { (productImage) in
+                //            print(productImage)
+                //            cell.imageViewProduct.image = productImage
+                post.picture = productImage
+                tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            }
         }
 		cell.populate(post)
 		
