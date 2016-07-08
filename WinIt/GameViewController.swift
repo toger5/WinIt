@@ -60,17 +60,19 @@ class GameViewController: UIViewController{
         pathToGame!.queryOrderedByValue()
         pathToGame!.queryLimitedToFirst(5)
         pathToGame!.observeEventType(FIRDataEventType.Value) { (snapshot: FIRDataSnapshot) in
-            var i = 0
-            for snap in snapshot.children{
-                print("snap: \(snap)")
+//            var i = 0
+            for (index, snap) in snapshot.children.enumerate(){
+                
                 let s = snap as! FIRDataSnapshot
-                self.labelArray[0] = "hello"
-                (self.labelArray[i] as! UILabel).text = s.value! as? String
-                i += 1
+                print("val: \(s.value!)")
+                (self.labelArray[index] as! UILabel).text = String(s.value!)
+
                 let toUser = FirebaseHelper.rootRef.child("user/\(s.key)")
                 toUser.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
-                    print(i)
-                    (self.nameArray[i] as! UILabel).text = snapshot.value!["name"] as? String
+                    print(index)
+//                    let n = (FIRAuth.id ?? "could not find user name")!
+                    let n = (snapshot.value!["name"] ?? "could not find user name")!
+                    (self.nameArray[index] as! UILabel).text = String(n)
                 })
             }
         }
