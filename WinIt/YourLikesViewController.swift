@@ -25,8 +25,22 @@ class YourLikesViewController: UIViewController {
     }
     
     
-    func likesLoaded(posts: [Post]){
-        likedPosts = posts
+    func likesLoaded(serverPostList: [Post]){
+        var newPostArray: [Post] = []
+        
+        for o in serverPostList{
+            var exist = false
+            for p in self.likedPosts{
+                if o.key == p.key{
+                    exist = true
+                    newPostArray.append(p)
+                }
+            }
+            if !exist{
+                newPostArray.append(o)
+            }
+        }
+        likedPosts = newPostArray
         tableVeiw.reloadData()
     }
 }

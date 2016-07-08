@@ -34,9 +34,10 @@ class GameViewController: UIViewController{
         super.viewDidLoad()
         labelArray = [p1,p2,p3,p4,p5]
         nameArray = [name1,name2,name3,name4,name5]
-        
+
         pathToGame = FirebaseHelper.rootRef.child("gameByPost/\(postID)")
 //        pathToGame = FirebaseHelper.rootRef.child("gameByPost/-KMAUfWSciJE_jnyOPhG")
+                startOtherPlayersObserver()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -50,7 +51,7 @@ class GameViewController: UIViewController{
     }
     
     func updateDB(){
-        print("uid by getUid: \(getuid()) uid by FIRAuth: \(FIRAuth.auth()?.currentUser?.uid)")
+//        print("uid by getUid: \(getuid()) uid by FIRAuth: \(FIRAuth.auth()?.currentUser?.uid)")
         let pathToGameThisUser = pathToGame!.child((FIRAuth.auth()?.currentUser?.uid)!)
         pathToGameThisUser.setValue(points)
     }
@@ -61,7 +62,9 @@ class GameViewController: UIViewController{
         pathToGame!.observeEventType(FIRDataEventType.Value) { (snapshot: FIRDataSnapshot) in
             var i = 0
             for snap in snapshot.children{
+                print("snap: \(snap)")
                 let s = snap as! FIRDataSnapshot
+                self.labelArray[0] = "hello"
                 (self.labelArray[i] as! UILabel).text = s.value! as? String
                 i += 1
                 let toUser = FirebaseHelper.rootRef.child("user/\(s.key)")
