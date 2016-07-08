@@ -39,7 +39,16 @@ extension YourLikesViewController: UITableViewDataSource{
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("likedPostCell") as! LikedPostCell
-        cell.populate(likedPosts[likedPosts.count-indexPath.row-1])
+		let post = likedPosts[likedPosts.count-indexPath.row-1]
+		if post.picture == nil{
+			FirebaseHelper.downloadImage(post) { (productImage) in
+				//            print(productImage)
+				//            cell.imageViewProduct.image = productImage
+				post.picture = productImage
+				tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+			}
+		}
+		cell.populate(post)
         return cell
     }
 }
