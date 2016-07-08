@@ -455,7 +455,7 @@
         <!--Your Likes-->
         <scene sceneID="Prk-w5-9So">
             <objects>
-                <viewController id="LA6-gn-w0g" customClass="yourLikesViewController" sceneMemberID="viewController">
+                <viewController id="LA6-gn-w0g" customClass="YourLikesViewController" customModule="WinIt" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7JP-Fd-Cwo"/>
                         <viewControllerLayoutGuide type="bottom" id="oAQ-Tu-EVE"/>
@@ -536,7 +536,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Your Likes" id="q5p-kG-etj"/>
                     <connections>
-                        <outlet property="tableVeiw" destination="AII-7A-hdy" id="zG8-Ff-gwj"/>
+                        <outlet property="tableVeiw" destination="AII-7A-hdy" id="OF7-Z6-rrq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RiV-fm-Ofj" userLabel="First Responder" sceneMemberID="firstResponder"/>

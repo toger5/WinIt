@@ -17,7 +17,13 @@ class Post{
     let uploadTime: Double
     var picture: UIImage?
     var description: String
-	var liked: Bool
+	var liked: Bool {
+		didSet {
+			cell?.updateLiked()
+		}
+	}
+	
+	var cell: MainTableViewCell?
     
     init(){
         eventTime = 0
@@ -77,4 +83,21 @@ class Post{
         ]
         return dictionary
     }
+	
+	func setLiked(liked: Bool) {
+		
+		if self.liked != liked {
+			
+			self.liked=liked
+			
+			if liked {
+				
+				FirebaseHelper.addLike(self)
+				
+			} else {
+				
+				FirebaseHelper.removeLike(self)
+			}
+		}
+	}
 }
