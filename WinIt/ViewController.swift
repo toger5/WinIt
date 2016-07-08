@@ -15,8 +15,8 @@ class ViewController: UIViewController {
     
     var postList: [Post] = []
     
-	//let dataListOfOffers = [Offer(),Offer(name: "computer", picture:nil, description:"anAlmostBrokenComputer", shippingCostIncluded: false)]
     @IBOutlet weak var tableView: MainTableView!
+	//let dataListOfOffers = [Offer(),Offer(name: "computer", picture:nil, description:"anAlmostBrokenComputer", shippingCostIncluded: false)]
 	
 	override func viewDidLoad() {
 		//print(FIRUserInfo)
@@ -28,21 +28,37 @@ class ViewController: UIViewController {
 	}
 	
     override func viewDidAppear(animated: Bool) {
+        FirebaseHelper.fillpostList(0,rangeMax: 20,callback: { (offerArray) in
+            print("offer array: \(offerArray)")
+            var newPostArray: [Post] = []
+            for o in offerArray{
+                var exist = false
+                for p in self.postList{
+                    if o.key == p.key{
+                        exist = true
+                        newPostArray.append(p)
+                    }
+                }
+                if !exist{
+                    newPostArray.append(o)
+                }
+            }
+            self.postList = newPostArray
+            
+            self.tableView.reloadData()
+            //print("test: \(self.postList)")
+        })
 		//print(FirebaseHelper.getOfferCount())
 		//rootRef.child("test0").setValue("baccccc")
         super.viewDidAppear(animated)
 //        FirebaseHelper.addPost(Post(name: "haus", picture: nil, description: "meinHaus", key: "", eventTime: 1000, user:  currentUser!.uid))
-        FirebaseHelper.fillpostList(0,rangeMax: 20,callback: { (offerArray) in
-			print("offer array: \(offerArray)")
-			self.postList = offerArray
-            self.tableView.reloadData()
-            //print("test: \(self.postList)")
-        })
+        
     }
 	
 	@IBAction func unwindToVC(segue: UIStoryboardSegue) {
 		
 	}
+    
 }
 
 extension ViewController: UITableViewDataSource {

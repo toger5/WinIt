@@ -128,8 +128,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Offer List" id="wH4-op-K12"/>
                     <connections>
-                        <outlet property="TableView" destination="yLD-mO-vJe" id="jz4-qc-WOq"/>
-                        <outlet property="tableView" destination="yLD-mO-vJe" id="h32-OK-iEJ"/>
+                        <outlet property="tableView" destination="yLD-mO-vJe" id="6La-Op-dTo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -320,7 +319,7 @@
         <!--Game View Controller-->
         <scene sceneID="hZd-aK-4ao">
             <objects>
-                <viewController id="bmp-bA-wTj" customClass="GameViewController" sceneMemberID="viewController">
+                <viewController id="bmp-bA-wTj" customClass="GameViewController" customModule="WinIt" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3DK-4e-7x8"/>
                         <viewControllerLayoutGuide type="bottom" id="rjP-Vz-e0k"/>
@@ -497,7 +496,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O7m-4q-Po9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1197" y="929"/>
+            <point key="canvasLocation" x="1339" y="759"/>
         </scene>
         <!--Your Likes-->
         <scene sceneID="Prk-w5-9So">
@@ -864,6 +863,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="sg2-9Z-e5B"/>
+        <segue reference="j9P-lg-B48"/>
     </inferredMetricsTieBreakers>
 </document>
