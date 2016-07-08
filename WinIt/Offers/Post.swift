@@ -62,8 +62,8 @@ class Post{
     }
     
     func getTimeLeftInSeconds() -> Double{
-//        let timeBetween = NSDate().timeIntervalSinceDate(NSDate(timeIntervalSince1970: uploadTime))
-        return eventTime - uploadTime
+        let currentTime = NSDate().timeIntervalSince1970
+        return eventTime - currentTime
     }
     
     func getHoursMinutesSecondsArray() -> [Int]{

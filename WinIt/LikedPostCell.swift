@@ -25,11 +25,12 @@ class LikedPostCell: UITableViewCell{
         posterName.text = post.user
         timeLeft = post.getHoursMinutesSecondsArray()
         setTimerBasedOnArray(timeLeft)
-        
-        clock = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(self.countdown), userInfo: nil, repeats: true)
+        print("timer created")
+        clock = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(LikedPostCell.countdown), userInfo: nil, repeats: true)
     }
     
     func countdown(){
+//        print("countdonw: \(self.)")
         if timeLeft[2] <= 0{
             if timeLeft[1] <= 0{
                 if timeLeft[0] <= 0{
@@ -61,4 +62,7 @@ class LikedPostCell: UITableViewCell{
         countDownTimer.text = "Event Started!"
     }
     
+    override func prepareForReuse() {
+        clock = nil
+    }
 }

@@ -47,9 +47,9 @@ class GameViewController: UIViewController{
     }
     
     @IBAction func buttonPressed(sender: AnyObject) {
-        points += 1
+        points -= 1
         updateDB()
-		livePointUpdate.text=String(points)
+		livePointUpdate.text = String(-points)
     }
     
     func updateDB(){
@@ -65,14 +65,15 @@ class GameViewController: UIViewController{
                 
                 let s = snap as! FIRDataSnapshot
                 print("val: \(s.value!)")
-                (self.labelArray[index] as! UILabel).text = String(s.value!)
+                let pnts = s.value! as! Double
+                (self.labelArray[index] as! UILabel).text = String(-pnts)
 
                 let toUser = FirebaseHelper.rootRef.child("users/\(s.key)")
                 toUser.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
                     print(index)
 //                    let n = (FIRAuth.id ?? "could not find user name")!
                     let n = (snapshot.value!["username"] ?? "could not find user name")!
-                    (self.nameArray[index] as! UILabel).text = "\(index). \(n)"
+                    (self.nameArray[index] as! UILabel).text = "\(index + 1). \(n)"
                 })
             }
         }
