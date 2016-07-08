@@ -707,7 +707,7 @@
                                             <action selector="passwordEditingUpdated:" destination="ihC-TT-Hu6" eventType="editingChanged" id="DbX-aW-JRu"/>
                                         </connections>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MLC-Bg-JP2">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MLC-Bg-JP2">
                                         <rect key="frame" x="0.0" y="152" width="560" height="42"/>
                                         <color key="backgroundColor" red="0.26048443870467652" green="0.51242624362844047" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -727,6 +727,7 @@
                                     <constraint firstItem="3lJ-Js-OdK" firstAttribute="top" secondItem="q23-2U-pQ3" secondAttribute="bottom" constant="20" id="BwW-Ao-Ldu"/>
                                     <constraint firstItem="q23-2U-pQ3" firstAttribute="top" secondItem="Ahs-cS-rSk" secondAttribute="bottom" constant="-1" id="UGW-hk-r8W"/>
                                     <constraint firstItem="q23-2U-pQ3" firstAttribute="top" secondItem="Ahs-cS-rSk" secondAttribute="bottom" constant="20" id="e1C-90-cji"/>
+                                    <constraint firstItem="MLC-Bg-JP2" firstAttribute="top" secondItem="s3H-j9-Z28" secondAttribute="bottom" constant="10" id="eBg-X0-Gir"/>
                                     <constraint firstItem="Ahs-cS-rSk" firstAttribute="top" secondItem="ILa-gb-a4b" secondAttribute="bottom" constant="20" id="fqa-Wx-c0c"/>
                                     <constraint firstItem="ILa-gb-a4b" firstAttribute="top" secondItem="VRl-jI-XVA" secondAttribute="bottom" constant="20" id="ghE-2J-ZSP"/>
                                     <constraint firstItem="Ahs-cS-rSk" firstAttribute="top" secondItem="ILa-gb-a4b" secondAttribute="bottom" id="lMX-pD-JHa"/>
