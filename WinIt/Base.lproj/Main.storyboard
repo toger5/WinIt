@@ -522,25 +522,25 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="33w-jO-fHl">
-                                                    <rect key="frame" x="0.0" y="8" width="326" height="183.5"/>
+                                                    <rect key="frame" x="8" y="8" width="326" height="183.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="33w-jO-fHl" secondAttribute="height" multiplier="16:9" id="sDa-9r-NI1"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oba-3K-vrX">
-                                                    <rect key="frame" x="426" y="89" width="42" height="21"/>
+                                                    <rect key="frame" x="364" y="37" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PostName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COV-dS-xvc">
-                                                    <rect key="frame" x="356" y="28" width="236" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="PostName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COV-dS-xvc">
+                                                    <rect key="frame" x="364" y="8" width="228" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PostUsername" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUG-bG-chz">
-                                                    <rect key="frame" x="356" y="170" width="236" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="PostUsername" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUG-bG-chz">
+                                                    <rect key="frame" x="364" y="66" width="228" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -548,7 +548,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="bUG-bG-chz" firstAttribute="trailing" secondItem="SGh-rj-pEv" secondAttribute="trailingMargin" id="4x8-qw-cOP"/>
-                                                <constraint firstItem="33w-jO-fHl" firstAttribute="leading" secondItem="SGh-rj-pEv" secondAttribute="leading" id="5na-37-t83"/>
+                                                <constraint firstItem="33w-jO-fHl" firstAttribute="leading" secondItem="SGh-rj-pEv" secondAttribute="leading" constant="8" id="5na-37-t83"/>
                                                 <constraint firstItem="33w-jO-fHl" firstAttribute="top" secondItem="SGh-rj-pEv" secondAttribute="topMargin" id="IOv-GF-uBh"/>
                                                 <constraint firstItem="bUG-bG-chz" firstAttribute="leading" secondItem="33w-jO-fHl" secondAttribute="trailing" constant="30" id="KkU-zW-NLl"/>
                                                 <constraint firstItem="Oba-3K-vrX" firstAttribute="centerY" secondItem="SGh-rj-pEv" secondAttribute="centerY" id="LoC-cm-Hu6"/>
@@ -560,6 +560,11 @@
                                                 <constraint firstItem="Oba-3K-vrX" firstAttribute="leading" secondItem="33w-jO-fHl" secondAttribute="trailing" constant="100" id="oSV-7m-UEK"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="33w-jO-fHl" secondAttribute="bottom" id="tdq-dC-9IH"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="Of2-Ix-GhJ"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="countDownTimer" destination="Oba-3K-vrX" id="DKN-Sl-Pjn"/>
