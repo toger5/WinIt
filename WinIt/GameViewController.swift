@@ -57,8 +57,9 @@ class GameViewController: UIViewController{
     }
     
     func startOtherPlayersObserver(){
-        pathToGame!.queryOrderedByValue()
+        
         pathToGame!.queryLimitedToFirst(5)
+        pathToGame!.queryOrderedByValue()
         pathToGame!.observeEventType(FIRDataEventType.Value) { (snapshot: FIRDataSnapshot) in
 //            var i = 0
             for (index, snap) in snapshot.children.enumerate(){
