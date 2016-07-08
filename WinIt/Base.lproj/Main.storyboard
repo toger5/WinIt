@@ -609,7 +609,6 @@
                                             <outlet property="postImage" destination="33w-jO-fHl" id="nlL-1Y-yfR"/>
                                             <outlet property="postName" destination="COV-dS-xvc" id="NxP-KT-HD0"/>
                                             <outlet property="posterName" destination="bUG-bG-chz" id="Npl-hn-Jyp"/>
-                                            <segue destination="bmp-bA-wTj" kind="show" id="AG4-N3-WBa"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -645,6 +644,7 @@
                     <tabBarItem key="tabBarItem" title="Your Likes" id="q5p-kG-etj"/>
                     <connections>
                         <outlet property="tableVeiw" destination="AII-7A-hdy" id="75o-RG-GXR"/>
+                        <segue destination="bmp-bA-wTj" kind="show" identifier="toGame" id="MUJ-gF-58o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RiV-fm-Ofj" userLabel="First Responder" sceneMemberID="firstResponder"/>

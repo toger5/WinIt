@@ -17,6 +17,7 @@ class YourLikesViewController: UIViewController {
 	override func viewDidLoad(){
         super.viewDidLoad()
 		tableVeiw.dataSource = self
+        tableVeiw.delegate = self
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -64,5 +65,17 @@ extension YourLikesViewController: UITableViewDataSource{
 		}
 		cell.populate(post)
         return cell
+    }
+}
+
+extension YourLikesViewController: UITableViewDelegate{
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = tableVeiw.cellForRowAtIndexPath(indexPath)
+        if  !likedPosts[indexPath.row].isCounting() {
+            self.performSegueWithIdentifier("toGame", sender: self)
+        }else{
+            let anim = CustomAnimation(obj: cell!, repetutionAmount: 3, maxRotation: 0, maxPosition: 20, duration: 0.1)
+            anim.shake()
+        }
     }
 }

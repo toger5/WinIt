@@ -162,6 +162,10 @@ class FirebaseHelper {
         
     }
     
+    static func removePost(post: Post){
+        FirebaseHelper.rootRef.child("posts").removeValue(post.key!)
+    }
+    
     //Storage Stuff
     static func downloadImage(post: Post, callback: (UIImage) -> Void){
         let storageRef = FirebaseHelper.storageRef

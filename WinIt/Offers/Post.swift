@@ -22,6 +22,7 @@ class Post{
 			cell?.updateLiked()
 		}
 	}
+    let eventLength = 60 //in seconds
 	
 	var cell: MainTableViewCell?
     
@@ -65,7 +66,21 @@ class Post{
         let currentTime = NSDate().timeIntervalSince1970
         return eventTime - currentTime
     }
-    
+    func isCounting() -> Bool{
+        if eventTime - NSDate().timeIntervalSince1970 > 0{
+            return true
+        }else{
+            return false
+        }
+
+    }
+    func isEventDone() -> Bool{
+        if (Int(NSDate().timeIntervalSince1970) - Int(eventTime)) > eventLength{
+            return true
+        }else{
+            return false
+        }
+    }
     func getHoursMinutesSecondsArray() -> [Int]{
         let timeLeft = getTimeLeftInSeconds()
         let array = [Int(timeLeft / 60 / 60),Int((timeLeft%(60 * 60)) / 60),Int(timeLeft%60)]

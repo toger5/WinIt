@@ -27,8 +27,10 @@ class LikedPostCell: UITableViewCell{
         timeLeft = post.getHoursMinutesSecondsArray()
         setTimerBasedOnArray(timeLeft)
         print("timer created")
-        if timeLeft[0] + timeLeft[1] + timeLeft[2] > 0{
+        if post.isCounting(){
             clock = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(LikedPostCell.countdown), userInfo: nil, repeats: true)
+        }else if post.isEventDone(){
+            FirebaseHelper.removePost(post)
         }
     }
     func countdown(timer: NSTimer){
@@ -54,7 +56,7 @@ class LikedPostCell: UITableViewCell{
         }
         setTimerBasedOnArray(timeLeft)
     }
-    
+
     func setTimerBasedOnArray(time: [Int]){
         countDownTimer.text = "\(timeLeft[0]):\(timeLeft[1]):\(timeLeft[2])"
     }
