@@ -63,7 +63,7 @@ extension ViewController: UITableViewDataSource {
         //maybe It works as lazy load
         let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! MainTableViewCell
         
-        let post = postList[indexPath.row]
+        let post = postList[postList.count-indexPath.row-1]
 		FirebaseHelper.downloadImage(post) { (productImage) in
 //            print(productImage)
             cell.imageViewProduct.image = productImage

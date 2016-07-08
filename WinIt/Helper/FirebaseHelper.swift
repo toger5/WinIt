@@ -76,7 +76,7 @@ class FirebaseHelper {
         let postKey = post.key
         
         rootRef.child("likesByPost/\(postKey)/\(userKey)").removeValue()
-        rootRef.child("likesByPost/\(userKey)/\(postKey)").removeValue()
+        rootRef.child("likesByUser/\(userKey)/\(postKey)").removeValue()
     }
 	
 	static func getLikedPosts(whenDone: ([Post]) -> Void) {
