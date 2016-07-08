@@ -489,6 +489,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="livePointUpdate" destination="7oW-KY-4uh" id="FjA-Yz-exN"/>
                         <outlet property="name1" destination="ZyZ-9u-gZP" id="SSW-ge-ehI"/>
                         <outlet property="name2" destination="d2a-rc-xh8" id="fwR-lu-At0"/>
                         <outlet property="name3" destination="7dZ-Vb-x1B" id="GrG-lq-6h7"/>
