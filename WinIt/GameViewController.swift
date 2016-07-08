@@ -11,7 +11,8 @@ import Firebase
 import FirebaseAuth
 
 class GameViewController: UIViewController{
-    
+	
+	@IBOutlet weak var livePointUpdate: UILabel!
     @IBOutlet weak var name1: UILabel!
     @IBOutlet weak var name2: UILabel!
     @IBOutlet weak var name3: UILabel!
@@ -48,6 +49,7 @@ class GameViewController: UIViewController{
     @IBAction func buttonPressed(sender: AnyObject) {
         points += 1
         updateDB()
+		livePointUpdate.text=String(points)
     }
     
     func updateDB(){
