@@ -20,17 +20,19 @@ class LikedPostCell: UITableViewCell{
     var clock: NSTimer? = nil
     
     func populate(post: Post){
+        
         postName.text = post.name
         postImage.image = post.picture
         posterName.text = post.user
         timeLeft = post.getHoursMinutesSecondsArray()
         setTimerBasedOnArray(timeLeft)
         print("timer created")
-        clock = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(LikedPostCell.countdown), userInfo: nil, repeats: true)
+        if timeLeft[0] + timeLeft[1] + timeLeft[2] > 0{
+            clock = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(LikedPostCell.countdown), userInfo: nil, repeats: true)
+        }
     }
-    
-    func countdown(){
-//        print("countdonw: \(self.)")
+    func countdown(timer: NSTimer){
+        print("countdonw: \(timer)")
         if timeLeft[2] <= 0{
             if timeLeft[1] <= 0{
                 if timeLeft[0] <= 0{
@@ -57,12 +59,13 @@ class LikedPostCell: UITableViewCell{
         countDownTimer.text = "\(timeLeft[0]):\(timeLeft[1]):\(timeLeft[2])"
     }
     
+    
     func setTimerLabelToEventStart(){
         eventIsOnline = true
-        countDownTimer.text = "Event Started!"
+        countDownTimer.text = "Started!"
     }
     
     override func prepareForReuse() {
-        clock = nil
+        clock?.invalidate()
     }
 }
