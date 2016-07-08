@@ -36,17 +36,16 @@ class Post{
 		liked = false
     }
     
-    init(name: String, picture:UIImage?, description: String, key:String = "", eventTime: Double, user: String){
+    init(name: String, picture:UIImage?, description: String, eventTime: Double, user: String){
         print("new")
         self.uploadTime = NSDate().timeIntervalSince1970
-        self.key = key
         self.eventTime = NSDate().dateByAddingTimeInterval(eventTime).timeIntervalSince1970
         self.name = name
         self.user = user
         self.description = description
         self.picture = picture
-		liked = false
-        print(getHoursMinutesSecondsArray())
+		self.liked = false
+        self.key = ""
     }
     
     init(snapshot: FIRDataSnapshot){

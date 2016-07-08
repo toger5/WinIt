@@ -15,7 +15,7 @@ class YourLikesViewController: UIViewController {
     @IBOutlet weak var tableVeiw: UITableView!
     override func viewDidLoad(){
         super.viewDidLoad()
-        FirebaseHelper.getLikedPosts(likesLoaded)
+//        FirebaseHelper.getLikedPosts(likesLoaded)
     }
     
     override func viewDidAppear(animated: Bool) {

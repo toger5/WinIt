@@ -49,7 +49,7 @@ class FirebaseHelper {
         print("try to add")
         print(post.toDict())
         
-        rootRef.child("posts").childByAutoId().setValue(post.toDict())
+        post.key = String(rootRef.child("posts").childByAutoId().setValue(post.toDict()))
     }
     
     static func addLike(post: Post) {
@@ -165,7 +165,7 @@ class FirebaseHelper {
         let metadate = FIRStorageMetadata()
         metadate.contentType = "image/jpeg"
         storageRef.putData(image, metadata: metadate)
-        //the returnvalue should be saven inside of a upoad Task Variable
+        //the returnvalue should be saved inside of a upoad Task Variable
         //there shoulb also be a handler which makes sure that files are uploaded before other people could try download
     }
 }
