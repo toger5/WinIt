@@ -23,7 +23,18 @@ class ViewController: UIViewController {
         print("curretn Logged In user: \(currentUser)")
         super.viewDidLoad()
         tableView.dataSource = self
-        
+        FirebaseHelper.fillpostList(0,rangeMax: 20,callback: { (offerArray) in
+            print("offer array: \(offerArray)")
+            for p in postList{
+                for t in offerArray{
+                    p.key == t.key
+                }
+            }
+            self.postList = offerArray
+            
+            self.tableView.reloadData()
+            //print("test: \(self.postList)")
+        })
         // Do any additional setup after loading the view, typically from a nib.
 	}
 	
@@ -32,17 +43,13 @@ class ViewController: UIViewController {
 		//rootRef.child("test0").setValue("baccccc")
         super.viewDidAppear(animated)
 //        FirebaseHelper.addPost(Post(name: "haus", picture: nil, description: "meinHaus", key: "", eventTime: 1000, user:  currentUser!.uid))
-        FirebaseHelper.fillpostList(0,rangeMax: 20,callback: { (offerArray) in
-			print("offer array: \(offerArray)")
-			self.postList = offerArray
-            self.tableView.reloadData()
-            //print("test: \(self.postList)")
-        })
+        
     }
 	
 	@IBAction func unwindToVC(segue: UIStoryboardSegue) {
 		
 	}
+    
 }
 
 extension ViewController: UITableViewDataSource {

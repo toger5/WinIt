@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class GameViewController: ViewController{
+class GameViewController: UIViewController{
     
     @IBOutlet weak var name1: UILabel!
     @IBOutlet weak var name2: UILabel!
