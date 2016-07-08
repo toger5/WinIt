@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mgW-Ch-ePP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bmp-bA-wTj">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -128,8 +128,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Offer List" id="wH4-op-K12"/>
                     <connections>
-                        <outlet property="TableView" destination="yLD-mO-vJe" id="jz4-qc-WOq"/>
-                        <outlet property="tableView" destination="yLD-mO-vJe" id="h32-OK-iEJ"/>
+                        <outlet property="tableView" destination="yLD-mO-vJe" id="6La-Op-dTo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -320,7 +319,7 @@
         <!--Game View Controller-->
         <scene sceneID="hZd-aK-4ao">
             <objects>
-                <viewController id="bmp-bA-wTj" customClass="GameViewController" sceneMemberID="viewController">
+                <viewController id="bmp-bA-wTj" customClass="GameViewController" customModule="WinIt" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3DK-4e-7x8"/>
                         <viewControllerLayoutGuide type="bottom" id="rjP-Vz-e0k"/>
@@ -374,7 +373,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pjj-om-vIw">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pjj-om-vIw">
                                 <rect key="frame" x="239" y="337" width="122" height="103"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="122" id="9XA-GA-XIx"/>
@@ -497,7 +496,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O7m-4q-Po9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1197" y="929"/>
+            <point key="canvasLocation" x="1339" y="759"/>
         </scene>
         <!--Your Likes-->
         <scene sceneID="Prk-w5-9So">
@@ -864,6 +863,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="sg2-9Z-e5B"/>
+        <segue reference="j9P-lg-B48"/>
     </inferredMetricsTieBreakers>
 </document>

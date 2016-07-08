@@ -24,7 +24,7 @@ class GameViewController: ViewController{
     @IBOutlet weak var p4: UILabel!
     @IBOutlet weak var p5: UILabel!
     
-    let postID: String = ""
+    let postID: String = "-KMAUfWSciJE_jnyOPhG"
     var points = 0
     var pathToGame: FIRDatabaseReference? = nil
     var labelArray = []
@@ -35,7 +35,8 @@ class GameViewController: ViewController{
         labelArray = [p1,p2,p3,p4,p5]
         nameArray = [name1,name2,name3,name4,name5]
         
-        pathToGame = FirebaseHelper.rootRef.child("gameByPost\(postID)")
+        pathToGame = FirebaseHelper.rootRef.child("gameByPost/\(postID)")
+//        pathToGame = FirebaseHelper.rootRef.child("gameByPost/-KMAUfWSciJE_jnyOPhG")
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -45,6 +46,7 @@ class GameViewController: ViewController{
     
     @IBAction func buttonPressed(sender: AnyObject) {
         points += 1
+        updateDB()
     }
     
     func updateDB(){

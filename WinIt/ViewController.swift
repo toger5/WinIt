@@ -15,8 +15,8 @@ class ViewController: UIViewController {
     
     var postList: [Post] = []
     
-	//let dataListOfOffers = [Offer(),Offer(name: "computer", picture:nil, description:"anAlmostBrokenComputer", shippingCostIncluded: false)]
     @IBOutlet weak var tableView: MainTableView!
+	//let dataListOfOffers = [Offer(),Offer(name: "computer", picture:nil, description:"anAlmostBrokenComputer", shippingCostIncluded: false)]
 	
 	override func viewDidLoad() {
 		//print(FIRUserInfo)
