@@ -22,11 +22,13 @@ class LoginViewController: UIViewController{
         
     }
     
-    @IBAction func registerSeguePressed(sender: AnyObject) {
-        performSegueWithIdentifier("registerSegue", sender: sender)
-
+//    @IBAction func registerSeguePressed(sender: AnyObject) {
+//        performSegueWithIdentifier("registerSegue", sender: sender)
+//
+//    }
+    @IBAction func unwindFromRegister(segue:UIStoryboardSegue) {
+        print("unswinded form the register viewport")
     }
-
 
     @IBAction func logInButtonPressed(sender: AnyObject) {
         FIRAuth.auth()?.signInWithEmail(email.text!, password: password.text!) { (user, error) in

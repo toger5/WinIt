@@ -11,7 +11,7 @@ import FirebaseAuth
 import UIKit
 class FirebaseHelper {
     
-    static let storage = FIRStorage.storage()
+    static let storageRef = FIRStorage.storage().referenceForURL("gs://winit-2941c.appspot.com")
     
     static let rootRef = FIRDatabase.database().reference()
     
@@ -48,10 +48,19 @@ class FirebaseHelper {
     static func addPost(post:Post){
         print("try to add")
         print(post.toDict())
+        if post.picture == nil{
+            post.picture = UIImage(named: "NoImage")
+        }
         
-        rootRef.child("posts").childByAutoId().setValue(post.toDict())
+        let newPostRef = rootRef.child("posts").childByAutoId()
+        post.key = newPostRef.key
+        newPostRef.setValue(post.toDict())
+        print("post and than user \(post.key)   \(post.user)")
+        FirebaseHelper.uploadImage(UIImageJPEGRepresentation(post.picture!,0.5)!, postID: post.key, uploadDone: FirebaseHelper.printSth)
     }
-    
+    static func printSth(t: FIRStorageTaskSnapshot){
+        print("UPLOADED")
+    }
     static func addLike(post: Post) {
         
         let userKey = (FIRAuth.auth()?.currentUser?.uid)!
@@ -145,12 +154,13 @@ class FirebaseHelper {
     }
     
     //Storage Stuff
-    func downloadImage(post: Post, callback: (UIImage) -> Void){
-        let storageRef = FirebaseHelper.storage.reference()
+    static func downloadImage(post: Post, callback: (UIImage) -> Void){
+        let storageRef = FirebaseHelper.storageRef
         storageRef.child("PostImages/\(post.key)")
         storageRef.dataWithMaxSize(1 * 1024 * 1024) { (data, error) -> Void in
             if (error != nil) {
                 let errorImage = UIImage(named: "NoImage")
+                print("error during download: \(error)")
                 callback(errorImage!)
             } else {
                 let imageFile = UIImage(data: data!)
@@ -159,13 +169,22 @@ class FirebaseHelper {
         }
     }
     
-    func uploadImage(image: NSData, postID: String){
-        let storageRef = FirebaseHelper.storage.reference()
-        storageRef.child("PostImages/\(postID)")
-        let metadate = FIRStorageMetadata()
-        metadate.contentType = "image/jpeg"
-        storageRef.putData(image, metadata: metadate)
-        //the returnvalue should be saven inside of a upoad Task Variable
-        //there shoulb also be a handler which makes sure that files are uploaded before other people could try download
+    static func uploadImage(image: NSData, postID: String, uploadDone: (FIRStorageTaskSnapshot) -> Void){
+
+        let storageRef = FirebaseHelper.storageRef
+        let path = "PostImages/\(postID).jpg"
+        let uploadTask = storageRef.child(path).putData(image, metadata: nil) { metadata, error in
+            if (error != nil) {
+                // Uh-oh, an error occurred!
+                print("error")
+            } else {
+                // Metadata contains file metadata such as size, content-type, and download URL.
+//                let downloadURL = metadata!.downloadURL
+            }
+        }
+        uploadTask.observeStatus(.Resume,handler: uploadDone)
+
+//        //the returnvalue should be saved inside of a upoad Task Variable
+//        //there shoulb also be a handler which makes sure that files are uploaded before other people could try download
     }
 }

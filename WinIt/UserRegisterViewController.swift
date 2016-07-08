@@ -63,8 +63,12 @@ class UserRegisterViewController: UIViewController {
                 self.loginFailed()
             }
  
-        
     }
+    
+    @IBAction func cancelAccountCreation(segue:UIStoryboardSegue) {
+        print("wentBackToAccountCreation")
+    }
+    
     @IBAction func passwordEditingUpdated(sender: AnyObject) {
         let pas = password.text ?? ""
         if pas.characters.count > 5{

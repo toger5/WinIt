@@ -31,7 +31,7 @@ class ViewController: UIViewController {
 		//print(FirebaseHelper.getOfferCount())
 		//rootRef.child("test0").setValue("baccccc")
         super.viewDidAppear(animated)
-        FirebaseHelper.addPost(Post(name: "haus", picture: nil, description: "meinHaus", key: "", eventTime: 1000, user:  currentUser!.uid))
+//        FirebaseHelper.addPost(Post(name: "haus", picture: nil, description: "meinHaus", key: "", eventTime: 1000, user:  currentUser!.uid))
         FirebaseHelper.fillpostList(0,rangeMax: 20,callback: { (offerArray) in
 			print("offer array: \(offerArray)")
 			self.postList = offerArray
@@ -64,7 +64,11 @@ extension ViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! MainTableViewCell
         
         let post = postList[indexPath.row]
-		
+		FirebaseHelper.downloadImage(post) { (productImage) in
+            print("OHA I think the image got downnloaded")
+            print(productImage)
+            cell.imageViewProduct.image = productImage
+        }
 		cell.populate(post)
 		
         return cell
