@@ -157,6 +157,8 @@ class FirebaseHelper {
     static func downloadImage(post: Post, callback: (UIImage) -> Void){
         let storageRef = FirebaseHelper.storageRef
         storageRef.child("PostImages/\(post.key)")
+        print("is verified.... \(FIRAuth.auth()?.currentUser?.emailVerified)")
+        print("BIIIIIIIIGTEEEEEEESSSSSR")
         storageRef.dataWithMaxSize(1 * 1024 * 1024) { (data, error) -> Void in
             if (error != nil) {
                 let errorImage = UIImage(named: "NoImage")
@@ -164,6 +166,7 @@ class FirebaseHelper {
                 callback(errorImage!)
             } else {
                 let imageFile = UIImage(data: data!)
+                print("downloadWorked \(imageFile)")
                 callback(imageFile!)
             }
         }
@@ -176,7 +179,7 @@ class FirebaseHelper {
         let uploadTask = storageRef.child(path).putData(image, metadata: nil) { metadata, error in
             if (error != nil) {
                 // Uh-oh, an error occurred!
-                print("error")
+                print("error during upload \(error)")
             } else {
                 // Metadata contains file metadata such as size, content-type, and download URL.
 //                let downloadURL = metadata!.downloadURL

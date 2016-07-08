@@ -65,8 +65,7 @@ extension ViewController: UITableViewDataSource {
         
         let post = postList[indexPath.row]
 		FirebaseHelper.downloadImage(post) { (productImage) in
-            print("OHA I think the image got downnloaded")
-            print(productImage)
+//            print(productImage)
             cell.imageViewProduct.image = productImage
         }
 		cell.populate(post)
