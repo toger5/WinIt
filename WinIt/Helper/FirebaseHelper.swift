@@ -103,13 +103,20 @@ class FirebaseHelper {
 			
 			likesLeft=Int(snapshot.childrenCount)
 			
-			for postKeyDict in snapshot.children{
-				let postKey = (postKeyDict as! FIRDataSnapshot).key
+			if likesLeft == 0 {
 				
-				let postQuery = rootRef.child("posts/\(postKey)")
-				
-				postQuery.observeSingleEventOfType(.Value, withBlock: postDownloadedCallback) { (error) in
-					print(error.localizedDescription)
+				whenDone(posts)
+			
+			} else {
+			
+				for postKeyDict in snapshot.children{
+					let postKey = (postKeyDict as! FIRDataSnapshot).key
+					
+					let postQuery = rootRef.child("posts/\(postKey)")
+					
+					postQuery.observeSingleEventOfType(.Value, withBlock: postDownloadedCallback) { (error) in
+						print(error.localizedDescription)
+					}
 				}
 			}
 		}
