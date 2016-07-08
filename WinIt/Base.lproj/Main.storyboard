@@ -147,21 +147,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zou-hJ-cZ5">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="65"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="NHS-c5-XrO"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="New" id="8fF-Ub-O9U">
-                                        <barButtonItem key="leftBarButtonItem" title="cancel" id="E5a-cm-r7E">
-                                            <connections>
-                                                <segue destination="zij-u3-PaY" kind="unwind" unwindAction="unwindToVC:" id="tWw-GG-CVr"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oel-NB-gQr">
                                 <rect key="frame" x="0.0" y="65" width="600" height="229.5"/>
                                 <color key="backgroundColor" red="0.19694071991103224" green="0.46711646437227916" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -262,6 +247,21 @@
                                     </mask>
                                 </variation>
                             </stackView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zou-hJ-cZ5">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="NHS-c5-XrO"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="New" id="8fF-Ub-O9U">
+                                        <barButtonItem key="leftBarButtonItem" title="cancel" id="E5a-cm-r7E">
+                                            <connections>
+                                                <segue destination="zij-u3-PaY" kind="unwind" unwindAction="unwindToVC:" id="tWw-GG-CVr"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

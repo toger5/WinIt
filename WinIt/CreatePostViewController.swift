@@ -15,8 +15,11 @@ class CreatePostViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextView!
-    override func viewDidLoad() {
-        
+	
+	var postImage: UIImage?
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
         
     }
     
@@ -26,6 +29,7 @@ class CreatePostViewController: UIViewController {
     @IBAction func imageUploadButtonTapped(sender: AnyObject){
         photoTaker = ImageHelper(viewController: self) { (image) in
             self.imageView.image = image
+			self.postImage=image
         }
     }
     
@@ -33,7 +37,7 @@ class CreatePostViewController: UIViewController {
         let n = nameTextField.text ?? "keinNameEingegeben"
         let d = descriptionTextField.text ?? "keineDescriptionEingegeben"
 		let time = Double(secs + (mins + (hours + days*24)*60)*60)
-        FirebaseHelper.addPost(Post(name: n, picture: imageView.image, description: d, eventTime: time, user: String(FIRAuth.auth()!.currentUser!.uid)))
+        FirebaseHelper.addPost(Post(name: n, picture: postImage, description: d, eventTime: time, user: String(FIRAuth.auth()!.currentUser!.uid)))
 //        performSegueWithIdentifier("toMainViewSegue", sender: sender)
     }
     
