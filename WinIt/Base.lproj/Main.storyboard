@@ -549,20 +549,20 @@
                                                         <constraint firstAttribute="width" secondItem="33w-jO-fHl" secondAttribute="height" multiplier="16:9" id="sDa-9r-NI1"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oba-3K-vrX">
-                                                    <rect key="frame" x="364" y="37" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PostName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COV-dS-xvc">
+                                                    <rect key="frame" x="364" y="28" width="228" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="PostName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COV-dS-xvc">
-                                                    <rect key="frame" x="364" y="8" width="228" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PostUsername" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUG-bG-chz">
+                                                    <rect key="frame" x="364" y="170" width="228" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="PostUsername" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUG-bG-chz">
-                                                    <rect key="frame" x="364" y="66" width="228" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oba-3K-vrX">
+                                                    <rect key="frame" x="434" y="89" width="38" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -725,9 +725,6 @@
                                 <constraints>
                                     <constraint firstItem="3lJ-Js-OdK" firstAttribute="top" secondItem="q23-2U-pQ3" secondAttribute="bottom" id="5ke-hN-ub7"/>
                                     <constraint firstItem="3lJ-Js-OdK" firstAttribute="top" secondItem="q23-2U-pQ3" secondAttribute="bottom" constant="20" id="BwW-Ao-Ldu"/>
-                                    <constraint firstItem="MLC-Bg-JP2" firstAttribute="leading" secondItem="zTM-aE-n2m" secondAttribute="leading" id="Bwt-ns-Qak"/>
-                                    <constraint firstAttribute="trailing" secondItem="MLC-Bg-JP2" secondAttribute="trailing" id="GxW-oh-db4"/>
-                                    <constraint firstItem="MLC-Bg-JP2" firstAttribute="top" secondItem="s3H-j9-Z28" secondAttribute="bottom" constant="20" id="R2L-3f-8vE"/>
                                     <constraint firstItem="q23-2U-pQ3" firstAttribute="top" secondItem="Ahs-cS-rSk" secondAttribute="bottom" constant="-1" id="UGW-hk-r8W"/>
                                     <constraint firstItem="q23-2U-pQ3" firstAttribute="top" secondItem="Ahs-cS-rSk" secondAttribute="bottom" constant="20" id="e1C-90-cji"/>
                                     <constraint firstItem="Ahs-cS-rSk" firstAttribute="top" secondItem="ILa-gb-a4b" secondAttribute="bottom" constant="20" id="fqa-Wx-c0c"/>
@@ -890,6 +887,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="j9P-lg-B48"/>
+        <segue reference="sg2-9Z-e5B"/>
     </inferredMetricsTieBreakers>
 </document>
