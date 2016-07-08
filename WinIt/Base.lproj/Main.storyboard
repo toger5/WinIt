@@ -305,7 +305,9 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="descriptionTextField" destination="P7j-Zs-8cc" id="V8K-xX-75m"/>
                         <outlet property="imageView" destination="O9R-ht-MV3" id="CC2-h2-Mqf"/>
+                        <outlet property="nameTextField" destination="hco-vz-4zA" id="MzK-7R-wf7"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="toMainViewSegue" id="cxP-13-4is"/>
                     </connections>
                 </viewController>

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import FirebaseAuth
 class CreatePostViewController: UIViewController {
     var photoTaker: ImageHelper?
     @IBOutlet weak var imageView: UIImageView!
@@ -28,7 +28,9 @@ class CreatePostViewController: UIViewController {
     }
     
     @IBAction func postUploadButtonPressed(sender: AnyObject) {
-        FirebaseHelper.addPost(Post(name: nameTextField.text!, picture: imageView.image, description: descriptionTextField.text, eventTime: 60*60*24*5, user: String(getuid())))
+        let n = nameTextField.text ?? "keinNameEingegeben"
+        let d = descriptionTextField.text ?? "keineDescriptionEingegeben"
+        FirebaseHelper.addPost(Post(name: n, picture: imageView.image, description: d, eventTime: 60*60*24*5, user: String(FIRAuth.auth()!.currentUser!.uid)))
         performSegueWithIdentifier("toMainViewSegue", sender: sender)
     }
     

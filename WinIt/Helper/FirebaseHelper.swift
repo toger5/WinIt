@@ -48,8 +48,15 @@ class FirebaseHelper {
     static func addPost(post:Post){
         print("try to add")
         print(post.toDict())
+        if post.picture == nil{
+            post.picture = UIImage(named: "NoImage")
+        }
         
-        post.key = String(rootRef.child("posts").childByAutoId().setValue(post.toDict()))
+        let newPostRef = rootRef.child("psots").childByAutoId()
+        post.key = newPostRef.key
+        newPostRef.setValue(post.toDict())
+        print("post and than user\(post.key)   \(post.user)")
+        FirebaseHelper.uploadImage(UIImagePNGRepresentation(post.picture!)!, postID: post.key)
     }
     
     static func addLike(post: Post) {
@@ -145,7 +152,7 @@ class FirebaseHelper {
     }
     
     //Storage Stuff
-    func downloadImage(post: Post, callback: (UIImage) -> Void){
+    static func downloadImage(post: Post, callback: (UIImage) -> Void){
         let storageRef = FirebaseHelper.storage.reference()
         storageRef.child("PostImages/\(post.key)")
         storageRef.dataWithMaxSize(1 * 1024 * 1024) { (data, error) -> Void in
@@ -159,7 +166,7 @@ class FirebaseHelper {
         }
     }
     
-    func uploadImage(image: NSData, postID: String){
+    static func uploadImage(image: NSData, postID: String) -> Void{
         let storageRef = FirebaseHelper.storage.reference()
         storageRef.child("PostImages/\(postID)")
         let metadate = FIRStorageMetadata()
