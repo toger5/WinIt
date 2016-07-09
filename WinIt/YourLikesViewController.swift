@@ -20,9 +20,14 @@ class YourLikesViewController: UIViewController {
     // MARK: - View Lifecycles
     override func viewDidLoad(){
         super.viewDidLoad()
-        FirebaseHelper.getLikedPosts(likesLoaded)
         tableVeiw.dataSource = self
         tableVeiw.delegate = self
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        FirebaseHelper.getLikedPosts(likesLoaded)
+        tableVeiw.reloadData()
     }
     
     
@@ -67,7 +72,7 @@ extension YourLikesViewController: UITableViewDataSource{
                 //            print(productImage)
                 //            cell.imageViewProduct.image = productImage
                 post.picture = productImage
-                tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+                tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
             }
         }
         cell.populate(post)
