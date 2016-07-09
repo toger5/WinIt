@@ -10,8 +10,10 @@ import UIKit
 
 class MainTableViewCell: UITableViewCell{
 	
+    // MARK: - Properties
 	var post: Post?
 	
+    // MARK: - IBOutlets
 	@IBOutlet weak var nameLabel: UILabel!
 	@IBOutlet weak var imageViewProduct: UIImageView!
 	
@@ -19,29 +21,29 @@ class MainTableViewCell: UITableViewCell{
 	
 	@IBOutlet weak var likeSwitch: UISwitch!
 	
-	func populate(post: Post) {
-		
-		self.post = post
-		post.cell = self
-		nameLabel.text = post.name
-		descriptionLabel.text = post.description
-		if let pic = post.picture{
-			imageViewProduct.image = pic
-		}else{
-			imageViewProduct.image = UIImage(named: "NoImage")
-		}
-		
-		updateLiked()
-	}
-	
-	func updateLiked() {
-		
-		likeSwitch.on = post?.liked ?? false
-	}
-	
+    // MARK: - IBActions
 	@IBAction func likeTriggered(sender: AnyObject) {
-		
 		post?.setLiked(likeSwitch.on)
-		print("post liked")
 	}
+    
+    // MARK: - Helper Methods
+    func populate(post: Post) {
+        
+        self.post = post
+        post.cell = self
+        nameLabel.text = post.name
+        descriptionLabel.text = post.description
+        
+        if let image = post.image {
+            imageViewProduct.image = image
+        } else {
+            imageViewProduct.image = UIImage(named: "NoImage")
+        }
+        
+        updateLiked()
+    }
+    
+    func updateLiked() {
+        likeSwitch.on = post?.liked ?? false
+    }
 }

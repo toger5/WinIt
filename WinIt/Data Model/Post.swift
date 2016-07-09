@@ -15,7 +15,7 @@ class Post{
     var name: String
     var eventTime: Double
     let uploadTime: Double
-    var picture: UIImage?
+    var image: UIImage?
     var description: String
     var liked: Bool {
         didSet {
@@ -26,25 +26,26 @@ class Post{
     let outDatedTime = 60 * 10
     var cell: MainTableViewCell?
     
-    init(){
+    
+    init() {
         eventTime = 0
         uploadTime = 0
         key = ""
         name = "unknown"
         user = "user"
-        picture = nil
+        image = nil
         description = "unknown"
         liked = false
     }
     
-    init(name: String, picture:UIImage?, description: String, eventTime: Double, user: String){
+    init(name: String, image:UIImage?, description: String, eventTime: Double, user: String){
         print("new")
         self.uploadTime = Global.getTimeStamp()
         self.eventTime = NSDate(timeIntervalSince1970: uploadTime).dateByAddingTimeInterval(eventTime).timeIntervalSince1970
         self.name = name
         self.user = user
         self.description = description
-        self.picture = picture
+        self.image = image
         self.liked = false
         self.key = ""
     }
@@ -58,8 +59,12 @@ class Post{
         self.user = ""
         self.name = snapshot.value!["name"] as! String
         self.description = ""
-        self.picture = nil
+        self.image = nil
         self.liked = false
+    }
+    
+    func isPlaceHolderImage() -> Bool {
+        return image == UIImage(named: "NoImage")
     }
     
     func getTimeLeftInSeconds() -> Double{
@@ -67,13 +72,9 @@ class Post{
         return eventTime - currentTime
     }
     func isCounting() -> Bool{
-        if eventTime - Global.getTimeStamp() > 0{
-            return true
-        }else{
-            return false
-        }
-        
+        return eventTime - Global.getTimeStamp() > 0
     }
+    
     func isEventDone() -> Bool{
         if (Int(Global.getTimeStamp()) - Int(eventTime)) > eventLength{
             return true

@@ -37,7 +37,7 @@ class LikedPostCell: UITableViewCell{
     func populate(post: Post){
         self.post = post
         postName.text = post.name
-        postImage.image = post.picture
+        postImage.image = post.image
         posterName.text = post.user
         timeLeft = post.getHoursMinutesSecondsArray()
         
