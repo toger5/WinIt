@@ -28,6 +28,7 @@
 		E261258F1D30B9F800BB1274 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E261258D1D30B9F800BB1274 /* ImageHelper.swift */; };
 		E26125911D30BA0A00BB1274 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26125901D30BA0A00BB1274 /* CreatePostViewController.swift */; };
 		E27B674E1D316DB4006F2951 /* CustomAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27B674D1D316DB4006F2951 /* CustomAnimation.swift */; };
+		E27B67511D317962006F2951 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27B67501D317962006F2951 /* Global.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		E261258D1D30B9F800BB1274 /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageHelper.swift; path = Helpers/ImageHelper.swift; sourceTree = "<group>"; };
 		E26125901D30BA0A00BB1274 /* CreatePostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreatePostViewController.swift; path = "Create Posts/CreatePostViewController.swift"; sourceTree = "<group>"; };
 		E27B674D1D316DB4006F2951 /* CustomAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomAnimation.swift; path = Extensions/CustomAnimation.swift; sourceTree = "<group>"; };
+		E27B67501D317962006F2951 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Global.swift; path = Constants/Global.swift; sourceTree = "<group>"; };
 		E705CD1AF9A1B83519CEFEF7 /* Pods-WinItUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinItUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WinItUITests/Pods-WinItUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F3EEB14B27CFE7AD24913D65 /* Pods-WinItUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinItUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WinItUITests/Pods-WinItUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FB64FC5BFD76F07DE97CAB74 /* Pods-WinItTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinItTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WinItTests/Pods-WinItTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				250E554A1D2C7282006C3A22 /* Helpers */,
 				25DB24B01D2C33DD0050B2D8 /* Data Model */,
 				E27B674C1D316D97006F2951 /* Extensions */,
+				E27B674F1D317949006F2951 /* Constants */,
 				E261257F1D30B8D200BB1274 /* Supporting Files */,
 			);
 			path = WinIt;
@@ -203,6 +206,14 @@
 				E27B674D1D316DB4006F2951 /* CustomAnimation.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		E27B674F1D317949006F2951 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				E27B67501D317962006F2951 /* Global.swift */,
+			);
+			name = Constants;
 			sourceTree = "<group>";
 		};
 		E65EC864429BB4E0B87A52C5 /* Pods */ = {
@@ -350,6 +361,7 @@
 				E261257E1D30B6AE00BB1274 /* WelcomeViewController.swift in Sources */,
 				E261257D1D30B6AE00BB1274 /* SignupViewController.swift in Sources */,
 				E261258B1D30B96E00BB1274 /* Post.swift in Sources */,
+				E27B67511D317962006F2951 /* Global.swift in Sources */,
 				25DB24AD1D29D6840050B2D8 /* MainTableViewCell.swift in Sources */,
 				E26125911D30BA0A00BB1274 /* CreatePostViewController.swift in Sources */,
 				E27B674E1D316DB4006F2951 /* CustomAnimation.swift in Sources */,

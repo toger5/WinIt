@@ -11,18 +11,18 @@ import Firebase
 
 class YourLikesViewController: UIViewController {
     var likedPosts: [Post] = []
-	
+    var selectedPost:Post? = nil
     @IBOutlet weak var tableVeiw: UITableView!
-	
-	override func viewDidLoad(){
+    
+    override func viewDidLoad(){
         super.viewDidLoad()
-		tableVeiw.dataSource = self
+        tableVeiw.dataSource = self
         tableVeiw.delegate = self
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-		FirebaseHelper.getLikedPosts(likesLoaded)
+        FirebaseHelper.getLikedPosts(likesLoaded)
     }
     
     
@@ -44,26 +44,33 @@ class YourLikesViewController: UIViewController {
         likedPosts = newPostArray
         tableVeiw.reloadData()
     }
+    @IBAction func unwindToYourLikes(segue: UIStoryboardSegue) {
+        
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        (segue.destinationViewController as! GameViewController).post = selectedPost
+    }
 }
+
 
 extension YourLikesViewController: UITableViewDataSource{
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		
-		return likedPosts.count
+        
+        return likedPosts.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("likedPostCell") as! LikedPostCell
-		let post = likedPosts[likedPosts.count-indexPath.row-1]
-		if post.picture == nil{
-			FirebaseHelper.downloadImage(post) { (productImage) in
-				//            print(productImage)
-				//            cell.imageViewProduct.image = productImage
-				post.picture = productImage
-				tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-			}
-		}
-		cell.populate(post)
+        let post = likedPosts[likedPosts.count-indexPath.row-1]
+        if post.picture == nil{
+            FirebaseHelper.downloadImage(post) { (productImage) in
+                //            print(productImage)
+                //            cell.imageViewProduct.image = productImage
+                post.picture = productImage
+                tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            }
+        }
+        cell.populate(post)
         return cell
     }
 }
@@ -71,10 +78,11 @@ extension YourLikesViewController: UITableViewDataSource{
 extension YourLikesViewController: UITableViewDelegate{
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let cell = tableVeiw.cellForRowAtIndexPath(indexPath)
-        if  !likedPosts[indexPath.row].isCounting() {
+        let clickedPost: Post = likedPosts[indexPath.row]
+        if  clickedPost.isCounting() {
+            selectedPost = clickedPost
             self.performSegueWithIdentifier("toGame", sender: self)
         }else{
-            
             let animation = CustomAnimation(view: cell!, delay: 0, direction: .Left, repetitions: 3, maxRotation: 0, maxPosition: 20, duration: 0.1)
             
             animation.shakeAnimation()

@@ -11,8 +11,8 @@ import Firebase
 import FirebaseAuth
 
 class GameViewController: UIViewController{
-	
-	@IBOutlet weak var livePointUpdate: UILabel!
+    
+    @IBOutlet weak var livePointUpdate: UILabel!
     @IBOutlet weak var name1: UILabel!
     @IBOutlet weak var name2: UILabel!
     @IBOutlet weak var name3: UILabel!
@@ -25,20 +25,22 @@ class GameViewController: UIViewController{
     @IBOutlet weak var p4: UILabel!
     @IBOutlet weak var p5: UILabel!
     
-    let postID: String = "-KMAUfWSciJE_jnyOPhG"
+    var post: Post? = nil
     var points = 0
+    
     var pathToGame: FIRDatabaseReference? = nil
     var labelArray = []
     var nameArray = []
     
     override func viewDidLoad() {
+        pathToGame = FirebaseHelper.rootRef.child("gameByPost/\(post!.key)")
         super.viewDidLoad()
+        setPointsIfAlredyPlayed()
         labelArray = [p1,p2,p3,p4,p5]
         nameArray = [name1,name2,name3,name4,name5]
-
-        pathToGame = FirebaseHelper.rootRef.child("gameByPost/\(postID)")
-//        pathToGame = FirebaseHelper.rootRef.child("gameByPost/-KMAUfWSciJE_jnyOPhG")
-                startOtherPlayersObserver()
+        
+        
+        startOtherPlayersObserver()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -49,33 +51,41 @@ class GameViewController: UIViewController{
     @IBAction func buttonPressed(sender: AnyObject) {
         points -= 1
         updateDB()
-		livePointUpdate.text = String(-points)
+        livePointUpdate.text = String(-points)
     }
     
     func updateDB(){
-//        print("uid by getUid: \(getuid()) uid by FIRAuth: \(FIRAuth.auth()?.currentUser?.uid)")
+        //        print("uid by getUid: \(getuid()) uid by FIRAuth: \(FIRAuth.auth()?.currentUser?.uid)")
         let pathToGameThisUser = pathToGame!.child((FIRAuth.auth()?.currentUser?.uid)!)
         pathToGameThisUser.setValue(points)
     }
     
     func startOtherPlayersObserver(){
         pathToGame!.queryOrderedByValue().queryLimitedToFirst(5).observeEventType(FIRDataEventType.Value) { (snapshot: FIRDataSnapshot) in
-//            var i = 0
+            //            var i = 0
             for (index, snap) in snapshot.children.enumerate(){
                 
                 let s = snap as! FIRDataSnapshot
                 print("val: \(s.value!)")
                 let pnts = s.value! as! Double
                 (self.labelArray[index] as! UILabel).text = String(-pnts)
-
+                
                 let toUser = FirebaseHelper.rootRef.child("users/\(s.key)")
                 toUser.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
                     print(index)
-//                    let n = (FIRAuth.id ?? "could not find user name")!
+                    //                    let n = (FIRAuth.id ?? "could not find user name")!
                     let n = (snapshot.value!["username"] ?? "could not find user name")!
                     (self.nameArray[index] as! UILabel).text = "\(index + 1). \(n)"
                 })
             }
         }
+    }
+    
+    func setPointsIfAlredyPlayed(){
+        pathToGame!.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+            if snapshot.hasChild(FirebaseHelper.userID){
+                self.points = (snapshot.childSnapshotForPath(FirebaseHelper.userID).value! as! Int) ?? 0
+                self.livePointUpdate.text = String(-self.points)            }
+        })
     }
 }

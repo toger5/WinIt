@@ -36,9 +36,9 @@ class FirebaseHelper {
 		//func postDownloadCallback
 		
         let postQuery = rootRef.child("posts")
-        print("fill post list")
+
         postQuery.queryLimitedToLast(UInt(rangeMax))
-        print("aaa")
+        
         postQuery.queryOrderedByChild("time")
         
         postQuery.observeSingleEventOfType(.Value, withBlock: postDownloadCallback) { (error) in
@@ -202,8 +202,7 @@ class FirebaseHelper {
     static func downloadImage(post: Post, callback: (UIImage) -> Void){
         let storageRef = FirebaseHelper.storageRef
         let s = storageRef.child("PostImages/\(post.key).jpg")
-        print("is verified.... \(FIRAuth.auth()?.currentUser?.uid)")
-        print("BIIIIIIIIGTEEEEEEESSSSSR")
+        
         s.dataWithMaxSize(INT64_MAX) { (data, error) -> Void in
             if (error != nil) {
                 let errorImage = UIImage(named: "NoImage")

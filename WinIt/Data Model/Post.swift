@@ -1,8 +1,8 @@
 //
-//  Post.swift
+//  File.swift
 //  WinIt
 //
-//  Created by Jake on 7/8/16.
+//  Created by Timo on 05/07/16.
 //  Copyright © 2016 Timo. All rights reserved.
 //
 
@@ -39,8 +39,8 @@ class Post{
     
     init(name: String, picture:UIImage?, description: String, eventTime: Double, user: String){
         print("new")
-        self.uploadTime = NSDate().timeIntervalSince1970
-        self.eventTime = NSDate().dateByAddingTimeInterval(eventTime).timeIntervalSince1970
+        self.uploadTime = Global.getTimeStamp()
+        self.eventTime = NSDate(timeIntervalSince1970: uploadTime).dateByAddingTimeInterval(eventTime).timeIntervalSince1970
         self.name = name
         self.user = user
         self.description = description
@@ -63,11 +63,11 @@ class Post{
     }
     
     func getTimeLeftInSeconds() -> Double{
-        let currentTime = NSDate().timeIntervalSince1970
+        let currentTime = Global.getTimeStamp()
         return eventTime - currentTime
     }
     func isCounting() -> Bool{
-        if eventTime - NSDate().timeIntervalSince1970 > 0{
+        if eventTime - Global.getTimeStamp() > 0{
             return true
         }else{
             return false
@@ -75,14 +75,14 @@ class Post{
         
     }
     func isEventDone() -> Bool{
-        if (Int(NSDate().timeIntervalSince1970) - Int(eventTime)) > eventLength{
+        if (Int(Global.getTimeStamp()) - Int(eventTime)) > eventLength{
             return true
         }else{
             return false
         }
     }
     func isOutdated() -> Bool{
-        if (Int(NSDate().timeIntervalSince1970) - Int(eventTime)) > outDatedTime{
+        if (Int(Global.getTimeStamp()) - Int(eventTime)) > outDatedTime{
             return true
         }else{
             return false
