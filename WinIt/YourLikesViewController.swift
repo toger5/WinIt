@@ -72,7 +72,7 @@ extension YourLikesViewController: UITableViewDataSource{
                 //            print(productImage)
                 //            cell.imageViewProduct.image = productImage
                 post.picture = productImage
-                tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+                tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
             }
         }
         cell.populate(post)
