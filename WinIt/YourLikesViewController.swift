@@ -44,7 +44,11 @@ class YourLikesViewController: UIViewController {
         likedPosts = newPostArray
         tableVeiw.reloadData()
     }
+    @IBAction func unwindToYourLikes(segue: UIStoryboardSegue) {
+        
+    }
 }
+
 
 extension YourLikesViewController: UITableViewDataSource{
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

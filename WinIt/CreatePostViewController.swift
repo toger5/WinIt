@@ -34,8 +34,8 @@ class CreatePostViewController: UIViewController {
     }
     
     @IBAction func postUploadButtonPressed(sender: AnyObject) {
-        let n = nameTextField.text ?? "keinNameEingegeben"
-        let d = descriptionTextField.text ?? "keineDescriptionEingegeben"
+        let n = nameTextField.text ?? "noName"
+        let d = descriptionTextField.text ?? "noDescription"
 		let time = Double(secs + (mins + (hours + days*24)*60)*60)
         FirebaseHelper.addPost(Post(name: n, picture: postImage, description: d, eventTime: time, user: String(FIRAuth.auth()!.currentUser!.uid)))
 //        performSegueWithIdentifier("toMainViewSegue", sender: sender)

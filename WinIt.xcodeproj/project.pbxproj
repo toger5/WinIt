@@ -16,6 +16,7 @@
 		250E555C1D2EFD57006C3A22 /* LikedPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E555B1D2EFD57006C3A22 /* LikedPostCell.swift */; };
 		250E555E1D2F1AB2006C3A22 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E555D1D2F1AB2006C3A22 /* ImageHelper.swift */; };
 		254863A11D2F27AD00A35590 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254863A01D2F27AD00A35590 /* CreatePostViewController.swift */; };
+		257ACE231D30B8230026E08E /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257ACE221D30B8230026E08E /* Global.swift */; };
 		25DB247D1D29C3E70050B2D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB247C1D29C3E70050B2D8 /* AppDelegate.swift */; };
 		25DB247F1D29C3E70050B2D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB247E1D29C3E70050B2D8 /* ViewController.swift */; };
 		25DB24821D29C3E70050B2D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25DB24801D29C3E70050B2D8 /* Main.storyboard */; };
@@ -60,6 +61,7 @@
 		250E555B1D2EFD57006C3A22 /* LikedPostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikedPostCell.swift; sourceTree = "<group>"; };
 		250E555D1D2F1AB2006C3A22 /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageHelper.swift; path = Helper/ImageHelper.swift; sourceTree = "<group>"; };
 		254863A01D2F27AD00A35590 /* CreatePostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
+		257ACE221D30B8230026E08E /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		25DB24791D29C3E70050B2D8 /* WinIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WinIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25DB247C1D29C3E70050B2D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25DB247E1D29C3E70050B2D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 		25DB247B1D29C3E70050B2D8 /* WinIt */ = {
 			isa = PBXGroup;
 			children = (
+				25DB247C1D29C3E70050B2D8 /* AppDelegate.swift */,
 				250E55611D2F2447006C3A22 /* NewPost */,
 				250E55581D2EF890006C3A22 /* LikedPosts */,
 				250E55571D2EF87A006C3A22 /* Login */,
@@ -202,11 +205,11 @@
 				250E55531D2EBCC0006C3A22 /* Game */,
 				250E554A1D2C7282006C3A22 /* Helper */,
 				25DB24B01D2C33DD0050B2D8 /* Offers */,
-				25DB247C1D29C3E70050B2D8 /* AppDelegate.swift */,
 				25DB24801D29C3E70050B2D8 /* Main.storyboard */,
 				25DB24831D29C3E70050B2D8 /* Assets.xcassets */,
 				25DB24851D29C3E70050B2D8 /* LaunchScreen.storyboard */,
 				25DB24881D29C3E70050B2D8 /* Info.plist */,
+				257ACE221D30B8230026E08E /* Global.swift */,
 			);
 			path = WinIt;
 			sourceTree = "<group>";
@@ -531,6 +534,7 @@
 				25DB24AB1D29D3A80050B2D8 /* MainTableView.swift in Sources */,
 				25DB247F1D29C3E70050B2D8 /* ViewController.swift in Sources */,
 				250E55501D2CB66B006C3A22 /* UserRegisterViewController.swift in Sources */,
+				257ACE231D30B8230026E08E /* Global.swift in Sources */,
 				254863A11D2F27AD00A35590 /* CreatePostViewController.swift in Sources */,
 				250E555E1D2F1AB2006C3A22 /* ImageHelper.swift in Sources */,
 				25DB24AD1D29D6840050B2D8 /* MainTableViewCell.swift in Sources */,

@@ -35,9 +35,9 @@ class FirebaseHelper {
 		//func postDownloadCallback
 		
         let postQuery = rootRef.child("posts")
-        print("fill post list")
+//        print("fill post list")
         postQuery.queryLimitedToLast(UInt(rangeMax))
-        print("aaa")
+//        print("aaa")
         postQuery.queryOrderedByChild("time")
         
         postQuery.observeSingleEventOfType(.Value, withBlock: postDownloadCallback) { (error) in
@@ -164,12 +164,20 @@ class FirebaseHelper {
     
 
 //    static func getWinnerNameOfPost(post: Post){
-//        let postQueryToWinningUsreID = FirebaseHelper.rootRef.child("gameByPost/\(post.key)").queryOrderedByValue().queryLimitedToFirst(1)
-//        postQueryToWinningUsreID.observeSingleEventOfType(.Value) { (snapshot) in
+//        let postQueryToWinningUserID = FirebaseHelper.rootRef.child("gameByPost/\(post.key)").queryOrderedByValue().queryLimitedToFirst(1)
+//        postQueryToWinningUserID.observeSingleEventOfType(.Value) { (snapshot) in
 //            let snap = snapshot[0] as! FIRDataSnapshot
 //            FirebaseHelper.rootRef.child("users/\(snap)")
 //            
 //        }
+//        
+//        let toUser = FirebaseHelper.rootRef.child("users/\(s.key)")
+//        toUser.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+//            print(index)
+//            //                    let n = (FIRAuth.id ?? "could not find user name")!
+//            let n = (snapshot.value!["username"] ?? "could not find user name")!
+//            (self.nameArray[index] as! UILabel).text = "\(index + 1). \(n)"
+//        })
 //    }
     
 
@@ -201,9 +209,8 @@ class FirebaseHelper {
     static func downloadImage(post: Post, callback: (UIImage) -> Void){
         let storageRef = FirebaseHelper.storageRef
         let s = storageRef.child("PostImages/\(post.key).jpg")
-        print("is verified.... \(FIRAuth.auth()?.currentUser?.uid)")
-        print("BIIIIIIIIGTEEEEEEESSSSSR")
-        s.dataWithMaxSize(INT64_MAX) { (data, error) -> Void in
+
+        s.dataWithMaxSize(1024 * 1024) { (data, error) -> Void in
             if (error != nil) {
                 let errorImage = UIImage(named: "NoImage")
                 print("error during download: \(error?.localizedDescription)")
