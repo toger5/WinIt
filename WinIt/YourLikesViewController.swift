@@ -49,9 +49,11 @@ class YourLikesViewController: UIViewController {
         likedPosts = newPostArray
         tableVeiw.reloadData()
     }
+    
     @IBAction func unwindToYourLikes(segue: UIStoryboardSegue) {
         
     }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         (segue.destinationViewController as! GameViewController).post = selectedPost
     }

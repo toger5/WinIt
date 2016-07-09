@@ -11,7 +11,7 @@ import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     // MARK: - Properties
     var window: UIWindow?
     
@@ -56,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let storyboard = UIStoryboard(name: "SignupLogin", bundle: nil)
             startViewController = storyboard.instantiateViewControllerWithIdentifier("WelcomeNavigationController") as! UINavigationController
         }
-
+        
     }
     
     func prepareTimer() {
@@ -70,18 +70,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let statusCode = httpResponse.statusCode
             
             if (statusCode == 200) {
-                print("Everyone is fine, file downloaded successfully.")
+                
+                //                if let data = data {
+                // Data downloaded successfully
                 let stringFormattedDate = String(data: data!, encoding: NSUTF8StringEncoding)
                 let dateFormatter = NSDateFormatter()
                 //        2016-07-09T04:34:04+01:00         http://www.timeapi.org/utc/now?\Y.\m.\d-\I:\M:\S%20
                 //        2016.07.09-05:04:02
-                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"/* find out and place date format from http://userguide.icu-project.org/formatparse/datetime */
-                print(String(stringFormattedDate))
+                
+                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                
+                //find out and place date format from http://userguide.icu-project.org/formatparse/datetime
+                
+                
                 
                 let date = dateFormatter.dateFromString(stringFormattedDate!)
                 Global.timeOffset = (date?.timeIntervalSince1970)! - NSDate().timeIntervalSince1970
-                print(Global.timeOffset)
-                print(Global.getTimeStamp())
+                
+                //                }
             }
         }
         
