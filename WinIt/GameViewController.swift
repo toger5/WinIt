@@ -25,7 +25,7 @@ class GameViewController: UIViewController{
     @IBOutlet weak var p4: UILabel!
     @IBOutlet weak var p5: UILabel!
     
-    let postID: String = "-KMAUfWSciJE_jnyOPhG"
+    var post: Post? = nil
     var points = 0
     
     var pathToGame: FIRDatabaseReference? = nil
@@ -33,7 +33,7 @@ class GameViewController: UIViewController{
     var nameArray = []
     
     override func viewDidLoad() {
-        pathToGame = FirebaseHelper.rootRef.child("gameByPost/\(postID)")
+        pathToGame = FirebaseHelper.rootRef.child("gameByPost/\(post!.key)")
         super.viewDidLoad()
         setPointsIfAlredyPlayed()
         labelArray = [p1,p2,p3,p4,p5]
@@ -85,7 +85,7 @@ class GameViewController: UIViewController{
         pathToGame!.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
             if snapshot.hasChild(FirebaseHelper.userID){
                 self.points = (snapshot.childSnapshotForPath(FirebaseHelper.userID).value! as! Int) ?? 0
-                self.livePointUpdate.text = String(self.points)            }
+                self.livePointUpdate.text = String(-self.points)            }
         })
     }
 }

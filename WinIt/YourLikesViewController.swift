@@ -11,7 +11,7 @@ import Firebase
 
 class YourLikesViewController: UIViewController {
     var likedPosts: [Post] = []
-	
+    var selectedPost:Post? = nil
     @IBOutlet weak var tableVeiw: UITableView!
 	
 	override func viewDidLoad(){
@@ -47,6 +47,9 @@ class YourLikesViewController: UIViewController {
     @IBAction func unwindToYourLikes(segue: UIStoryboardSegue) {
         
     }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        (segue.destinationViewController as! GameViewController).post = selectedPost
+    }
 }
 
 
@@ -75,7 +78,9 @@ extension YourLikesViewController: UITableViewDataSource{
 extension YourLikesViewController: UITableViewDelegate{
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let cell = tableVeiw.cellForRowAtIndexPath(indexPath)
-        if  !likedPosts[indexPath.row].isCounting() {
+        let clickedPost: Post = likedPosts[indexPath.row]
+        if  clickedPost.isCounting() {
+            selectedPost = clickedPost
             self.performSegueWithIdentifier("toGame", sender: self)
         }else{
             let anim = CustomAnimation(obj: cell!, repetutionAmount: 3, maxRotation: 0, maxPosition: 20, duration: 0.1)
