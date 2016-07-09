@@ -164,12 +164,20 @@ class FirebaseHelper {
     
 
 //    static func getWinnerNameOfPost(post: Post){
-//        let postQueryToWinningUsreID = FirebaseHelper.rootRef.child("gameByPost/\(post.key)").queryOrderedByValue().queryLimitedToFirst(1)
-//        postQueryToWinningUsreID.observeSingleEventOfType(.Value) { (snapshot) in
+//        let postQueryToWinningUserID = FirebaseHelper.rootRef.child("gameByPost/\(post.key)").queryOrderedByValue().queryLimitedToFirst(1)
+//        postQueryToWinningUserID.observeSingleEventOfType(.Value) { (snapshot) in
 //            let snap = snapshot[0] as! FIRDataSnapshot
 //            FirebaseHelper.rootRef.child("users/\(snap)")
 //            
 //        }
+//        
+//        let toUser = FirebaseHelper.rootRef.child("users/\(s.key)")
+//        toUser.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+//            print(index)
+//            //                    let n = (FIRAuth.id ?? "could not find user name")!
+//            let n = (snapshot.value!["username"] ?? "could not find user name")!
+//            (self.nameArray[index] as! UILabel).text = "\(index + 1). \(n)"
+//        })
 //    }
     
 
