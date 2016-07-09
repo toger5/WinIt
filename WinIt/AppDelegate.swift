@@ -66,15 +66,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let task = session.dataTaskWithRequest(urlRequest) {
             (data, response, error) -> Void in
             
-            let httpResponse = response as! NSHTTPURLResponse
-            let statusCode = httpResponse.statusCode
             
-            if (statusCode == 200) {
-                
-                //                if let data = data {
+            if let data = data {
                 // Data downloaded successfully
-                let stringFormattedDate = String(data: data!, encoding: NSUTF8StringEncoding)
+                let stringFormattedDate = String(data: data, encoding: NSUTF8StringEncoding)
                 let dateFormatter = NSDateFormatter()
+                
                 //        2016-07-09T04:34:04+01:00         http://www.timeapi.org/utc/now?\Y.\m.\d-\I:\M:\S%20
                 //        2016.07.09-05:04:02
                 
@@ -82,15 +79,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
                 //find out and place date format from http://userguide.icu-project.org/formatparse/datetime
                 
-                
-                
                 let date = dateFormatter.dateFromString(stringFormattedDate!)
                 Global.timeOffset = (date?.timeIntervalSince1970)! - NSDate().timeIntervalSince1970
                 
-                //                }
             }
         }
-        
         task.resume()
     }
     
