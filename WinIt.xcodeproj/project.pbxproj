@@ -7,12 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		250E55551D2EBCD1006C3A22 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E55541D2EBCD1006C3A22 /* GameViewController.swift */; };
-		250E555A1D2EF8CD006C3A22 /* YourLikesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E55591D2EF8CD006C3A22 /* YourLikesViewController.swift */; };
-		250E555C1D2EFD57006C3A22 /* LikedPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E555B1D2EFD57006C3A22 /* LikedPostCell.swift */; };
 		25DB247D1D29C3E70050B2D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB247C1D29C3E70050B2D8 /* AppDelegate.swift */; };
-		25DB247F1D29C3E70050B2D8 /* SearchPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB247E1D29C3E70050B2D8 /* SearchPostsViewController.swift */; };
-		25DB24AD1D29D6840050B2D8 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB24AC1D29D6840050B2D8 /* MainTableViewCell.swift */; };
 		25DB24B41D2C4FF50050B2D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25DB24B31D2C4FF50050B2D8 /* GoogleService-Info.plist */; };
 		CEC604F9F64D01811A48B9AA /* Pods_WinIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B3DC8257723FF200B9347B /* Pods_WinIt.framework */; };
 		E261257B1D30B6AE00BB1274 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26125771D30B6AE00BB1274 /* ForgotPasswordViewController.swift */; };
@@ -25,21 +20,21 @@
 		E261258B1D30B96E00BB1274 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = E261258A1D30B96E00BB1274 /* Post.swift */; };
 		E261258E1D30B9F800BB1274 /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E261258C1D30B9F800BB1274 /* FirebaseHelper.swift */; };
 		E261258F1D30B9F800BB1274 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E261258D1D30B9F800BB1274 /* ImageHelper.swift */; };
-		E26125911D30BA0A00BB1274 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26125901D30BA0A00BB1274 /* CreatePostViewController.swift */; };
 		E27B674E1D316DB4006F2951 /* CustomAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27B674D1D316DB4006F2951 /* CustomAnimation.swift */; };
 		E27B67511D317962006F2951 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27B67501D317962006F2951 /* Global.swift */; };
+		E2976AED1D31A4F400FCF694 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2976AEC1D31A4F400FCF694 /* CreatePostViewController.swift */; };
+		E2976AEF1D31A55C00FCF694 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2976AEE1D31A55C00FCF694 /* GameViewController.swift */; };
+		E2976AF21D31A58C00FCF694 /* LikedPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2976AF01D31A58C00FCF694 /* LikedPostCell.swift */; };
+		E2976AF31D31A58C00FCF694 /* LikesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2976AF11D31A58C00FCF694 /* LikesViewController.swift */; };
+		E2976AF61D31A5C900FCF694 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2976AF41D31A5C900FCF694 /* MainTableViewCell.swift */; };
+		E2976AF71D31A5C900FCF694 /* SearchPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2976AF51D31A5C900FCF694 /* SearchPostsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2155D184F652733215929F5E /* Pods-WinIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinIt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WinIt/Pods-WinIt.debug.xcconfig"; sourceTree = "<group>"; };
-		250E55541D2EBCD1006C3A22 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		250E55591D2EF8CD006C3A22 /* YourLikesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YourLikesViewController.swift; sourceTree = "<group>"; };
-		250E555B1D2EFD57006C3A22 /* LikedPostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikedPostCell.swift; sourceTree = "<group>"; };
 		25DB24791D29C3E70050B2D8 /* WinIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WinIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25DB247C1D29C3E70050B2D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		25DB247E1D29C3E70050B2D8 /* SearchPostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPostsViewController.swift; sourceTree = "<group>"; };
 		25DB24881D29C3E70050B2D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		25DB24AC1D29D6840050B2D8 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTableViewCell.swift; path = TableViewShopping/MainTableViewCell.swift; sourceTree = "<group>"; };
 		25DB24B31D2C4FF50050B2D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		46B75B5978AA09B6C111D698 /* Pods_WinItTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WinItTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75F1B09707F1A42668133BBE /* Pods-WinIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinIt.release.xcconfig"; path = "Pods/Target Support Files/Pods-WinIt/Pods-WinIt.release.xcconfig"; sourceTree = "<group>"; };
@@ -56,9 +51,14 @@
 		E261258A1D30B96E00BB1274 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Post.swift; path = "WinIt/Data Model/Post.swift"; sourceTree = SOURCE_ROOT; };
 		E261258C1D30B9F800BB1274 /* FirebaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseHelper.swift; path = Helpers/FirebaseHelper.swift; sourceTree = "<group>"; };
 		E261258D1D30B9F800BB1274 /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageHelper.swift; path = Helpers/ImageHelper.swift; sourceTree = "<group>"; };
-		E26125901D30BA0A00BB1274 /* CreatePostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreatePostViewController.swift; path = "Create Posts/CreatePostViewController.swift"; sourceTree = "<group>"; };
 		E27B674D1D316DB4006F2951 /* CustomAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomAnimation.swift; path = Extensions/CustomAnimation.swift; sourceTree = "<group>"; };
 		E27B67501D317962006F2951 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Global.swift; path = Constants/Global.swift; sourceTree = "<group>"; };
+		E2976AEC1D31A4F400FCF694 /* CreatePostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreatePostViewController.swift; path = "Create Post/CreatePostViewController.swift"; sourceTree = "<group>"; };
+		E2976AEE1D31A55C00FCF694 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = Game/GameViewController.swift; sourceTree = "<group>"; };
+		E2976AF01D31A58C00FCF694 /* LikedPostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LikedPostCell.swift; path = "Liked Posts/LikedPostCell.swift"; sourceTree = "<group>"; };
+		E2976AF11D31A58C00FCF694 /* LikesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LikesViewController.swift; path = "Liked Posts/LikesViewController.swift"; sourceTree = "<group>"; };
+		E2976AF41D31A5C900FCF694 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTableViewCell.swift; path = "Search Posts/MainTableViewCell.swift"; sourceTree = "<group>"; };
+		E2976AF51D31A5C900FCF694 /* SearchPostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchPostsViewController.swift; path = "Search Posts/SearchPostsViewController.swift"; sourceTree = "<group>"; };
 		E705CD1AF9A1B83519CEFEF7 /* Pods-WinItUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinItUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WinItUITests/Pods-WinItUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F3EEB14B27CFE7AD24913D65 /* Pods-WinItUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinItUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WinItUITests/Pods-WinItUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FB64FC5BFD76F07DE97CAB74 /* Pods-WinItTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinItTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WinItTests/Pods-WinItTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 		250E55531D2EBCC0006C3A22 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				250E55541D2EBCD1006C3A22 /* GameViewController.swift */,
+				E2976AEE1D31A55C00FCF694 /* GameViewController.swift */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -96,8 +96,8 @@
 		250E55561D2EF824006C3A22 /* Search Posts */ = {
 			isa = PBXGroup;
 			children = (
-				25DB247E1D29C3E70050B2D8 /* SearchPostsViewController.swift */,
-				25DB24AC1D29D6840050B2D8 /* MainTableViewCell.swift */,
+				E2976AF41D31A5C900FCF694 /* MainTableViewCell.swift */,
+				E2976AF51D31A5C900FCF694 /* SearchPostsViewController.swift */,
 			);
 			name = "Search Posts";
 			sourceTree = "<group>";
@@ -105,8 +105,8 @@
 		250E55581D2EF890006C3A22 /* Liked Posts */ = {
 			isa = PBXGroup;
 			children = (
-				250E55591D2EF8CD006C3A22 /* YourLikesViewController.swift */,
-				250E555B1D2EFD57006C3A22 /* LikedPostCell.swift */,
+				E2976AF01D31A58C00FCF694 /* LikedPostCell.swift */,
+				E2976AF11D31A58C00FCF694 /* LikesViewController.swift */,
 			);
 			name = "Liked Posts";
 			sourceTree = "<group>";
@@ -114,7 +114,7 @@
 		250E55611D2F2447006C3A22 /* Create Post */ = {
 			isa = PBXGroup;
 			children = (
-				E26125901D30BA0A00BB1274 /* CreatePostViewController.swift */,
+				E2976AEC1D31A4F400FCF694 /* CreatePostViewController.swift */,
 			);
 			name = "Create Post";
 			sourceTree = "<group>";
@@ -351,19 +351,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				E261258E1D30B9F800BB1274 /* FirebaseHelper.swift in Sources */,
-				250E55551D2EBCD1006C3A22 /* GameViewController.swift in Sources */,
-				250E555C1D2EFD57006C3A22 /* LikedPostCell.swift in Sources */,
-				25DB247F1D29C3E70050B2D8 /* SearchPostsViewController.swift in Sources */,
+				E2976AF21D31A58C00FCF694 /* LikedPostCell.swift in Sources */,
 				E261257E1D30B6AE00BB1274 /* WelcomeViewController.swift in Sources */,
 				E261257D1D30B6AE00BB1274 /* SignupViewController.swift in Sources */,
 				E261258B1D30B96E00BB1274 /* Post.swift in Sources */,
 				E27B67511D317962006F2951 /* Global.swift in Sources */,
-				25DB24AD1D29D6840050B2D8 /* MainTableViewCell.swift in Sources */,
-				E26125911D30BA0A00BB1274 /* CreatePostViewController.swift in Sources */,
 				E27B674E1D316DB4006F2951 /* CustomAnimation.swift in Sources */,
+				E2976AED1D31A4F400FCF694 /* CreatePostViewController.swift in Sources */,
+				E2976AEF1D31A55C00FCF694 /* GameViewController.swift in Sources */,
+				E2976AF71D31A5C900FCF694 /* SearchPostsViewController.swift in Sources */,
+				E2976AF31D31A58C00FCF694 /* LikesViewController.swift in Sources */,
+				E2976AF61D31A5C900FCF694 /* MainTableViewCell.swift in Sources */,
 				E261258F1D30B9F800BB1274 /* ImageHelper.swift in Sources */,
 				E261257B1D30B6AE00BB1274 /* ForgotPasswordViewController.swift in Sources */,
-				250E555A1D2EF8CD006C3A22 /* YourLikesViewController.swift in Sources */,
 				25DB247D1D29C3E70050B2D8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
