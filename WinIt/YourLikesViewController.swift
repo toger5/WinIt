@@ -84,13 +84,20 @@ extension YourLikesViewController: UITableViewDelegate{
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let cell = tableVeiw.cellForRowAtIndexPath(indexPath)
         let clickedPost: Post = likedPosts[indexPath.row]
-        if  !clickedPost.isCounting() {
+        switch clickedPost.getState(){
+        case EventStatus.Waiting:
+            let animation = CustomAnimation(view: cell!, delay: 0, direction: .Left, repetitions: 3, maxRotation: 0, maxPosition: 20, duration: 0.1)
+            animation.shakeAnimation()
+        
+        case EventStatus.Running:
             selectedPost = clickedPost
             self.performSegueWithIdentifier("toGame", sender: self)
-        }else{
-            let animation = CustomAnimation(view: cell!, delay: 0, direction: .Left, repetitions: 3, maxRotation: 0, maxPosition: 20, duration: 0.1)
-            
-            animation.shakeAnimation()
+        //will be needed as soon as the View Controller for the EventOverview is created
+//        case EventStatus.Complete:
+//            selectedPost = clickedPost
+//            self.performSegueWithIdentifier("toEventOverview", sender: self)
+        default:
+            break
         }
     }
 }

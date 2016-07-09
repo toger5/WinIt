@@ -5,6 +5,9 @@
 //  Created by Timo on 05/07/16.
 //  Copyright © 2016 Timo. All rights reserved.
 //
+enum EventStatus: Int{
+    case Waiting, Running, Complete, Archived
+}
 
 import UIKit
 import Firebase
@@ -66,28 +69,19 @@ class Post{
         let currentTime = Global.getTimeStamp()
         return eventTime - currentTime
     }
-    func isCounting() -> Bool{
-        if eventTime - Global.getTimeStamp() > 0{
-            return true
+    
+    func getState() -> EventStatus{
+        if Global.getTimeStamp() < eventTime{
+            return EventStatus.Waiting
+        }else if Int(Global.getTimeStamp()) < Int(eventTime) + eventLength{
+            return EventStatus.Running
+        }else if Int(Global.getTimeStamp()) > Int(eventTime) + outDatedTime{
+            return EventStatus.Archived
         }else{
-            return false
-        }
-        
-    }
-    func isEventDone() -> Bool{
-        if (Int(Global.getTimeStamp()) - Int(eventTime)) > eventLength{
-            return true
-        }else{
-            return false
+            return EventStatus.Complete
         }
     }
-    func isOutdated() -> Bool{
-        if (Int(Global.getTimeStamp()) - Int(eventTime)) > outDatedTime{
-            return true
-        }else{
-            return false
-        }
-    }
+
     func getHoursMinutesSecondsArray() -> [Int]{
         let timeLeft = getTimeLeftInSeconds()
         let array = [Int(timeLeft / 60 / 60),Int((timeLeft%(60 * 60)) / 60),Int(timeLeft%60)]
