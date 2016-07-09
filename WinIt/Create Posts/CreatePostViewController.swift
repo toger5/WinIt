@@ -29,7 +29,7 @@ class CreatePostViewController: UIViewController {
     @IBAction func imageUploadButtonTapped(sender: AnyObject){
         photoTaker = ImageHelper(viewController: self) { (image) in
             self.imageView.image = image
-			self.postImage=image
+			self.postImage = image
         }
     }
     

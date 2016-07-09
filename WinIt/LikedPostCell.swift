@@ -10,15 +10,19 @@ import UIKit
 
 class LikedPostCell: UITableViewCell{
     
-    @IBOutlet weak var posterName: UILabel!
-    @IBOutlet weak var countDownTimer: UILabel!
-    @IBOutlet weak var postName: UILabel!
-    @IBOutlet weak var postImage: UIImageView!
+    // MARK: - Properties
     var eventIsOnline = false
     var timeLeft: [Int] = []
     
     var clock: NSTimer? = nil
     
+    // MARK: - IBOutlets
+    @IBOutlet weak var posterName: UILabel!
+    @IBOutlet weak var countDownTimer: UILabel!
+    @IBOutlet weak var postName: UILabel!
+    @IBOutlet weak var postImage: UIImageView!
+    
+    // MARK: - Helper Methods
     func populate(post: Post){
         
         postName.text = post.name

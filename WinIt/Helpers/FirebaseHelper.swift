@@ -9,6 +9,7 @@
 import Firebase
 import FirebaseAuth
 import UIKit
+
 class FirebaseHelper {
     
     static let storageRef = FIRStorage.storage().referenceForURL("gs://winit-2941c.appspot.com")
@@ -35,9 +36,9 @@ class FirebaseHelper {
 		//func postDownloadCallback
 		
         let postQuery = rootRef.child("posts")
-//        print("fill post list")
+
         postQuery.queryLimitedToLast(UInt(rangeMax))
-//        print("aaa")
+        
         postQuery.queryOrderedByChild("time")
         
         postQuery.observeSingleEventOfType(.Value, withBlock: postDownloadCallback) { (error) in
@@ -46,8 +47,7 @@ class FirebaseHelper {
     }
     
     static func addPost(post:Post){
-        print("try to add")
-        print(post.toDict())
+        
         if post.picture == nil{
             post.picture = UIImage(named: "NoImage")
         }
@@ -55,7 +55,7 @@ class FirebaseHelper {
         let newPostRef = rootRef.child("posts").childByAutoId()
         post.key = newPostRef.key
         newPostRef.setValue(post.toDict())
-        print("post and than user \(post.key)   \(post.user)")
+        
         FirebaseHelper.uploadImage(UIImageJPEGRepresentation(post.picture!,0.3)!, postID: post.key, uploadDone: FirebaseHelper.printSth)
     }
     static func printSth(t: FIRStorageTaskSnapshot){
@@ -209,8 +209,8 @@ class FirebaseHelper {
     static func downloadImage(post: Post, callback: (UIImage) -> Void){
         let storageRef = FirebaseHelper.storageRef
         let s = storageRef.child("PostImages/\(post.key).jpg")
-
-        s.dataWithMaxSize(1024 * 1024) { (data, error) -> Void in
+        
+        s.dataWithMaxSize(INT64_MAX) { (data, error) -> Void in
             if (error != nil) {
                 let errorImage = UIImage(named: "NoImage")
                 print("error during download: \(error?.localizedDescription)")
