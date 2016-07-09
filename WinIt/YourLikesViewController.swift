@@ -10,19 +10,19 @@ import UIKit
 import Firebase
 
 class YourLikesViewController: UIViewController {
+    // MARK: - Properties
     var likedPosts: [Post] = []
     var selectedPost:Post? = nil
+    
+    // MARK: - IBOutlets
     @IBOutlet weak var tableVeiw: UITableView!
     
+    // MARK: - View Lifecycles
     override func viewDidLoad(){
         super.viewDidLoad()
+        FirebaseHelper.getLikedPosts(likesLoaded)
         tableVeiw.dataSource = self
         tableVeiw.delegate = self
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        FirebaseHelper.getLikedPosts(likesLoaded)
     }
     
     
