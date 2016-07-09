@@ -1,8 +1,8 @@
 //
-//  File.swift
+//  Post.swift
 //  WinIt
 //
-//  Created by Timo on 05/07/16.
+//  Created by Jake on 7/8/16.
 //  Copyright © 2016 Timo. All rights reserved.
 //
 
@@ -17,14 +17,14 @@ class Post{
     let uploadTime: Double
     var picture: UIImage?
     var description: String
-	var liked: Bool {
-		didSet {
-			cell?.updateLiked()
-		}
-	}
+    var liked: Bool {
+        didSet {
+            cell?.updateLiked()
+        }
+    }
     let eventLength = 60 //in seconds
-	let outDatedTime = 60 * 10
-	var cell: MainTableViewCell?
+    let outDatedTime = 60 * 10
+    var cell: MainTableViewCell?
     
     init(){
         eventTime = 0
@@ -34,7 +34,7 @@ class Post{
         user = "user"
         picture = nil
         description = "unknown"
-		liked = false
+        liked = false
     }
     
     init(name: String, picture:UIImage?, description: String, eventTime: Double, user: String){
@@ -45,7 +45,7 @@ class Post{
         self.user = user
         self.description = description
         self.picture = picture
-		self.liked = false
+        self.liked = false
         self.key = ""
     }
     
@@ -54,12 +54,12 @@ class Post{
         self.uploadTime = snapshot.value!["uploadTime"] as! Double
         self.eventTime = snapshot.value!["eventTime"] as! Double
         self.key = snapshot.key
-		print("user key: \(key)")
+        print("user key: \(key)")
         self.user = ""
         self.name = snapshot.value!["name"] as! String
         self.description = ""
         self.picture = nil
-		self.liked = false
+        self.liked = false
     }
     
     func getTimeLeftInSeconds() -> Double{
@@ -72,7 +72,7 @@ class Post{
         }else{
             return false
         }
-
+        
     }
     func isEventDone() -> Bool{
         if (Int(NSDate().timeIntervalSince1970) - Int(eventTime)) > eventLength{
@@ -104,21 +104,21 @@ class Post{
         ]
         return dictionary
     }
-	
-	func setLiked(liked: Bool) {
-		
-		if self.liked != liked {
-			
-			self.liked=liked
-			
-			if liked {
-				
-				FirebaseHelper.addLike(self)
-				
-			} else {
-				
-				FirebaseHelper.removeLike(self)
-			}
-		}
-	}
+    
+    func setLiked(liked: Bool) {
+        
+        if self.liked != liked {
+            
+            self.liked=liked
+            
+            if liked {
+                
+                FirebaseHelper.addLike(self)
+                
+            } else {
+                
+                FirebaseHelper.removeLike(self)
+            }
+        }
+    }
 }

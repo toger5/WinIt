@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+
 class ViewController: UIViewController {
     let currentUser = FIRAuth.auth()!.currentUser
     let rootRef = FIRDatabase.database().reference()

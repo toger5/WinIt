@@ -74,8 +74,10 @@ extension YourLikesViewController: UITableViewDelegate{
         if  !likedPosts[indexPath.row].isCounting() {
             self.performSegueWithIdentifier("toGame", sender: self)
         }else{
-            let anim = CustomAnimation(obj: cell!, repetutionAmount: 3, maxRotation: 0, maxPosition: 20, duration: 0.1)
-            anim.shake()
+            
+            let animation = CustomAnimation(view: cell!, delay: 0, direction: .Left, repetitions: 3, maxRotation: 0, maxPosition: 20, duration: 0.1)
+            
+            animation.shakeAnimation()
         }
     }
 }
