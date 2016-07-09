@@ -48,15 +48,15 @@ class FirebaseHelper {
     
     static func addPost(post:Post){
         
-        if post.picture == nil{
-            post.picture = UIImage(named: "NoImage")
+        if post.image == nil{
+            post.image = UIImage(named: "NoImage")
         }
         
         let newPostRef = rootRef.child("posts").childByAutoId()
         post.key = newPostRef.key
         newPostRef.setValue(post.toDict())
         
-        FirebaseHelper.uploadImage(UIImageJPEGRepresentation(post.picture!,0.3)!, postID: post.key, uploadDone: FirebaseHelper.printSth)
+        FirebaseHelper.uploadImage(UIImageJPEGRepresentation(post.image!,0.3)!, postID: post.key, uploadDone: FirebaseHelper.printSth)
     }
     static func printSth(t: FIRStorageTaskSnapshot){
         print("UPLOADED")

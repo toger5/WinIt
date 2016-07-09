@@ -37,19 +37,20 @@ class LikedPostCell: UITableViewCell{
     func populate(post: Post){
         self.post = post
         postName.text = post.name
-        postImage.image = post.picture
+        postImage.image = post.image
         posterName.text = post.user
         timeLeft = post.getHoursMinutesSecondsArray()
         
         handleCellStyleAndDescription()
         
         if post.getState().rawValue <= 1 /*  this means it is Waitng or Running */ {
+
             clock = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(LikedPostCell.countdown), userInfo: nil, repeats: true)
         }
     }
     
     func countdown(timer: NSTimer){
-        print("countdonw: \(timer)")
+        
         if timeLeft[2] <= 0{
             if timeLeft[1] <= 0{
                 if timeLeft[0] <= 0{
@@ -83,7 +84,6 @@ class LikedPostCell: UITableViewCell{
                 handleCellDuringComplete()
             case EventStatus.Archived:
                 break
-                
             }
         }else{
             print("The requested post object is nil")
@@ -99,7 +99,7 @@ class LikedPostCell: UITableViewCell{
     func handleCellDuringGame(){
         countDownTimer.text = "Event Is Running\n \(getStringBasedOnArray(timeLeft))"
     }
-    
+
     func getStringBasedOnArray(time: [Int]) -> String{
         return "\(abs(timeLeft[0])):\(abs(timeLeft[1])):\(abs(timeLeft[2]))"
     }
