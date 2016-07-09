@@ -47,8 +47,7 @@ class FirebaseHelper {
     }
     
     static func addPost(post:Post){
-        print("try to add")
-        print(post.toDict())
+        
         if post.picture == nil{
             post.picture = UIImage(named: "NoImage")
         }
@@ -56,7 +55,7 @@ class FirebaseHelper {
         let newPostRef = rootRef.child("posts").childByAutoId()
         post.key = newPostRef.key
         newPostRef.setValue(post.toDict())
-        print("post and than user \(post.key)   \(post.user)")
+        
         FirebaseHelper.uploadImage(UIImageJPEGRepresentation(post.picture!,0.3)!, postID: post.key, uploadDone: FirebaseHelper.printSth)
     }
     static func printSth(t: FIRStorageTaskSnapshot){
