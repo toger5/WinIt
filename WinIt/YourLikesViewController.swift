@@ -78,8 +78,8 @@ extension YourLikesViewController: UITableViewDataSource{
 extension YourLikesViewController: UITableViewDelegate{
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let cell = tableVeiw.cellForRowAtIndexPath(indexPath)
-        let clickedPost: Post = likedPosts[indexPath.row]
-        if  clickedPost.isCounting() {
+        let clickedPost: Post = likedPosts[likedPosts.count - indexPath.row - 1]
+        if  !clickedPost.isCounting() {
             selectedPost = clickedPost
             self.performSegueWithIdentifier("toGame", sender: self)
         }else{

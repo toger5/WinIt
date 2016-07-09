@@ -370,13 +370,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JdW-tU-UW8">
-                                                <rect key="frame" x="0.0" y="0.0" width="250" height="200"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="250" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scr-Xl-4vV">
-                                                <rect key="frame" x="0.0" y="200" width="250" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="250" height="200"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -477,13 +477,13 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="KUD-6H-hvG"/>
                                 <exclude reference="2Xz-I3-fOc"/>
                                 <exclude reference="eK0-Um-FWR"/>
                                 <exclude reference="nT2-tT-8ut"/>
                                 <exclude reference="qm6-bc-eaV"/>
                                 <exclude reference="v8D-eS-yVE"/>
                                 <exclude reference="wxA-P7-kma"/>
-                                <exclude reference="KUD-6H-hvG"/>
                                 <exclude reference="8xc-uK-DTJ"/>
                                 <exclude reference="Brm-zv-Hi1"/>
                                 <exclude reference="lnW-2A-LtX"/>

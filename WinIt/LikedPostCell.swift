@@ -18,22 +18,22 @@ class LikedPostCell: UITableViewCell{
     var timeLeft: [Int] = []
     
     var clock: NSTimer? = nil
-    
+    var post: Post? = nil
     func populate(post: Post){
-        
+        self.post = post
         postName.text = post.name
         postImage.image = post.picture
         posterName.text = post.user
         timeLeft = post.getHoursMinutesSecondsArray()
-        setTimerBasedOnArray(timeLeft)
+        handelCellDuringWait(timeLeft)
         print("timer created")
         if post.isCounting(){
             clock = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(LikedPostCell.countdown), userInfo: nil, repeats: true)
         }else if post.isEventDone(){
-            //FirebaseHelper.removePost(post)
-            
+            handleCellDuringGame(timeLeft)
         }
     }
+    
     func countdown(timer: NSTimer){
         print("countdonw: \(timer)")
         if timeLeft[2] <= 0{
@@ -55,12 +55,17 @@ class LikedPostCell: UITableViewCell{
         }else{
             timeLeft[2] -= 1
         }
-        setTimerBasedOnArray(timeLeft)
+        if post!.isEventDone(){
+            handleCellDuringGame(timeLeft)
+        }else{
+            handelCellDuringWait(timeLeft)
+        }
     }
-
-    func setTimerBasedOnArray(time: [Int]){
-        countDownTimer.text = "\(timeLeft[0]):\(timeLeft[1]):\(timeLeft[2])"
+    
+    func handelCellDuringWait(time: [Int]){
+        countDownTimer.text = getStringBasedOnArray(time)
     }
+    func getStringBasedOnArray(time: [Int]) -> String{return "\(abs(timeLeft[0])):\(abs(timeLeft[1])):\(abs(timeLeft[2]))"}
     
     
     func setTimerLabelToEventStart(){
@@ -70,5 +75,10 @@ class LikedPostCell: UITableViewCell{
     
     override func prepareForReuse() {
         clock?.invalidate()
+    }
+    
+    func handleCellDuringGame(time: [Int]){
+        countDownTimer.text = "Event Is Running\n \(getStringBasedOnArray(time))"
+        
     }
 }

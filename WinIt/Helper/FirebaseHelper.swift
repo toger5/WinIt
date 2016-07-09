@@ -10,7 +10,6 @@ import Firebase
 import FirebaseAuth
 import UIKit
 class FirebaseHelper {
-    
     static let storageRef = FIRStorage.storage().referenceForURL("gs://winit-2941c.appspot.com")
     
     static let rootRef = FIRDatabase.database().reference()

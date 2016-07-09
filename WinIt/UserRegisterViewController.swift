@@ -55,12 +55,12 @@ class UserRegisterViewController: UIViewController {
                         
                         
                     }else{
-                        self.loginFailed()
+                        self.registrationFailed()
                     }
                 }
                 
             }else{
-                self.loginFailed()
+                self.registrationFailed()
             }
  
     }
@@ -86,7 +86,7 @@ class UserRegisterViewController: UIViewController {
         let name = username.text ?? ""
         return (name.characters.count > 0 && pas.characters.count > 5)
     }
-    func loginFailed(){
+    func registrationFailed(){
         let anim = CustomAnimation(obj: registerButton, repetutionAmount: 4, maxRotation: 0, maxPosition: 40, duration: 0.06)
         anim.shake()
     }
