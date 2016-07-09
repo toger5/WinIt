@@ -10,14 +10,20 @@ import UIKit
 import FirebaseAuth
 class CreatePostViewController: UIViewController {
 	
-	var secs = 0, mins = 1, hours = 0, days = 0
+    // MARK: - Properties
+	var seconds = 0
+    var mins = 1
+    var hours = 0
+    var days = 0
     var photoTaker: ImageHelper?
+    var postImage: UIImage?
+    
+    // MARK: - IBOutlets
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextView!
 	
-	var postImage: UIImage?
-	
+    // MARK: - View Lifecycles
 	override func viewDidLoad() {
 		super.viewDidLoad()
         
@@ -26,19 +32,22 @@ class CreatePostViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
     }
+    
+    // MARK: - IBActions
     @IBAction func imageUploadButtonTapped(sender: AnyObject){
         photoTaker = ImageHelper(viewController: self) { (image) in
             self.imageView.image = image
-			self.postImage=image
+			self.postImage = image
         }
     }
     
     @IBAction func postUploadButtonPressed(sender: AnyObject) {
-        let n = nameTextField.text ?? "noName"
-        let d = descriptionTextField.text ?? "noDescription"
-		let time = Double(secs + (mins + (hours + days*24)*60)*60)
-        FirebaseHelper.addPost(Post(name: n, picture: postImage, description: d, eventTime: time, user: String(FIRAuth.auth()!.currentUser!.uid)))
-//        performSegueWithIdentifier("toMainViewSegue", sender: sender)
+        let name = nameTextField.text ?? "noName"
+        let description = descriptionTextField.text ?? "noDescription"
+		let time = Double(seconds + (mins + (hours + days*24)*60)*60)
+        let user = FIRAuth.auth()!.currentUser!.uid
+        
+        FirebaseHelper.addPost(Post(name: name, image: postImage, description: description, eventTime: time, user: user))
     }
     
 }

@@ -10,22 +10,43 @@ import UIKit
 import Firebase
 
 class YourLikesViewController: UIViewController {
+    // MARK: - Properties
     var likedPosts: [Post] = []
     var selectedPost:Post? = nil
-    @IBOutlet weak var tableVeiw: UITableView!
-	
-	override func viewDidLoad(){
+    
+    // MARK: - IBOutlets
+    @IBOutlet weak var tableView: UITableView!
+    
+    // MARK: - View Lifecycles
+    override func viewDidLoad(){
         super.viewDidLoad()
-		tableVeiw.dataSource = self
-        tableVeiw.delegate = self
+        prepareTableView()
     }
     
     override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-		FirebaseHelper.getLikedPosts(likesLoaded)
+        super.viewDidAppear(true)
+        FirebaseHelper.getLikedPosts(likesLoaded)
+        tableView.reloadData()
     }
     
+    // MARK: - Preparations
+    func prepareTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+    }
     
+    // MARK: - IBActions
+    @IBAction func unwindToYourLikes(segue: UIStoryboardSegue) {
+        
+    }
+    
+    // MARK: - Segues
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let dvc = segue.destinationViewController as! GameViewController
+        dvc.post = selectedPost
+    }
+    
+    // MARK: - Helper Methods
     func likesLoaded(serverPostList: [Post]){
         var newPostArray: [Post] = []
         
@@ -42,49 +63,58 @@ class YourLikesViewController: UIViewController {
             }
         }
         likedPosts = newPostArray
-        tableVeiw.reloadData()
-    }
-    @IBAction func unwindToYourLikes(segue: UIStoryboardSegue) {
-        
-    }
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        (segue.destinationViewController as! GameViewController).post = selectedPost
+        tableView.reloadData()
     }
 }
 
-
-extension YourLikesViewController: UITableViewDataSource{
+// MARK: - Table View Data Source
+extension YourLikesViewController: UITableViewDataSource {
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		
-		return likedPosts.count
+        return likedPosts.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("likedPostCell") as! LikedPostCell
-		let post = likedPosts[likedPosts.count-indexPath.row-1]
-		if post.picture == nil{
-			FirebaseHelper.downloadImage(post) { (productImage) in
-				//            print(productImage)
-				//            cell.imageViewProduct.image = productImage
-				post.picture = productImage
-				tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-			}
-		}
-		cell.populate(post)
+        let post = likedPosts[indexPath.row]
+        
+        guard post.isPlaceHolderImage() || post.image == nil else {
+            cell.populate(post)
+            return cell
+        }
+        
+        FirebaseHelper.downloadImage(post) { (image) in
+            post.image = image
+            tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        }
+        
+        cell.populate(post)
         return cell
     }
 }
 
-extension YourLikesViewController: UITableViewDelegate{
+// MARK: - Table View Delegate
+extension YourLikesViewController: UITableViewDelegate {
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = tableVeiw.cellForRowAtIndexPath(indexPath)
-        let clickedPost: Post = likedPosts[likedPosts.count - indexPath.row - 1]
-        if  !clickedPost.isCounting() {
+
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        let clickedPost: Post = likedPosts[indexPath.row]
+        switch clickedPost.getState(){
+        case EventStatus.Waiting:
+
+            let animation = CustomAnimation(view: cell!, delay: 0, direction: .Left, repetitions: 3, maxRotation: 0, maxPosition: 20, duration: 0.1)
+            animation.shakeAnimation()
+        
+        case EventStatus.Running:
             selectedPost = clickedPost
             self.performSegueWithIdentifier("toGame", sender: self)
-        }else{
-            let anim = CustomAnimation(obj: cell!, repetutionAmount: 3, maxRotation: 0, maxPosition: 20, duration: 0.1)
-            anim.shake()
+        //will be needed as soon as the View Controller for the EventOverview is created
+//        case EventStatus.Complete:
+//            selectedPost = clickedPost
+//            self.performSegueWithIdentifier("toEventOverview", sender: self)
+        default:
+            break
         }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SearchPostsViewController.swift
 //  WinIt
 //
 //  Created by Timo on 03/07/16.
@@ -9,25 +9,28 @@
 import UIKit
 import Firebase
 import FirebaseAuth
-class ViewController: UIViewController {
+
+class SearchPostsViewController: UIViewController {
+    
+    // MARK: - Properties
     let currentUser = FIRAuth.auth()!.currentUser
     let rootRef = FIRDatabase.database().reference()
     
-    var postList: [Post] = []
+    lazy var postList: [Post] = []
     
-    @IBOutlet weak var tableView: MainTableView!
-	//let dataListOfOffers = [Offer(),Offer(name: "computer", picture:nil, description:"anAlmostBrokenComputer", shippingCostIncluded: false)]
+    // MARK: IBOutlets
+    @IBOutlet weak var tableView: UITableView!
+    
 	
-	override func viewDidLoad() {
-		//print(FIRUserInfo)
-        print("curretn Logged In user: \(currentUser)")
+    // MARK: - View Lifecycles
+    override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
-        
-        // Do any additional setup after loading the view, typically from a nib.
-	}
-	
+    }
+    
     override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
         FirebaseHelper.fillpostList(0,rangeMax: 20,callback: { (offerArray) in
             print("offer array: \(offerArray)")
             var newPostArray: [Post] = []
@@ -46,13 +49,8 @@ class ViewController: UIViewController {
             self.postList = newPostArray
             
             self.tableView.reloadData()
-            //print("test: \(self.postList)")
+            
         })
-		//print(FirebaseHelper.getOfferCount())
-		//rootRef.child("test0").setValue("baccccc")
-        super.viewDidAppear(animated)
-//        FirebaseHelper.addPost(Post(name: "haus", picture: nil, description: "meinHaus", key: "", eventTime: 1000, user:  currentUser!.uid))
-        
     }
 	
 	@IBAction func unwindToVC(segue: UIStoryboardSegue) {
@@ -61,7 +59,7 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController: UITableViewDataSource {
+extension SearchPostsViewController: UITableViewDataSource {
 	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		//return dataListOfOffers.count
@@ -80,11 +78,11 @@ extension ViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! MainTableViewCell
         
         let post = postList[postList.count-indexPath.row-1]
-        if post.picture == nil{
+        if post.image == nil{
             FirebaseHelper.downloadImage(post) { (productImage) in
                 //            print(productImage)
                 //            cell.imageViewProduct.image = productImage
-                post.picture = productImage
+                post.image = productImage
                 tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
             }
         }

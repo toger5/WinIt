@@ -7,83 +7,58 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		250E554C1D2C72B4006C3A22 /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E554B1D2C72B4006C3A22 /* FirebaseHelper.swift */; };
-		250E554E1D2CAD2B006C3A22 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E554D1D2CAD2B006C3A22 /* LoginViewController.swift */; };
-		250E55501D2CB66B006C3A22 /* UserRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E554F1D2CB66B006C3A22 /* UserRegisterViewController.swift */; };
-		250E55521D2D8B5A006C3A22 /* CustomAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E55511D2D8B5A006C3A22 /* CustomAnimation.swift */; };
 		250E55551D2EBCD1006C3A22 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E55541D2EBCD1006C3A22 /* GameViewController.swift */; };
 		250E555A1D2EF8CD006C3A22 /* YourLikesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E55591D2EF8CD006C3A22 /* YourLikesViewController.swift */; };
 		250E555C1D2EFD57006C3A22 /* LikedPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E555B1D2EFD57006C3A22 /* LikedPostCell.swift */; };
-		250E555E1D2F1AB2006C3A22 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250E555D1D2F1AB2006C3A22 /* ImageHelper.swift */; };
-		254863A11D2F27AD00A35590 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254863A01D2F27AD00A35590 /* CreatePostViewController.swift */; };
-		257ACE231D30B8230026E08E /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257ACE221D30B8230026E08E /* Global.swift */; };
 		25DB247D1D29C3E70050B2D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB247C1D29C3E70050B2D8 /* AppDelegate.swift */; };
-		25DB247F1D29C3E70050B2D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB247E1D29C3E70050B2D8 /* ViewController.swift */; };
-		25DB24821D29C3E70050B2D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25DB24801D29C3E70050B2D8 /* Main.storyboard */; };
-		25DB24841D29C3E70050B2D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25DB24831D29C3E70050B2D8 /* Assets.xcassets */; };
-		25DB24871D29C3E70050B2D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25DB24851D29C3E70050B2D8 /* LaunchScreen.storyboard */; };
-		25DB24921D29C3E70050B2D8 /* WinItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB24911D29C3E70050B2D8 /* WinItTests.swift */; };
-		25DB249D1D29C3E70050B2D8 /* WinItUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB249C1D29C3E70050B2D8 /* WinItUITests.swift */; };
-		25DB24AB1D29D3A80050B2D8 /* MainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB24AA1D29D3A80050B2D8 /* MainTableView.swift */; };
+		25DB247F1D29C3E70050B2D8 /* SearchPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB247E1D29C3E70050B2D8 /* SearchPostsViewController.swift */; };
 		25DB24AD1D29D6840050B2D8 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB24AC1D29D6840050B2D8 /* MainTableViewCell.swift */; };
-		25DB24B21D2C33DD0050B2D8 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB24B11D2C33DD0050B2D8 /* Post.swift */; };
 		25DB24B41D2C4FF50050B2D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25DB24B31D2C4FF50050B2D8 /* GoogleService-Info.plist */; };
-		5FAA63333FEA3D4BCD6697C0 /* Pods_WinItUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC9F23DE59BC2A81513BCE18 /* Pods_WinItUITests.framework */; };
-		B5E4F769C9AAE99126E23A4B /* Pods_WinItTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B75B5978AA09B6C111D698 /* Pods_WinItTests.framework */; };
 		CEC604F9F64D01811A48B9AA /* Pods_WinIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B3DC8257723FF200B9347B /* Pods_WinIt.framework */; };
+		E261257B1D30B6AE00BB1274 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26125771D30B6AE00BB1274 /* ForgotPasswordViewController.swift */; };
+		E261257C1D30B6AE00BB1274 /* SignupLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E26125781D30B6AE00BB1274 /* SignupLogin.storyboard */; };
+		E261257D1D30B6AE00BB1274 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26125791D30B6AE00BB1274 /* SignupViewController.swift */; };
+		E261257E1D30B6AE00BB1274 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E261257A1D30B6AE00BB1274 /* WelcomeViewController.swift */; };
+		E26125841D30B8F700BB1274 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E26125801D30B8F700BB1274 /* LaunchScreen.storyboard */; };
+		E26125851D30B8F700BB1274 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E26125821D30B8F700BB1274 /* Main.storyboard */; };
+		E26125871D30B90000BB1274 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E26125861D30B90000BB1274 /* Assets.xcassets */; };
+		E261258B1D30B96E00BB1274 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = E261258A1D30B96E00BB1274 /* Post.swift */; };
+		E261258E1D30B9F800BB1274 /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E261258C1D30B9F800BB1274 /* FirebaseHelper.swift */; };
+		E261258F1D30B9F800BB1274 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E261258D1D30B9F800BB1274 /* ImageHelper.swift */; };
+		E26125911D30BA0A00BB1274 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26125901D30BA0A00BB1274 /* CreatePostViewController.swift */; };
+		E27B674E1D316DB4006F2951 /* CustomAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27B674D1D316DB4006F2951 /* CustomAnimation.swift */; };
+		E27B67511D317962006F2951 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27B67501D317962006F2951 /* Global.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		25DB248E1D29C3E70050B2D8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 25DB24711D29C3E70050B2D8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 25DB24781D29C3E70050B2D8;
-			remoteInfo = WinIt;
-		};
-		25DB24991D29C3E70050B2D8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 25DB24711D29C3E70050B2D8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 25DB24781D29C3E70050B2D8;
-			remoteInfo = WinIt;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2155D184F652733215929F5E /* Pods-WinIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinIt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WinIt/Pods-WinIt.debug.xcconfig"; sourceTree = "<group>"; };
-		250E554B1D2C72B4006C3A22 /* FirebaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseHelper.swift; path = Helper/FirebaseHelper.swift; sourceTree = "<group>"; };
-		250E554D1D2CAD2B006C3A22 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		250E554F1D2CB66B006C3A22 /* UserRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRegisterViewController.swift; sourceTree = "<group>"; };
-		250E55511D2D8B5A006C3A22 /* CustomAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnimation.swift; sourceTree = "<group>"; };
 		250E55541D2EBCD1006C3A22 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		250E55591D2EF8CD006C3A22 /* YourLikesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YourLikesViewController.swift; sourceTree = "<group>"; };
 		250E555B1D2EFD57006C3A22 /* LikedPostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikedPostCell.swift; sourceTree = "<group>"; };
-		250E555D1D2F1AB2006C3A22 /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageHelper.swift; path = Helper/ImageHelper.swift; sourceTree = "<group>"; };
-		254863A01D2F27AD00A35590 /* CreatePostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
-		257ACE221D30B8230026E08E /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		25DB24791D29C3E70050B2D8 /* WinIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WinIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25DB247C1D29C3E70050B2D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		25DB247E1D29C3E70050B2D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		25DB24811D29C3E70050B2D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		25DB24831D29C3E70050B2D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		25DB24861D29C3E70050B2D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		25DB247E1D29C3E70050B2D8 /* SearchPostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPostsViewController.swift; sourceTree = "<group>"; };
 		25DB24881D29C3E70050B2D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		25DB248D1D29C3E70050B2D8 /* WinItTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WinItTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		25DB24911D29C3E70050B2D8 /* WinItTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinItTests.swift; sourceTree = "<group>"; };
-		25DB24931D29C3E70050B2D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		25DB24981D29C3E70050B2D8 /* WinItUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WinItUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		25DB249C1D29C3E70050B2D8 /* WinItUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinItUITests.swift; sourceTree = "<group>"; };
-		25DB249E1D29C3E70050B2D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		25DB24AA1D29D3A80050B2D8 /* MainTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTableView.swift; path = TableViewShopping/MainTableView.swift; sourceTree = "<group>"; };
 		25DB24AC1D29D6840050B2D8 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTableViewCell.swift; path = TableViewShopping/MainTableViewCell.swift; sourceTree = "<group>"; };
-		25DB24B11D2C33DD0050B2D8 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		25DB24B31D2C4FF50050B2D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		46B75B5978AA09B6C111D698 /* Pods_WinItTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WinItTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75F1B09707F1A42668133BBE /* Pods-WinIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinIt.release.xcconfig"; path = "Pods/Target Support Files/Pods-WinIt/Pods-WinIt.release.xcconfig"; sourceTree = "<group>"; };
 		93B3DC8257723FF200B9347B /* Pods_WinIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WinIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC9F23DE59BC2A81513BCE18 /* Pods_WinItUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WinItUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E140941445475B5E27B6E232 /* Pods-WinItTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinItTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WinItTests/Pods-WinItTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E26125771D30B6AE00BB1274 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForgotPasswordViewController.swift; path = Authentication/ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		E26125781D30B6AE00BB1274 /* SignupLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SignupLogin.storyboard; path = Authentication/SignupLogin.storyboard; sourceTree = "<group>"; };
+		E26125791D30B6AE00BB1274 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupViewController.swift; path = Authentication/SignupViewController.swift; sourceTree = "<group>"; };
+		E261257A1D30B6AE00BB1274 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = Authentication/WelcomeViewController.swift; sourceTree = "<group>"; };
+		E26125811D30B8F700BB1274 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Supporting Files/Base.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
+		E26125831D30B8F700BB1274 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Supporting Files/Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
+		E26125861D30B90000BB1274 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Supporting Files/Assets.xcassets"; sourceTree = "<group>"; };
+		E261258A1D30B96E00BB1274 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Post.swift; path = "WinIt/Data Model/Post.swift"; sourceTree = SOURCE_ROOT; };
+		E261258C1D30B9F800BB1274 /* FirebaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseHelper.swift; path = Helpers/FirebaseHelper.swift; sourceTree = "<group>"; };
+		E261258D1D30B9F800BB1274 /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageHelper.swift; path = Helpers/ImageHelper.swift; sourceTree = "<group>"; };
+		E26125901D30BA0A00BB1274 /* CreatePostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreatePostViewController.swift; path = "Create Posts/CreatePostViewController.swift"; sourceTree = "<group>"; };
+		E27B674D1D316DB4006F2951 /* CustomAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomAnimation.swift; path = Extensions/CustomAnimation.swift; sourceTree = "<group>"; };
+		E27B67501D317962006F2951 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Global.swift; path = Constants/Global.swift; sourceTree = "<group>"; };
 		E705CD1AF9A1B83519CEFEF7 /* Pods-WinItUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinItUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WinItUITests/Pods-WinItUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F3EEB14B27CFE7AD24913D65 /* Pods-WinItUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinItUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WinItUITests/Pods-WinItUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FB64FC5BFD76F07DE97CAB74 /* Pods-WinItTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinItTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WinItTests/Pods-WinItTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,33 +73,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		25DB248A1D29C3E70050B2D8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B5E4F769C9AAE99126E23A4B /* Pods_WinItTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		25DB24951D29C3E70050B2D8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5FAA63333FEA3D4BCD6697C0 /* Pods_WinItUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		250E554A1D2C7282006C3A22 /* Helper */ = {
+		250E554A1D2C7282006C3A22 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				250E554B1D2C72B4006C3A22 /* FirebaseHelper.swift */,
-				250E555D1D2F1AB2006C3A22 /* ImageHelper.swift */,
-				250E55511D2D8B5A006C3A22 /* CustomAnimation.swift */,
+				E261258C1D30B9F800BB1274 /* FirebaseHelper.swift */,
+				E261258D1D30B9F800BB1274 /* ImageHelper.swift */,
 			);
-			name = Helper;
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		250E55531D2EBCC0006C3A22 /* Game */ = {
@@ -135,40 +93,30 @@
 			name = Game;
 			sourceTree = "<group>";
 		};
-		250E55561D2EF824006C3A22 /* AllPostView */ = {
+		250E55561D2EF824006C3A22 /* Search Posts */ = {
 			isa = PBXGroup;
 			children = (
-				25DB247E1D29C3E70050B2D8 /* ViewController.swift */,
-				25DB24AA1D29D3A80050B2D8 /* MainTableView.swift */,
+				25DB247E1D29C3E70050B2D8 /* SearchPostsViewController.swift */,
 				25DB24AC1D29D6840050B2D8 /* MainTableViewCell.swift */,
 			);
-			name = AllPostView;
+			name = "Search Posts";
 			sourceTree = "<group>";
 		};
-		250E55571D2EF87A006C3A22 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				250E554D1D2CAD2B006C3A22 /* LoginViewController.swift */,
-				250E554F1D2CB66B006C3A22 /* UserRegisterViewController.swift */,
-			);
-			name = Login;
-			sourceTree = "<group>";
-		};
-		250E55581D2EF890006C3A22 /* LikedPosts */ = {
+		250E55581D2EF890006C3A22 /* Liked Posts */ = {
 			isa = PBXGroup;
 			children = (
 				250E55591D2EF8CD006C3A22 /* YourLikesViewController.swift */,
 				250E555B1D2EFD57006C3A22 /* LikedPostCell.swift */,
 			);
-			name = LikedPosts;
+			name = "Liked Posts";
 			sourceTree = "<group>";
 		};
-		250E55611D2F2447006C3A22 /* NewPost */ = {
+		250E55611D2F2447006C3A22 /* Create Post */ = {
 			isa = PBXGroup;
 			children = (
-				254863A01D2F27AD00A35590 /* CreatePostViewController.swift */,
+				E26125901D30BA0A00BB1274 /* CreatePostViewController.swift */,
 			);
-			name = NewPost;
+			name = "Create Post";
 			sourceTree = "<group>";
 		};
 		25DB24701D29C3E70050B2D8 = {
@@ -176,8 +124,6 @@
 			children = (
 				25DB24B31D2C4FF50050B2D8 /* GoogleService-Info.plist */,
 				25DB247B1D29C3E70050B2D8 /* WinIt */,
-				25DB24901D29C3E70050B2D8 /* WinItTests */,
-				25DB249B1D29C3E70050B2D8 /* WinItUITests */,
 				25DB247A1D29C3E70050B2D8 /* Products */,
 				E65EC864429BB4E0B87A52C5 /* Pods */,
 				7F72FB4635C1994E7BCC27C9 /* Frameworks */,
@@ -188,8 +134,6 @@
 			isa = PBXGroup;
 			children = (
 				25DB24791D29C3E70050B2D8 /* WinIt.app */,
-				25DB248D1D29C3E70050B2D8 /* WinItTests.xctest */,
-				25DB24981D29C3E70050B2D8 /* WinItUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -198,45 +142,26 @@
 			isa = PBXGroup;
 			children = (
 				25DB247C1D29C3E70050B2D8 /* AppDelegate.swift */,
-				250E55611D2F2447006C3A22 /* NewPost */,
-				250E55581D2EF890006C3A22 /* LikedPosts */,
-				250E55571D2EF87A006C3A22 /* Login */,
-				250E55561D2EF824006C3A22 /* AllPostView */,
+				E26125761D30B6A200BB1274 /* Authentication */,
+				250E55611D2F2447006C3A22 /* Create Post */,
+				250E55581D2EF890006C3A22 /* Liked Posts */,
+				250E55561D2EF824006C3A22 /* Search Posts */,
 				250E55531D2EBCC0006C3A22 /* Game */,
-				250E554A1D2C7282006C3A22 /* Helper */,
-				25DB24B01D2C33DD0050B2D8 /* Offers */,
-				25DB24801D29C3E70050B2D8 /* Main.storyboard */,
-				25DB24831D29C3E70050B2D8 /* Assets.xcassets */,
-				25DB24851D29C3E70050B2D8 /* LaunchScreen.storyboard */,
-				25DB24881D29C3E70050B2D8 /* Info.plist */,
-				257ACE221D30B8230026E08E /* Global.swift */,
+				250E554A1D2C7282006C3A22 /* Helpers */,
+				25DB24B01D2C33DD0050B2D8 /* Data Model */,
+				E27B674C1D316D97006F2951 /* Extensions */,
+				E27B674F1D317949006F2951 /* Constants */,
+				E261257F1D30B8D200BB1274 /* Supporting Files */,
 			);
 			path = WinIt;
 			sourceTree = "<group>";
 		};
-		25DB24901D29C3E70050B2D8 /* WinItTests */ = {
+		25DB24B01D2C33DD0050B2D8 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				25DB24911D29C3E70050B2D8 /* WinItTests.swift */,
-				25DB24931D29C3E70050B2D8 /* Info.plist */,
+				E261258A1D30B96E00BB1274 /* Post.swift */,
 			);
-			path = WinItTests;
-			sourceTree = "<group>";
-		};
-		25DB249B1D29C3E70050B2D8 /* WinItUITests */ = {
-			isa = PBXGroup;
-			children = (
-				25DB249C1D29C3E70050B2D8 /* WinItUITests.swift */,
-				25DB249E1D29C3E70050B2D8 /* Info.plist */,
-			);
-			path = WinItUITests;
-			sourceTree = "<group>";
-		};
-		25DB24B01D2C33DD0050B2D8 /* Offers */ = {
-			isa = PBXGroup;
-			children = (
-				25DB24B11D2C33DD0050B2D8 /* Post.swift */,
-			);
+			name = "Data Model";
 			path = Offers;
 			sourceTree = "<group>";
 		};
@@ -248,6 +173,44 @@
 				CC9F23DE59BC2A81513BCE18 /* Pods_WinItUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E26125761D30B6A200BB1274 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				E26125771D30B6AE00BB1274 /* ForgotPasswordViewController.swift */,
+				E26125781D30B6AE00BB1274 /* SignupLogin.storyboard */,
+				E26125791D30B6AE00BB1274 /* SignupViewController.swift */,
+				E261257A1D30B6AE00BB1274 /* WelcomeViewController.swift */,
+			);
+			name = Authentication;
+			sourceTree = "<group>";
+		};
+		E261257F1D30B8D200BB1274 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E26125861D30B90000BB1274 /* Assets.xcassets */,
+				E26125801D30B8F700BB1274 /* LaunchScreen.storyboard */,
+				E26125821D30B8F700BB1274 /* Main.storyboard */,
+				25DB24881D29C3E70050B2D8 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E27B674C1D316D97006F2951 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E27B674D1D316DB4006F2951 /* CustomAnimation.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		E27B674F1D317949006F2951 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				E27B67501D317962006F2951 /* Global.swift */,
+			);
+			name = Constants;
 			sourceTree = "<group>";
 		};
 		E65EC864429BB4E0B87A52C5 /* Pods */ = {
@@ -286,47 +249,6 @@
 			productReference = 25DB24791D29C3E70050B2D8 /* WinIt.app */;
 			productType = "com.apple.product-type.application";
 		};
-		25DB248C1D29C3E70050B2D8 /* WinItTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 25DB24A41D29C3E70050B2D8 /* Build configuration list for PBXNativeTarget "WinItTests" */;
-			buildPhases = (
-				B17457924B60DAC457787B78 /* [CP] Check Pods Manifest.lock */,
-				25DB24891D29C3E70050B2D8 /* Sources */,
-				25DB248A1D29C3E70050B2D8 /* Frameworks */,
-				25DB248B1D29C3E70050B2D8 /* Resources */,
-				048E71DEECF46C04A4DDB9D7 /* [CP] Embed Pods Frameworks */,
-				0EC0CC84867459A04B908D09 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				25DB248F1D29C3E70050B2D8 /* PBXTargetDependency */,
-			);
-			name = WinItTests;
-			productName = WinItTests;
-			productReference = 25DB248D1D29C3E70050B2D8 /* WinItTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		25DB24971D29C3E70050B2D8 /* WinItUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 25DB24A71D29C3E70050B2D8 /* Build configuration list for PBXNativeTarget "WinItUITests" */;
-			buildPhases = (
-				CFEA6EFB949B4BCC29839F74 /* [CP] Check Pods Manifest.lock */,
-				25DB24941D29C3E70050B2D8 /* Sources */,
-				25DB24951D29C3E70050B2D8 /* Frameworks */,
-				25DB24961D29C3E70050B2D8 /* Resources */,
-				DCADF490C5A92D64443824D1 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				25DB249A1D29C3E70050B2D8 /* PBXTargetDependency */,
-			);
-			name = WinItUITests;
-			productName = WinItUITests;
-			productReference = 25DB24981D29C3E70050B2D8 /* WinItUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -339,14 +261,6 @@
 				TargetAttributes = {
 					25DB24781D29C3E70050B2D8 = {
 						CreatedOnToolsVersion = 7.3.1;
-					};
-					25DB248C1D29C3E70050B2D8 = {
-						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = 25DB24781D29C3E70050B2D8;
-					};
-					25DB24971D29C3E70050B2D8 = {
-						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = 25DB24781D29C3E70050B2D8;
 					};
 				};
 			};
@@ -364,8 +278,6 @@
 			projectRoot = "";
 			targets = (
 				25DB24781D29C3E70050B2D8 /* WinIt */,
-				25DB248C1D29C3E70050B2D8 /* WinItTests */,
-				25DB24971D29C3E70050B2D8 /* WinItUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -375,60 +287,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25DB24871D29C3E70050B2D8 /* LaunchScreen.storyboard in Resources */,
+				E26125841D30B8F700BB1274 /* LaunchScreen.storyboard in Resources */,
+				E261257C1D30B6AE00BB1274 /* SignupLogin.storyboard in Resources */,
 				25DB24B41D2C4FF50050B2D8 /* GoogleService-Info.plist in Resources */,
-				25DB24841D29C3E70050B2D8 /* Assets.xcassets in Resources */,
-				25DB24821D29C3E70050B2D8 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		25DB248B1D29C3E70050B2D8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		25DB24961D29C3E70050B2D8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				E26125851D30B8F700BB1274 /* Main.storyboard in Resources */,
+				E26125871D30B90000BB1274 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		048E71DEECF46C04A4DDB9D7 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WinItTests/Pods-WinItTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		0EC0CC84867459A04B908D09 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WinItTests/Pods-WinItTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		427F8BAA585431519E6A761A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -444,21 +313,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WinIt/Pods-WinIt-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B17457924B60DAC457787B78 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 		C14A763D0058C40458E59C63 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -472,36 +326,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		CFEA6EFB949B4BCC29839F74 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		DCADF490C5A92D64443824D1 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WinItUITests/Pods-WinItUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F0D699393CFCE124FC6A43D4 /* [CP] Copy Pods Resources */ = {
@@ -526,70 +350,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E261258E1D30B9F800BB1274 /* FirebaseHelper.swift in Sources */,
 				250E55551D2EBCD1006C3A22 /* GameViewController.swift in Sources */,
 				250E555C1D2EFD57006C3A22 /* LikedPostCell.swift in Sources */,
-				250E554E1D2CAD2B006C3A22 /* LoginViewController.swift in Sources */,
-				25DB24B21D2C33DD0050B2D8 /* Post.swift in Sources */,
-				250E55521D2D8B5A006C3A22 /* CustomAnimation.swift in Sources */,
-				25DB24AB1D29D3A80050B2D8 /* MainTableView.swift in Sources */,
-				25DB247F1D29C3E70050B2D8 /* ViewController.swift in Sources */,
-				250E55501D2CB66B006C3A22 /* UserRegisterViewController.swift in Sources */,
-				257ACE231D30B8230026E08E /* Global.swift in Sources */,
-				254863A11D2F27AD00A35590 /* CreatePostViewController.swift in Sources */,
-				250E555E1D2F1AB2006C3A22 /* ImageHelper.swift in Sources */,
+				25DB247F1D29C3E70050B2D8 /* SearchPostsViewController.swift in Sources */,
+				E261257E1D30B6AE00BB1274 /* WelcomeViewController.swift in Sources */,
+				E261257D1D30B6AE00BB1274 /* SignupViewController.swift in Sources */,
+				E261258B1D30B96E00BB1274 /* Post.swift in Sources */,
+				E27B67511D317962006F2951 /* Global.swift in Sources */,
 				25DB24AD1D29D6840050B2D8 /* MainTableViewCell.swift in Sources */,
-				250E554C1D2C72B4006C3A22 /* FirebaseHelper.swift in Sources */,
+				E26125911D30BA0A00BB1274 /* CreatePostViewController.swift in Sources */,
+				E27B674E1D316DB4006F2951 /* CustomAnimation.swift in Sources */,
+				E261258F1D30B9F800BB1274 /* ImageHelper.swift in Sources */,
+				E261257B1D30B6AE00BB1274 /* ForgotPasswordViewController.swift in Sources */,
 				250E555A1D2EF8CD006C3A22 /* YourLikesViewController.swift in Sources */,
 				25DB247D1D29C3E70050B2D8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		25DB24891D29C3E70050B2D8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				25DB24921D29C3E70050B2D8 /* WinItTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		25DB24941D29C3E70050B2D8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				25DB249D1D29C3E70050B2D8 /* WinItUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		25DB248F1D29C3E70050B2D8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 25DB24781D29C3E70050B2D8 /* WinIt */;
-			targetProxy = 25DB248E1D29C3E70050B2D8 /* PBXContainerItemProxy */;
-		};
-		25DB249A1D29C3E70050B2D8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 25DB24781D29C3E70050B2D8 /* WinIt */;
-			targetProxy = 25DB24991D29C3E70050B2D8 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
-		25DB24801D29C3E70050B2D8 /* Main.storyboard */ = {
+		E26125801D30B8F700BB1274 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				25DB24811D29C3E70050B2D8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		25DB24851D29C3E70050B2D8 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				25DB24861D29C3E70050B2D8 /* Base */,
+				E26125811D30B8F700BB1274 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		E26125821D30B8F700BB1274 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E26125831D30B8F700BB1274 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -702,56 +497,6 @@
 			};
 			name = Release;
 		};
-		25DB24A51D29C3E70050B2D8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E140941445475B5E27B6E232 /* Pods-WinItTests.debug.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = WinItTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = to.WinItTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WinIt.app/WinIt";
-			};
-			name = Debug;
-		};
-		25DB24A61D29C3E70050B2D8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FB64FC5BFD76F07DE97CAB74 /* Pods-WinItTests.release.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = WinItTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = to.WinItTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WinIt.app/WinIt";
-			};
-			name = Release;
-		};
-		25DB24A81D29C3E70050B2D8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E705CD1AF9A1B83519CEFEF7 /* Pods-WinItUITests.debug.xcconfig */;
-			buildSettings = {
-				INFOPLIST_FILE = WinItUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = to.WinItUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = WinIt;
-			};
-			name = Debug;
-		};
-		25DB24A91D29C3E70050B2D8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F3EEB14B27CFE7AD24913D65 /* Pods-WinItUITests.release.xcconfig */;
-			buildSettings = {
-				INFOPLIST_FILE = WinItUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = to.WinItUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = WinIt;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -769,24 +514,6 @@
 			buildConfigurations = (
 				25DB24A21D29C3E70050B2D8 /* Debug */,
 				25DB24A31D29C3E70050B2D8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		25DB24A41D29C3E70050B2D8 /* Build configuration list for PBXNativeTarget "WinItTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				25DB24A51D29C3E70050B2D8 /* Debug */,
-				25DB24A61D29C3E70050B2D8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		25DB24A71D29C3E70050B2D8 /* Build configuration list for PBXNativeTarget "WinItUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				25DB24A81D29C3E70050B2D8 /* Debug */,
-				25DB24A91D29C3E70050B2D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
