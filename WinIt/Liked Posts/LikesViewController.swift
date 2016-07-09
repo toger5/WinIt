@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class YourLikesViewController: UIViewController {
+class LikesViewController: UIViewController {
     // MARK: - Properties
     var likedPosts: [Post] = []
     var selectedPost:Post? = nil
@@ -68,7 +68,7 @@ class YourLikesViewController: UIViewController {
 }
 
 // MARK: - Table View Data Source
-extension YourLikesViewController: UITableViewDataSource {
+extension LikesViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return likedPosts.count
@@ -94,7 +94,7 @@ extension YourLikesViewController: UITableViewDataSource {
 }
 
 // MARK: - Table View Delegate
-extension YourLikesViewController: UITableViewDelegate {
+extension LikesViewController: UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
