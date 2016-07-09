@@ -85,8 +85,7 @@ class GameViewController: UIViewController{
         pathToGame!.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
             if snapshot.hasChild(FirebaseHelper.userID){
                 self.points = (snapshot.childSnapshotForPath(FirebaseHelper.userID).value! as! Int) ?? 0
-                self.livePointUpdate = self.points
-            }
+                self.livePointUpdate.text = String(self.points)            }
         })
     }
 }
