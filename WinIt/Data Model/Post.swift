@@ -87,7 +87,7 @@ class Post{
         }
     }
 
-    func getHoursMinutesSecondsArray() -> [Int]{
+    func getTimeLeftHoursMinutesSecondsArray() -> [Int]{
         let timeLeft = getTimeLeftInSeconds()
         let array = [Int(timeLeft / 60 / 60),Int((timeLeft%(60 * 60)) / 60),Int(timeLeft%60)]
         return array

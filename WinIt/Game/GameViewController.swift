@@ -26,9 +26,10 @@ class GameViewController: UIViewController{
     @IBOutlet weak var p4: UILabel!
     @IBOutlet weak var p5: UILabel!
     
+    
     var post: Post? = nil
     var points = 0
-    
+    var clock: CountDownLabelHelper? = nil
     var pathToGame: FIRDatabaseReference? = nil
     var labelArray = []
     var nameArray = []
@@ -36,6 +37,9 @@ class GameViewController: UIViewController{
     override func viewDidLoad() {
         pathToGame = FirebaseHelper.rootRef.child("gameByPost/\(post!.key)")
         super.viewDidLoad()
+        clock = CountDownLabelHelper(timeInSeconds: (post?.getTimeLeftInSeconds())!, countDownCallback: { () in
+            self.timerLabel.text = self.clock!.getTimeString()
+        })
         setPointsIfAlredyPlayed()
         labelArray = [p1,p2,p3,p4,p5]
         nameArray = [name1,name2,name3,name4,name5]

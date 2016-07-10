@@ -23,9 +23,8 @@ class LikedPostCell: UITableViewCell{
     
     // MARK: - Properties
     var eventIsOnline = false
-    var timeLeft: [Int] = []
-    
-    var clock: NSTimer? = nil
+
+    var clock: CountDownLabelHelper? = nil
     var post: Post? = nil
     // MARK: - IBOutlets
     @IBOutlet weak var posterName: UILabel!
@@ -39,49 +38,29 @@ class LikedPostCell: UITableViewCell{
         postName.text = post.name
         postImage.image = post.image
         posterName.text = post.user
-        timeLeft = post.getHoursMinutesSecondsArray()
         
         handleCellStyleAndDescription()
         
         if post.getState().rawValue <= 1 /*  this means it is Waitng or Running */ {
-
-            clock = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(LikedPostCell.countdown), userInfo: nil, repeats: true)
+            clock = CountDownLabelHelper(timeInSeconds: post.getTimeLeftInSeconds(), countDownCallback: { () in
+                self.handleCellStyleAndDescription()
+            })
         }
-    }
-    
-    func countdown(timer: NSTimer){
-        
-        if timeLeft[2] <= 0{
-            if timeLeft[1] <= 0{
-                if timeLeft[0] <= 0{
-                    clock?.invalidate()
-                    clock = nil
-                    setTimerLabelToEventStart()
-                    return
-                }else{
-                    timeLeft[0] -= 1
-                    timeLeft[1] = 60
-                    timeLeft[2] = 60
-                }
-            }else{
-                timeLeft[1] -= 1
-                timeLeft[2] = 60
-            }
-        }else{
-            timeLeft[2] -= 1
-        }
-        handleCellStyleAndDescription()
     }
     
     func handleCellStyleAndDescription(){
         if let post = post{
             switch post.getState(){
+                
             case EventStatus.Waiting:
                 handelCellDuringWait()
+                
             case EventStatus.Running:
                 handleCellDuringGame()
+                
             case EventStatus.Complete:
                 handleCellDuringComplete()
+                
             case EventStatus.Archived:
                 break
             }
@@ -91,26 +70,17 @@ class LikedPostCell: UITableViewCell{
     }
 
     func handelCellDuringWait(){
-        countDownTimer.text = getStringBasedOnArray(timeLeft)
+        countDownTimer.text = clock?.getTimeString()
     }
     func handleCellDuringComplete(){
-        countDownTimer.text = "Completed /n Winner: Jake"
+        countDownTimer.text = "Completed \n Winner: Jake"
     }
     func handleCellDuringGame(){
-        countDownTimer.text = "Event Is Running\n \(getStringBasedOnArray(timeLeft))"
+        countDownTimer.text = "Event Is Running\n \(clock?.getTimeString())"
     }
 
-    func getStringBasedOnArray(time: [Int]) -> String{
-        return "\(abs(timeLeft[0])):\(abs(timeLeft[1])):\(abs(timeLeft[2]))"
-    }
-    
-    func setTimerLabelToEventStart(){
-        eventIsOnline = true
-        countDownTimer.text = "Started!"
-    }
-    
     override func prepareForReuse() {
-        clock?.invalidate()
+        clock?.stop()
     }
     
     
