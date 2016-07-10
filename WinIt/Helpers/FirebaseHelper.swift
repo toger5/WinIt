@@ -55,11 +55,13 @@ class FirebaseHelper {
         post.key = newPostRef.key
         newPostRef.setValue(post.toDict())
         
-        FirebaseHelper.uploadImage(UIImageJPEGRepresentation(post.image!,0.3)!, postID: post.key, uploadDone: FirebaseHelper.printSth)
+        FirebaseHelper.uploadImage(post.image!, postID: post.key, uploadDone: FirebaseHelper.printSth)
     }
+    
     static func printSth(t: FIRStorageTaskSnapshot){
         print("UPLOADED")
     }
+    
     static func addLike(post: Post) {
         
         let userKey = (FIRAuth.auth()?.currentUser?.uid)!
@@ -223,11 +225,14 @@ class FirebaseHelper {
     }
     
 
-    static func uploadImage(image: NSData, postID: String, uploadDone: (FIRStorageTaskSnapshot) -> Void){
+    static func uploadImage(image: UIImage, postID: String, uploadDone: (FIRStorageTaskSnapshot) -> Void){
 
         let storageRef = FirebaseHelper.storageRef
         let path = "PostImages/\(postID).jpg"
-        let uploadTask = storageRef.child(path).putData(image, metadata: nil) { metadata, error in
+        let resizedImage = ImageHelper.resize(image, newWidth: 750)
+        let smallerImage = UIImageJPEGRepresentation(resizedImage,0.3)!
+        
+        let uploadTask = storageRef.child(path).putData(smallerImage, metadata: nil) { metadata, error in
             if (error != nil) {
                 // Uh-oh, an error occurred!
                 print("error during upload \(error)")

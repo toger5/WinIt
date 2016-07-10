@@ -371,33 +371,44 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PostUsername" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUG-bG-chz">
-                                                    <rect key="frame" x="479" y="60.5" width="113" height="21"/>
+                                                    <rect key="frame" x="479" y="60" width="113" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oba-3K-vrX">
-                                                    <rect key="frame" x="321" y="39" width="38" height="21"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="time" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmF-Bk-mGO">
+                                                    <rect key="frame" x="310" y="20" width="100" height="60"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="bW2-xd-Bza"/>
+                                                        <constraint firstAttribute="width" constant="100" id="gmU-W4-AdO"/>
+                                                        <constraint firstAttribute="width" constant="100" id="kUw-aS-i3e"/>
+                                                        <constraint firstAttribute="height" constant="60" id="xUi-qm-s3b"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="bW2-xd-Bza"/>
+                                                            <exclude reference="kUw-aS-i3e"/>
+                                                        </mask>
+                                                    </variation>
+                                                </textView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="hmF-Bk-mGO" firstAttribute="centerY" secondItem="SGh-rj-pEv" secondAttribute="centerY" id="4bn-jF-s63"/>
                                                 <constraint firstItem="bUG-bG-chz" firstAttribute="trailing" secondItem="SGh-rj-pEv" secondAttribute="trailingMargin" id="4x8-qw-cOP"/>
                                                 <constraint firstItem="33w-jO-fHl" firstAttribute="leading" secondItem="SGh-rj-pEv" secondAttribute="leading" constant="8" id="5na-37-t83"/>
                                                 <constraint firstItem="33w-jO-fHl" firstAttribute="top" secondItem="SGh-rj-pEv" secondAttribute="top" id="EG8-8K-S3V"/>
                                                 <constraint firstItem="33w-jO-fHl" firstAttribute="top" secondItem="SGh-rj-pEv" secondAttribute="topMargin" id="IOv-GF-uBh"/>
                                                 <constraint firstItem="bUG-bG-chz" firstAttribute="leading" secondItem="33w-jO-fHl" secondAttribute="trailing" constant="30" id="KkU-zW-NLl"/>
-                                                <constraint firstItem="Oba-3K-vrX" firstAttribute="centerY" secondItem="SGh-rj-pEv" secondAttribute="centerY" id="LoC-cm-Hu6"/>
                                                 <constraint firstItem="COV-dS-xvc" firstAttribute="leading" secondItem="33w-jO-fHl" secondAttribute="trailing" id="Of2-Ix-GhJ"/>
                                                 <constraint firstItem="COV-dS-xvc" firstAttribute="leading" secondItem="33w-jO-fHl" secondAttribute="trailing" constant="30" id="PKZ-zu-yMd"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="COV-dS-xvc" secondAttribute="trailing" id="SW1-7J-abC"/>
                                                 <constraint firstItem="COV-dS-xvc" firstAttribute="top" secondItem="SGh-rj-pEv" secondAttribute="topMargin" constant="10" id="VNU-Xr-hT5"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="bUG-bG-chz" secondAttribute="bottom" constant="10" id="X3u-Qr-Dnz"/>
-                                                <constraint firstItem="Oba-3K-vrX" firstAttribute="centerX" secondItem="SGh-rj-pEv" secondAttribute="centerX" constant="40" id="ZzA-fv-Gle"/>
                                                 <constraint firstItem="33w-jO-fHl" firstAttribute="leading" secondItem="SGh-rj-pEv" secondAttribute="leading" id="bbM-lo-vGc"/>
-                                                <constraint firstItem="Oba-3K-vrX" firstAttribute="leading" secondItem="33w-jO-fHl" secondAttribute="trailing" constant="100" id="oSV-7m-UEK"/>
+                                                <constraint firstItem="hmF-Bk-mGO" firstAttribute="centerX" secondItem="SGh-rj-pEv" secondAttribute="centerX" constant="60" id="pLb-aH-ckE"/>
                                                 <constraint firstAttribute="bottom" secondItem="33w-jO-fHl" secondAttribute="bottom" id="tHR-3U-MXY"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="33w-jO-fHl" secondAttribute="bottom" id="tdq-dC-9IH"/>
                                             </constraints>
@@ -406,7 +417,6 @@
                                                     <exclude reference="5na-37-t83"/>
                                                     <exclude reference="IOv-GF-uBh"/>
                                                     <exclude reference="tdq-dC-9IH"/>
-                                                    <exclude reference="oSV-7m-UEK"/>
                                                     <exclude reference="KkU-zW-NLl"/>
                                                     <exclude reference="Of2-Ix-GhJ"/>
                                                     <exclude reference="PKZ-zu-yMd"/>
@@ -414,7 +424,7 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="countDownTimer" destination="Oba-3K-vrX" id="DKN-Sl-Pjn"/>
+                                            <outlet property="countDownTimer" destination="hmF-Bk-mGO" id="YJo-kV-ekt"/>
                                             <outlet property="postImage" destination="33w-jO-fHl" id="nlL-1Y-yfR"/>
                                             <outlet property="postName" destination="COV-dS-xvc" id="NxP-KT-HD0"/>
                                             <outlet property="posterName" destination="bUG-bG-chz" id="Npl-hn-Jyp"/>

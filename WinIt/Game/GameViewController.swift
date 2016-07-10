@@ -85,7 +85,10 @@ class GameViewController: UIViewController{
             }
         }
     }
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        clock?.stop()
+        print("backSegue")
+    }
     func setPointsIfAlredyPlayed(){
         pathToGame!.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
             if snapshot.hasChild(FirebaseHelper.userID){

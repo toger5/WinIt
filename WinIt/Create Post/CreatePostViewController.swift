@@ -47,7 +47,7 @@ class CreatePostViewController: UIViewController {
 		let time = Double(seconds + (mins + (hours + days*24)*60)*60)
         let user = FIRAuth.auth()!.currentUser!.uid
         
-        FirebaseHelper.addPost(Post(name: name, image: postImage, description: description, eventTime: time, user: user))
+        FirebaseHelper.addPost(Post(name: name, image: postImage, description: description, eventWaitTime: time, user: user))
     }
     
 }
