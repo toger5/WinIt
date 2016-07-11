@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainTableViewCell: UITableViewCell{
+class SearchPostsTableViewCell: UITableViewCell{
 	
     // MARK: - Properties
 	var post: Post?

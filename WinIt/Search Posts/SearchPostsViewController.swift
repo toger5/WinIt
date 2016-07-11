@@ -31,8 +31,8 @@ class SearchPostsViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        FirebaseHelper.fillpostList(0,rangeMax: 20,callback: { (offerArray) in
-            print("offer array: \(offerArray)")
+        FirebaseHelper.fillpostList(0, rangeMax: 20, callback: { (offerArray) in
+            
             var newPostArray: [Post] = []
             for o in offerArray{
                 var exist = false
@@ -42,7 +42,7 @@ class SearchPostsViewController: UIViewController {
                         newPostArray.append(p)
                     }
                 }
-                if !exist{
+                if !exist {
                     newPostArray.append(o)
                 }
             }
@@ -62,8 +62,6 @@ class SearchPostsViewController: UIViewController {
 extension SearchPostsViewController: UITableViewDataSource {
 	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		//return dataListOfOffers.count
-        print(postList.count)
         return postList.count
     }
 	
@@ -75,7 +73,7 @@ extension SearchPostsViewController: UITableViewDataSource {
         }
 		
         //maybe It works as lazy load
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! MainTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifiers.SearchPostsTableViewCell) as! SearchPostsTableViewCell
         
         let post = postList[postList.count-indexPath.row-1]
         if post.image == nil{

@@ -11,35 +11,31 @@ import FirebaseAuth
 import UIKit
 
 class FirebaseHelper {
+    
+    // MARK: - Properties
     static let storageRef = FIRStorage.storage().referenceForURL("gs://winit-2941c.appspot.com")
-    
     static let rootRef = FIRDatabase.database().reference()
-    
     static var userID = (FIRAuth.auth()?.currentUser?.uid)!
     
+    // MARK: - Helper Methods
     static func fillpostList(rangeMin: Int, rangeMax: Int, callback: ([Post]) -> Void){
-		
-		let postDownloadCallback = { (snapshot: FIRDataSnapshot) -> Void in
-			// Get the post list of all posts
-			var posts: [Post] = []
-			for postDict in snapshot.children{
-				let post = Post(snapshot: postDict as! FIRDataSnapshot)
-				FirebaseHelper.setIfLiked(post)
-				//post.liked=true
-				posts.append(post)
-			}
-			//refreshing the tableView
-			callback(posts)
-		}
-		
-		//func postDownloadCallback
-		
+        
+        let postDownloadCallback = { (snapshot: FIRDataSnapshot) -> Void in
+            // Get the post list of all posts
+            var posts: [Post] = []
+            for postDict in snapshot.children{
+                let post = Post(snapshot: postDict as! FIRDataSnapshot)
+                FirebaseHelper.setIfLiked(post)
+                //post.liked=true
+                posts.append(post)
+            }
+            //refreshing the tableView
+            callback(posts)
+        }
+        
         let postQuery = rootRef.child("posts")
-
         postQuery.queryLimitedToLast(UInt(rangeMax))
-        
         postQuery.queryOrderedByChild("time")
-        
         postQuery.observeSingleEventOfType(.Value, withBlock: postDownloadCallback) { (error) in
             print(error.localizedDescription)
         }
@@ -77,81 +73,67 @@ class FirebaseHelper {
         rootRef.child("likesByPost/\(postKey)/\(userKey)").removeValue()
         rootRef.child("likesByUser/\(userKey)/\(postKey)").removeValue()
     }
-	
-	static func getLikedPosts(whenDone: ([Post]) -> Void) {
-		
-		let userKey = (FIRAuth.auth()?.currentUser?.uid)!
-		
-		var likesLeft = 0
-		var posts: [Post] = []
-		
-		func postKeyDownloadCallback(snapshot: FIRDataSnapshot) {
-			
-			func postDownloadedCallback(snapshot: FIRDataSnapshot) {
-				let post = Post(snapshot: snapshot)
-				posts.append(post)
-				
-				likesLeft -= 1
-				
-				if likesLeft <= 0 {
-					
-					print("liked posts: \(posts)")
-					whenDone(posts)
-				}
-			}
-			
-			likesLeft=Int(snapshot.childrenCount)
-			
-			if likesLeft == 0 {
-				
-				whenDone(posts)
-			
-			} else {
-			
-				for postKeyDict in snapshot.children{
-					let postKey = (postKeyDict as! FIRDataSnapshot).key
-					
-					let postQuery = rootRef.child("posts/\(postKey)")
-					
-					postQuery.observeSingleEventOfType(.Value, withBlock: postDownloadedCallback) { (error) in
-						print(error.localizedDescription)
-					}
-				}
-			}
-		}
-		
-		//func
-		
-		let postKeyQuery = rootRef.child("likesByUser/\(userKey)")
-		
-		postKeyQuery.observeSingleEventOfType(.Value, withBlock: postKeyDownloadCallback) { (error) in
-			print(error.localizedDescription)
-		}
-	}
-	
-	static func setIfLiked(post: Post) {
-		
-		let userKey = (FIRAuth.auth()?.currentUser?.uid)!
-		let postKey = post.key
-		
-		func postKeyDownloadCallback(snapshot: FIRDataSnapshot) {
-			
-			if snapshot.exists() {
-				
-				post.liked = true
-				print("post like downloaded")
-			}
-		}
-		
-		//func
-		
-		let postKeyQuery = rootRef.child("likesByUser/\(userKey)/\(postKey)")
-		
-		postKeyQuery.observeSingleEventOfType(.Value, withBlock: postKeyDownloadCallback) { (error) in
-			print(error.localizedDescription)
-		}
-	}
-	
+    
+    static func getLikedPosts(completion: ([Post]) -> Void) {
+        
+        let userKey = (FIRAuth.auth()?.currentUser?.uid)!
+        var likesLeftInQuery = 0
+        var posts: [Post] = []
+        
+        let postKeyQuery = rootRef.child("likesByUser/\(userKey)")
+        
+        postKeyQuery.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+            
+            likesLeftInQuery = Int(snapshot.childrenCount)
+            
+            if likesLeftInQuery == 0 {
+                
+                completion(posts)
+                
+            } else {
+                
+                for postKeyDict in snapshot.children{
+                    let postKey = (postKeyDict as! FIRDataSnapshot).key
+                    
+                    let postQuery = rootRef.child("posts/\(postKey)")
+                    postQuery.observeSingleEventOfType(.Value, withBlock: { (<#FIRDataSnapshot#>) in
+                        let post = Post(snapshot: snapshot)
+                        posts.append(post)
+                        
+                        likesLeftInQuery -= 1
+                        
+                        if likesLeftInQuery <= 0 {
+                            completion(posts)
+                        }
+                    })
+                }
+            }
+        })
+    }
+    
+    static func setIfLiked(post: Post) {
+        
+        let userKey = (FIRAuth.auth()?.currentUser?.uid)!
+        let postKey = post.key
+        
+        func postKeyDownloadCallback(snapshot: FIRDataSnapshot) {
+            
+            if snapshot.exists() {
+                
+                post.liked = true
+                print("post like downloaded")
+            }
+        }
+        
+        //func
+        
+        let postKeyQuery = rootRef.child("likesByUser/\(userKey)/\(postKey)")
+        
+        postKeyQuery.observeSingleEventOfType(.Value, withBlock: postKeyDownloadCallback) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
     static func createAccount(username: String, coins: Int){
         if let user = FIRAuth.auth()?.currentUser{
             let userDict = ["coins":coins,
@@ -161,47 +143,51 @@ class FirebaseHelper {
         
     }
     
-
-//    static func getWinnerNameOfPost(post: Post){
-//        let postQueryToWinningUserID = FirebaseHelper.rootRef.child("gameByPost/\(post.key)").queryOrderedByValue().queryLimitedToFirst(1)
-//        postQueryToWinningUserID.observeSingleEventOfType(.Value) { (snapshot) in
-//            let snap = snapshot[0] as! FIRDataSnapshot
-//            FirebaseHelper.rootRef.child("users/\(snap)")
-//            
-//        }
-//        
-//        let toUser = FirebaseHelper.rootRef.child("users/\(s.key)")
-//        toUser.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
-//            print(index)
-//            //                    let n = (FIRAuth.id ?? "could not find user name")!
-//            let n = (snapshot.value!["username"] ?? "could not find user name")!
-//            (self.nameArray[index] as! UILabel).text = "\(index + 1). \(n)"
-//        })
-//    }
     
-
+    static func getWinnerOfPost(post: Post, callback: (username:String, userKey: String) ->Void){
+        
+        let postQueryToWinningUserID = FirebaseHelper.rootRef.child("gameByPost/\(post.key)").queryOrderedByValue().queryLimitedToFirst(1)
+        
+        
+        
+        func winningUserCallback(snapshot: FIRDataSnapshot) {
+            let snap = snapshot.children.allObjects[0] as! FIRDataSnapshot
+            //            FirebaseHelper.rootRef.child("users/\(snap.key)")
+            
+            
+            let toUser = FirebaseHelper.rootRef.child("users/\(snap.key)")
+            toUser.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+                
+                let username = (snapshot.value!["username"] ?? "could not find user name")!
+                callback(username: username as! String, userKey: snapshot.key)
+            })
+        }
+        postQueryToWinningUserID.observeSingleEventOfType(.Value, withBlock: winningUserCallback)
+    }
+    
+    
     static func removePost(post: Post){
-		
-		let postKey = post.key
-		
-		func postDownloadCallback(snapshot: FIRDataSnapshot) {
-			
-			for userData in snapshot.children{
-				
-				let userKey: String = userData.key
-				
-				rootRef.child("likesByUser/\(userKey)/\(postKey)").removeValue()
-				rootRef.child("likesByPost/\(postKey)/\(userKey)").removeValue()
-			}
-		}
-		
-		let postKeyQuery = rootRef.child("likesByPost/\(postKey)")
-		
-		postKeyQuery.observeSingleEventOfType(.Value, withBlock: postDownloadCallback) { (error) in
-			print(error.localizedDescription)
-		}
-		
-		rootRef.child("posts/\(postKey)").removeValue()
+        
+        let postKey = post.key
+        
+        func postDownloadCallback(snapshot: FIRDataSnapshot) {
+            
+            for userData in snapshot.children{
+                
+                let userKey: String = userData.key
+                
+                rootRef.child("likesByUser/\(userKey)/\(postKey)").removeValue()
+                rootRef.child("likesByPost/\(postKey)/\(userKey)").removeValue()
+            }
+        }
+        
+        let postKeyQuery = rootRef.child("likesByPost/\(postKey)")
+        
+        postKeyQuery.observeSingleEventOfType(.Value, withBlock: postDownloadCallback) { (error) in
+            print(error.localizedDescription)
+        }
+        
+        rootRef.child("posts/\(postKey)").removeValue()
     }
     
     //Storage Stuff
@@ -222,9 +208,9 @@ class FirebaseHelper {
         }
     }
     
-
+    
     static func uploadImage(image: NSData, postID: String, uploadDone: (FIRStorageTaskSnapshot) -> Void){
-
+        
         let storageRef = FirebaseHelper.storageRef
         let path = "PostImages/\(postID).jpg"
         let uploadTask = storageRef.child(path).putData(image, metadata: nil) { metadata, error in
@@ -233,12 +219,12 @@ class FirebaseHelper {
                 print("error during upload \(error)")
             } else {
                 // Metadata contains file metadata such as size, content-type, and download URL.
-//                let downloadURL = metadata!.downloadURL
+                //                let downloadURL = metadata!.downloadURL
             }
         }
         uploadTask.observeStatus(.Resume,handler: uploadDone)
-
-//        //the returnvalue should be saved inside of a upoad Task Variable
-//        //there shoulb also be a handler which makes sure that files are uploaded before other people could try download
+        
+        //        //the returnvalue should be saved inside of a upoad Task Variable
+        //        //there shoulb also be a handler which makes sure that files are uploaded before other people could try download
     }
 }
