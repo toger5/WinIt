@@ -31,6 +31,10 @@
 		E2976AF61D31A5C900FCF694 /* SearchPostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2976AF41D31A5C900FCF694 /* SearchPostsTableViewCell.swift */; };
 		E2976AF71D31A5C900FCF694 /* SearchPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2976AF51D31A5C900FCF694 /* SearchPostsViewController.swift */; };
 		E2976B191D3409DD00FCF694 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2976B181D3409DD00FCF694 /* Constants.swift */; };
+		E2976B1C1D340D9B00FCF694 /* GameViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2976B1A1D340D9B00FCF694 /* GameViewController.storyboard */; };
+		E2976B1F1D340DCB00FCF694 /* CreatePostViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2976B1D1D340DCB00FCF694 /* CreatePostViewController.storyboard */; };
+		E2976B221D340DFE00FCF694 /* SearchPostsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2976B201D340DFE00FCF694 /* SearchPostsViewController.storyboard */; };
+		E2976B251D34102C00FCF694 /* ArchivedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2976B231D34102C00FCF694 /* ArchivedViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +69,10 @@
 		E2976AF41D31A5C900FCF694 /* SearchPostsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchPostsTableViewCell.swift; path = "Search Posts/SearchPostsTableViewCell.swift"; sourceTree = "<group>"; };
 		E2976AF51D31A5C900FCF694 /* SearchPostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchPostsViewController.swift; path = "Search Posts/SearchPostsViewController.swift"; sourceTree = "<group>"; };
 		E2976B181D3409DD00FCF694 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Constants/Constants.swift; sourceTree = "<group>"; };
+		E2976B1B1D340D9B00FCF694 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Supporting Files/Base.lproj/GameViewController.storyboard"; sourceTree = "<group>"; };
+		E2976B1E1D340DCB00FCF694 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Supporting Files/Base.lproj/CreatePostViewController.storyboard"; sourceTree = "<group>"; };
+		E2976B211D340DFE00FCF694 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Supporting Files/Base.lproj/SearchPostsViewController.storyboard"; sourceTree = "<group>"; };
+		E2976B241D34102C00FCF694 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Supporting Files/Base.lproj/ArchivedViewController.storyboard"; sourceTree = "<group>"; };
 		E705CD1AF9A1B83519CEFEF7 /* Pods-WinItUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinItUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WinItUITests/Pods-WinItUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F3EEB14B27CFE7AD24913D65 /* Pods-WinItUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinItUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WinItUITests/Pods-WinItUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FB64FC5BFD76F07DE97CAB74 /* Pods-WinItTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinItTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WinItTests/Pods-WinItTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -200,6 +208,10 @@
 				E26125861D30B90000BB1274 /* Assets.xcassets */,
 				E26125801D30B8F700BB1274 /* LaunchScreen.storyboard */,
 				E26125821D30B8F700BB1274 /* Main.storyboard */,
+				E2976B231D34102C00FCF694 /* ArchivedViewController.storyboard */,
+				E2976B201D340DFE00FCF694 /* SearchPostsViewController.storyboard */,
+				E2976B1D1D340DCB00FCF694 /* CreatePostViewController.storyboard */,
+				E2976B1A1D340D9B00FCF694 /* GameViewController.storyboard */,
 				25DB24881D29C3E70050B2D8 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -297,9 +309,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E26125841D30B8F700BB1274 /* LaunchScreen.storyboard in Resources */,
+				E2976B221D340DFE00FCF694 /* SearchPostsViewController.storyboard in Resources */,
 				E261257C1D30B6AE00BB1274 /* SignupLogin.storyboard in Resources */,
 				25DB24B41D2C4FF50050B2D8 /* GoogleService-Info.plist in Resources */,
+				E2976B1C1D340D9B00FCF694 /* GameViewController.storyboard in Resources */,
 				E26125851D30B8F700BB1274 /* Main.storyboard in Resources */,
+				E2976B1F1D340DCB00FCF694 /* CreatePostViewController.storyboard in Resources */,
+				E2976B251D34102C00FCF694 /* ArchivedViewController.storyboard in Resources */,
 				E26125871D30B90000BB1274 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,6 +413,38 @@
 				E26125831D30B8F700BB1274 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E2976B1A1D340D9B00FCF694 /* GameViewController.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E2976B1B1D340D9B00FCF694 /* Base */,
+			);
+			name = GameViewController.storyboard;
+			sourceTree = "<group>";
+		};
+		E2976B1D1D340DCB00FCF694 /* CreatePostViewController.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E2976B1E1D340DCB00FCF694 /* Base */,
+			);
+			name = CreatePostViewController.storyboard;
+			sourceTree = "<group>";
+		};
+		E2976B201D340DFE00FCF694 /* SearchPostsViewController.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E2976B211D340DFE00FCF694 /* Base */,
+			);
+			name = SearchPostsViewController.storyboard;
+			sourceTree = "<group>";
+		};
+		E2976B231D34102C00FCF694 /* ArchivedViewController.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E2976B241D34102C00FCF694 /* Base */,
+			);
+			name = ArchivedViewController.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
