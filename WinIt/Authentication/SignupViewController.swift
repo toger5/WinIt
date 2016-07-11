@@ -49,7 +49,7 @@ class SignupViewController : UIViewController {
         let email = emailTextField.text ?? ""
         let password = passwordTextField.text ?? ""
         
-        guard username.characters.count > 0 && password.characters.count > 5 && email.containsString("@") else {return}
+        guard username.characters.count > 0 && password.characters.count > 5 && email.containsString("@") else { return }
         
         FIRAuth.auth()?.createUserWithEmail(email, password: password) { (user, error) in
             
