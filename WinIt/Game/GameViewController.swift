@@ -76,6 +76,7 @@ class GameViewController: UIViewController{
     func eventStop(){
         clock?.stop()
         clickButton.enabled = false
+        
     }
     
     func startOtherPlayersObserver(){
