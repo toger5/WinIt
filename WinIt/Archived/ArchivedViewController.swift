@@ -9,10 +9,15 @@
 import UIKit
 
 class ArchivedViewController: UIViewController{
+//    let post: ArchivedPost
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
     }
+    
+    
 }

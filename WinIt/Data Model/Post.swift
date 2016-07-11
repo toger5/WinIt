@@ -55,14 +55,12 @@ class Post{
     }
     
     init(snapshot: FIRDataSnapshot){
-        print("acces")
         self.uploadTime = snapshot.value!["uploadTime"] as! Double
         self.eventTime = snapshot.value!["eventTime"] as! Double
         self.key = snapshot.key
-        print("user key: \(key)")
         self.user = ""
         self.name = snapshot.value!["name"] as! String
-        self.description = ""
+        self.description = snapshot.value!["description"] as! String
         self.image = nil
         self.liked = false
     }
