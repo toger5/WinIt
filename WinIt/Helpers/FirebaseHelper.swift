@@ -98,7 +98,7 @@ class FirebaseHelper {
                     let postKey = (postKeyDict as! FIRDataSnapshot).key
                     
                     let postQuery = rootRef.child("posts/\(postKey)")
-                    postQuery.observeSingleEventOfType(.Value, withBlock: { (<#FIRDataSnapshot#>) in
+                    postQuery.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
                         let post = Post(snapshot: snapshot)
                         posts.append(post)
                         
