@@ -30,7 +30,7 @@ class SearchPostsViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        FirebaseHelper.fillpostList(0, rangeMax: 20, callback: { (offerArray) in
+        FirebaseHelper.downloadPosts(0, rangeMax: 20, callback: { (offerArray) in
             
             var newPostArray: [Post] = []
             for o in offerArray{
@@ -50,6 +50,7 @@ class SearchPostsViewController: UIViewController {
         })
     }
 	
+    // MARK: - Segues
     @IBAction func cancelCreatePost(segue: UIStoryboardSegue) {
         
     }
@@ -60,6 +61,7 @@ class SearchPostsViewController: UIViewController {
     
 }
 
+// MARK: - Table View Data Source
 extension SearchPostsViewController: UITableViewDataSource {
 	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

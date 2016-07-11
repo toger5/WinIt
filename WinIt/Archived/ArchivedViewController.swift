@@ -12,6 +12,7 @@ class ArchivedViewController: UIViewController{
     let post: ArchivedPost
     
     @IBOutlet weak var productImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
