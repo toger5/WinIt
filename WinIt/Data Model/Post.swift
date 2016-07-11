@@ -19,7 +19,7 @@ class Post {
     var name: String
     var eventTime: Double
     let uploadTime: Double
-    let eventLength = 60 //in seconds
+    var eventLength = 60 //in seconds
     var image: UIImage?
     var description: String
     var liked: Bool {
@@ -43,6 +43,18 @@ class Post {
         liked = false
     }
     
+    init(post: Post){
+        self.key = post.key
+        self.user = post.user
+        self.name = post.name
+        self.eventTime = post.eventTime
+        self.uploadTime = post.uploadTime
+        self.eventLength = post.eventLength
+        self.image = post.image
+        self.description = post.description
+        self.liked = post.liked
+    }
+        
     init(name: String, image:UIImage?, description: String, eventWaitTime: Double, user: String){
         print("new")
         self.uploadTime = Global.getTimeStamp()
