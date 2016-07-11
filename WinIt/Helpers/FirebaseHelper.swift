@@ -45,7 +45,7 @@ class FirebaseHelper {
         }
     }
     
-    static func addPost(post:Post){
+    static func addPost(post:Post, callbackAfterUpload: (FIRStorageTaskSnapshot) -> Void){
         
         if post.image == nil{
             post.image = UIImage(named: "NoImage")
@@ -55,7 +55,7 @@ class FirebaseHelper {
         post.key = newPostRef.key
         newPostRef.setValue(post.toDict())
         
-        FirebaseHelper.uploadImage(post.image!, postID: post.key, uploadDone: FirebaseHelper.printSth)
+        FirebaseHelper.uploadImage(post.image!, postID: post.key, uploadDone: callbackAfterUpload)
     }
     
     static func printSth(t: FIRStorageTaskSnapshot){
@@ -231,7 +231,7 @@ class FirebaseHelper {
         let path = "PostImages/\(postID).jpg"
         let resizedImage = ImageHelper.resize(image, newWidth: 750)
         let smallerImage = UIImageJPEGRepresentation(resizedImage,0.3)!
-        
+        print("resized Image size: width\(resizedImage.size.width) height: \(resizedImage.size.height)")
         let uploadTask = storageRef.child(path).putData(smallerImage, metadata: nil) { metadata, error in
             if (error != nil) {
                 // Uh-oh, an error occurred!
@@ -241,7 +241,7 @@ class FirebaseHelper {
 //                let downloadURL = metadata!.downloadURL
             }
         }
-        uploadTask.observeStatus(.Resume,handler: uploadDone)
+        uploadTask.observeStatus(.Success, handler: uploadDone)
 
 //        //the returnvalue should be saved inside of a upoad Task Variable
 //        //there shoulb also be a handler which makes sure that files are uploaded before other people could try download

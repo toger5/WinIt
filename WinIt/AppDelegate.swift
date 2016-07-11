@@ -44,8 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.login), name: "Login", object: nil)
     }
     
-    func prepareInitialViewController() {
-        
+    func prepareInitialViewController() {        
         if FIRAuth.auth()?.currentUser != nil {
             // User is signed in.
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -95,5 +94,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController? = startViewController
         
     }
+    
 }
 

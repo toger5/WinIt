@@ -63,7 +63,7 @@
                                                         <action selector="likeTriggered:" destination="QnQ-ls-WAk" eventType="primaryActionTriggered" id="lJY-ii-rWr"/>
                                                     </connections>
                                                 </switch>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXT-Pe-NrG">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXT-Pe-NrG">
                                                     <rect key="frame" x="495" y="371" width="24" height="43"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                     <size key="titleShadowOffset" width="2.2250738585072014e-308" height="0.0"/>
@@ -230,7 +230,6 @@
                                         <state key="normal" title="Upload"/>
                                         <connections>
                                             <action selector="postUploadButtonPressed:" destination="msm-TU-qZ1" eventType="touchUpInside" id="RkQ-Dc-NLp"/>
-                                            <segue destination="zij-u3-PaY" kind="unwind" unwindAction="unwindToVC:" id="gwi-Id-nrc"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -267,11 +266,7 @@
                                 </constraints>
                                 <items>
                                     <navigationItem title="New Contest" id="8fF-Ub-O9U">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="E5a-cm-r7E">
-                                            <connections>
-                                                <segue destination="zij-u3-PaY" kind="unwind" unwindAction="unwindToVC:" id="tWw-GG-CVr"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="E5a-cm-r7E"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -322,6 +317,7 @@
                         <outlet property="descriptionTextField" destination="P7j-Zs-8cc" id="V8K-xX-75m"/>
                         <outlet property="imageView" destination="O9R-ht-MV3" id="CC2-h2-Mqf"/>
                         <outlet property="nameTextField" destination="hco-vz-4zA" id="MzK-7R-wf7"/>
+                        <segue destination="zij-u3-PaY" kind="unwind" identifier="unwindAfterUpload" unwindAction="unwindToVC:" id="I30-qC-GZf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Bn-6t-5pz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -666,7 +662,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYT-fr-sc1">
                                 <rect key="frame" x="266.5" y="496.5" width="67.5" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>

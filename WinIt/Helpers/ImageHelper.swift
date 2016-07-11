@@ -13,7 +13,8 @@ class ImageHelper: NSObject{
     
     static func resize(image: UIImage, newWidth: CGFloat) -> UIImage{
         let scale = newWidth / image.size.width
-        let newHeight = image.size.width * scale
+        let newHeight = image.size.height * scale
+        print("supposed size with scale \(scale): width \(newWidth), height \(newHeight)")
         UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight))
         image.drawInRect(CGRectMake(0, 0, newWidth, newHeight))
         
