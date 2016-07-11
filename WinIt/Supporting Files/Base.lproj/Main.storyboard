@@ -714,6 +714,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="clickButton" destination="7p1-2r-0eU" id="lcv-XQ-rm1"/>
                         <outlet property="livePointUpdate" destination="74r-ly-Exd" id="X6b-ad-wP3"/>
                         <outlet property="name1" destination="055-ol-weo" id="X2Q-Qv-aGn"/>
                         <outlet property="name2" destination="iL5-sy-kAo" id="qZK-VN-QsN"/>
