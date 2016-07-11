@@ -49,7 +49,7 @@ class CreatePostViewController: UIViewController {
             return
         }
         
-        FirebaseHelper.addPost(Post(name: name, image: postImage, description: description, eventWaitTime: time, user: user!.uid)) { (storageObj) in
+        FirebaseHelper.uploadPost(Post(name: name, image: postImage, description: description, eventWaitTime: time, user: user!.uid)) { (storageObj) in
             
             
             self.performSegueWithIdentifier(SegueIdentifiers.UnwindAfterUpload, sender: self)

@@ -21,7 +21,6 @@ class SearchPostsViewController: UIViewController {
     // MARK: IBOutlets
     @IBOutlet weak var tableView: UITableView!
     
-	
     // MARK: - View Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +30,7 @@ class SearchPostsViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        FirebaseHelper.fillpostList(0, rangeMax: 20, callback: { (offerArray) in
+        FirebaseHelper.downloadPosts(0, rangeMax: 20, callback: { (offerArray) in
             
             var newPostArray: [Post] = []
             for o in offerArray{
@@ -51,6 +50,7 @@ class SearchPostsViewController: UIViewController {
         })
     }
 	
+    // MARK: - Segues
     @IBAction func cancelCreatePost(segue: UIStoryboardSegue) {
         
     }
@@ -61,6 +61,7 @@ class SearchPostsViewController: UIViewController {
     
 }
 
+// MARK: - Table View Data Source
 extension SearchPostsViewController: UITableViewDataSource {
 	
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -70,7 +71,7 @@ extension SearchPostsViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
         //maybe It works as lazy load
-        if indexPath.row >= postList.count {
+        if indexPath.row >= postList.count - 2{
 		//self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: self.comments.count-1, inSection: 1)], withRowAnimation: UITableViewRowAnimation.Automatic)
         }
 		
@@ -80,10 +81,8 @@ extension SearchPostsViewController: UITableViewDataSource {
         let post = postList[postList.count-indexPath.row-1]
         if post.image == nil{
             FirebaseHelper.downloadImage(post) { (productImage) in
-                //            print(productImage)
-                //            cell.imageViewProduct.image = productImage
                 post.image = productImage
-                tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+                tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
             }
         }
 		cell.populate(post)

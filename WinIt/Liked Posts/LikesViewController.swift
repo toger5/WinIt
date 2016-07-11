@@ -12,8 +12,8 @@ import Firebase
 class LikesViewController: UIViewController {
     
     // MARK: - Properties
-    var likedPosts: [Post] = []
-    var selectedPost:Post? = nil
+    lazy var likedPosts: [Post] = []
+    lazy var selectedPost:Post? = nil
     
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!

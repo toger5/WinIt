@@ -21,7 +21,7 @@ class ArchivedViewController: UIViewController{
         productImageView.image = post?.image
         productNameLabel.text = post?.name
 //        winnerImageView = winner
-        winnerNameLabel.text = post?.winner
+        winnerNameLabel.text = post?.winner.0
 //        winnerPoints.text = post?.participatedUsers[post?.winner].1
         
     }

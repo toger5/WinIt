@@ -17,15 +17,40 @@ class FirebaseHelper {
     static let rootRef = FIRDatabase.database().reference()
     static var userID = (FIRAuth.auth()?.currentUser?.uid)!
     
-    // MARK: - Helper Methods
-    static func fillpostList(rangeMin: Int, rangeMax: Int, callback: ([Post]) -> Void){
+    // MARK: - Accounts
+    static func createAccount(username: String, coins: Int){
+        if let user = FIRAuth.auth()?.currentUser{
+            let userDict = ["coins":coins,
+                            "username": username]
+            rootRef.child("users").child(user.uid).setValue(userDict)
+        }
+        
+    }
+    
+    // MARK: - Posts
+    // Upload Post
+    static func uploadPost(post:Post, callbackAfterUpload: (FIRStorageTaskSnapshot) -> Void){
+        
+        if post.image == nil{
+            post.image = UIImage(named: "NoImage")
+        }
+        
+        let newPostRef = rootRef.child("posts").childByAutoId()
+        post.key = newPostRef.key
+        newPostRef.setValue(post.toDict())
+        
+        FirebaseHelper.uploadImage(post.image!, postID: post.key, uploadDone: callbackAfterUpload)
+    }
+    
+    // Download Posts
+    static func downloadPosts(rangeMin: Int, rangeMax: Int, callback: ([Post]) -> Void){
         
         let postDownloadCallback = { (snapshot: FIRDataSnapshot) -> Void in
             // Get the post list of all posts
             var posts: [Post] = []
             for postDict in snapshot.children{
                 let post = Post(snapshot: postDict as! FIRDataSnapshot)
-                FirebaseHelper.setIfLiked(post)
+                FirebaseHelper.likePost(post)
                 //post.liked=true
                 posts.append(post)
             }
@@ -41,23 +66,7 @@ class FirebaseHelper {
         }
     }
     
-    static func addPost(post:Post, callbackAfterUpload: (FIRStorageTaskSnapshot) -> Void){
-        
-        if post.image == nil{
-            post.image = UIImage(named: "NoImage")
-        }
-        
-        let newPostRef = rootRef.child("posts").childByAutoId()
-        post.key = newPostRef.key
-        newPostRef.setValue(post.toDict())
-        
-        FirebaseHelper.uploadImage(post.image!, postID: post.key, uploadDone: callbackAfterUpload)
-    }
-    
-    static func printSth(t: FIRStorageTaskSnapshot){
-        print("UPLOADED")
-    }
-    
+    // Like Post
     static func addLike(post: Post) {
         
         let userKey = (FIRAuth.auth()?.currentUser?.uid)!
@@ -67,6 +76,7 @@ class FirebaseHelper {
         rootRef.child("likesByUser").child(userKey).updateChildValues([postKey: true])
     }
     
+    // Unlike Post
     static func removeLike(post: Post) {
         
         let userKey = (FIRAuth.auth()?.currentUser?.uid)!
@@ -76,6 +86,7 @@ class FirebaseHelper {
         rootRef.child("likesByUser/\(userKey)/\(postKey)").removeValue()
     }
     
+    // Download Liked Posts
     static func getLikedPosts(completion: ([Post]) -> Void) {
         
         let userKey = (FIRAuth.auth()?.currentUser?.uid)!
@@ -113,49 +124,15 @@ class FirebaseHelper {
         })
     }
     
-    static func setIfLiked(post: Post) {
-        
-        let userKey = (FIRAuth.auth()?.currentUser?.uid)!
-        let postKey = post.key
-        
-        func postKeyDownloadCallback(snapshot: FIRDataSnapshot) {
-            
-            if snapshot.exists() {
-                
-                post.liked = true
-                print("post like downloaded")
-            }
-        }
-        
-        //func
-        
-        let postKeyQuery = rootRef.child("likesByUser/\(userKey)/\(postKey)")
-        
-        postKeyQuery.observeSingleEventOfType(.Value, withBlock: postKeyDownloadCallback) { (error) in
-            print(error.localizedDescription)
-        }
-    }
-    
-    static func createAccount(username: String, coins: Int){
-        if let user = FIRAuth.auth()?.currentUser{
-            let userDict = ["coins":coins,
-                            "username": username]
-            rootRef.child("users").child(user.uid).setValue(userDict)
-        }
-        
-    }
-    
-    
-    static func getWinnerOfPost(post: Post, callback: (username:String, userKey: String) ->Void){
+    // Get Winner of Post
+    static func getWinnerOfPost(post: Post, callback: (username: String, userKey: String) -> Void) {
         
         let postQueryToWinningUserID = FirebaseHelper.rootRef.child("gameByPost/\(post.key)").queryOrderedByValue().queryLimitedToFirst(1)
         
-        
-        
-        func winningUserCallback(snapshot: FIRDataSnapshot) {
+        postQueryToWinningUserID.observeSingleEventOfType(.Value, withBlock:  { (snapshot) in
+            
             let snap = snapshot.children.allObjects[0] as! FIRDataSnapshot
             //            FirebaseHelper.rootRef.child("users/\(snap.key)")
-            
             
             let toUser = FirebaseHelper.rootRef.child("users/\(snap.key)")
             toUser.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
@@ -163,36 +140,46 @@ class FirebaseHelper {
                 let username = (snapshot.value!["username"] ?? "could not find user name")!
                 callback(username: username as! String, userKey: snapshot.key)
             })
-        }
-        postQueryToWinningUserID.observeSingleEventOfType(.Value, withBlock: winningUserCallback)
+        })
     }
     
-    
+    // Remove Post
     static func removePost(post: Post){
         
         let postKey = post.key
+        let postKeyQuery = rootRef.child("likesByPost/\(postKey)")
         
-        func postDownloadCallback(snapshot: FIRDataSnapshot) {
-            
-            for userData in snapshot.children{
+        postKeyQuery.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+            for userData in snapshot.children {
                 
                 let userKey: String = userData.key
                 
                 rootRef.child("likesByUser/\(userKey)/\(postKey)").removeValue()
                 rootRef.child("likesByPost/\(postKey)/\(userKey)").removeValue()
             }
-        }
-        
-        let postKeyQuery = rootRef.child("likesByPost/\(postKey)")
-        
-        postKeyQuery.observeSingleEventOfType(.Value, withBlock: postDownloadCallback) { (error) in
-            print(error.localizedDescription)
-        }
+        })
         
         rootRef.child("posts/\(postKey)").removeValue()
     }
     
-    //Storage Stuff
+    // Like Post Locally
+    static func likePost(post: Post) {
+        
+        let userKey = (FIRAuth.auth()?.currentUser?.uid)!
+        let postKey = post.key
+        
+        let postKeyQuery = rootRef.child("likesByUser/\(userKey)/\(postKey)")
+        
+        postKeyQuery.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+            if snapshot.exists() {
+                post.liked = true
+            }
+        })
+    }
+    
+    
+    
+    // MARK: - Images
     static func downloadImage(post: Post, callback: (UIImage) -> Void){
         let storageRef = FirebaseHelper.storageRef
         let s = storageRef.child("PostImages/\(post.key).jpg")
@@ -209,18 +196,21 @@ class FirebaseHelper {
             }
         }
     }
-
-    static func uploadImage(image: UIImage, postID: String, uploadDone: (FIRStorageTaskSnapshot) -> Void){
-
+    
+    static func uploadImage(image: UIImage, postID: String, uploadDone: (FIRStorageTaskSnapshot) -> Void) {
+        
         let storageRef = FirebaseHelper.storageRef
         let path = "PostImages/\(postID).jpg"
         let resizedImage = ImageHelper.resize(image, newWidth: 750)
         let smallerImage = UIImageJPEGRepresentation(resizedImage,0.3)!
+        
         print("resized Image size: width\(resizedImage.size.width) height: \(resizedImage.size.height)")
+        
         let uploadTask = storageRef.child(path).putData(smallerImage, metadata: nil) { metadata, error in
+            
             if (error != nil) {
                 // Uh-oh, an error occurred!
-                print("error during upload \(error?.localizedDescription)")
+                print("Upload Image Error: \(error?.localizedDescription)")
             } else {
                 // Metadata contains file metadata such as size, content-type, and download URL.
                 //                let downloadURL = metadata!.downloadURL
@@ -228,8 +218,8 @@ class FirebaseHelper {
         }
         
         uploadTask.observeStatus(.Success, handler: uploadDone)
-
-//        //the returnvalue should be saved inside of a upoad Task Variable
-//        //there shoulb also be a handler which makes sure that files are uploaded before other people could try download
+        
+        //        //the returnvalue should be saved inside of a upoad Task Variable
+        //        //there shoulb also be a handler which makes sure that files are uploaded before other people could try download
     }
 }
