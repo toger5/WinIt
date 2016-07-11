@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="65" width="600" height="535"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="451" id="QnQ-ls-WAk" customClass="MainTableViewCell" customModule="WinIt" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchPostsCell" rowHeight="451" id="QnQ-ls-WAk" customClass="SearchPostsTableViewCell" customModule="WinIt" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="451"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QnQ-ls-WAk" id="M9x-ir-2lm">

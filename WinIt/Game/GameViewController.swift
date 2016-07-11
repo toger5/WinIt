@@ -55,7 +55,10 @@ class GameViewController: UIViewController{
     @IBAction func buttonPressed(sender: AnyObject) {
         points -= 1
         updateDB()
-        livePointUpdate.text = String(-points)
+        FirebaseHelper.getWinnerOfPost(post!) { (username, userKey) in
+            self.livePointUpdate.text = username
+        }
+//        livePointUpdate.text = String(-points)
     }
     
     func updateDB(){
@@ -76,8 +79,8 @@ class GameViewController: UIViewController{
     }
     
     func startOtherPlayersObserver(){
-        pathToGame!.queryOrderedByValue().queryLimitedToFirst(5).observeEventType(FIRDataEventType.Value) { (snapshot: FIRDataSnapshot) in
-            //            var i = 0
+        pathToGame!.queryOrderedByValue().queryLimitedToFirst(5).observeEventType(.Value) { (snapshot: FIRDataSnapshot) in
+            
             for (index, snap) in snapshot.children.enumerate(){
                 
                 let s = snap as! FIRDataSnapshot

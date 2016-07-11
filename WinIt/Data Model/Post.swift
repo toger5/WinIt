@@ -28,7 +28,7 @@ class Post{
     }
     
     let outDatedTime = 60 * 10
-    var cell: MainTableViewCell?
+    var cell: SearchPostsTableViewCell?
     
     
     init() {
