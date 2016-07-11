@@ -9,10 +9,17 @@
 import UIKit
 
 class ArchivedViewController: UIViewController{
+    let post: ArchivedPost
+    
+    @IBOutlet weak var productImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
     }
+    
+    
 }

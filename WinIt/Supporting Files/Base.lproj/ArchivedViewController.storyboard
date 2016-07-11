@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Archived View Controller-->
@@ -16,8 +17,29 @@
                     <view key="view" contentMode="scaleToFill" id="jNX-Iw-22E">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bg7-Z4-UI4">
+                                <rect key="frame" x="422" y="-79" width="128" height="11"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="WY1-yU-6Fq"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FBB-xs-RS4">
+                                <rect key="frame" x="50" y="29" width="128" height="84"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="rVE-mW-veA"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="bg7-Z4-UI4" secondAttribute="trailing" constant="30" id="4As-tO-O2W"/>
+                            <constraint firstItem="FBB-xs-RS4" firstAttribute="leading" secondItem="jNX-Iw-22E" secondAttribute="leadingMargin" constant="30" id="7hu-Iw-J1X"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="productImageView" destination="FBB-xs-RS4" id="L1f-MQ-H0w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6lc-40-3hc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

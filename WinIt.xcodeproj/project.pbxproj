@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2588A7871D340CA8009C1C0B /* ArchivedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2588A7861D340CA8009C1C0B /* ArchivedViewController.swift */; };
+		2588A78A1D341173009C1C0B /* ArchivedPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2588A7891D341173009C1C0B /* ArchivedPost.swift */; };
 		25DB247D1D29C3E70050B2D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB247C1D29C3E70050B2D8 /* AppDelegate.swift */; };
 		25DB24B41D2C4FF50050B2D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25DB24B31D2C4FF50050B2D8 /* GoogleService-Info.plist */; };
 		25E440691D3216FD005999C6 /* CountDownLabelHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E440671D3207EA005999C6 /* CountDownLabelHelper.swift */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		2155D184F652733215929F5E /* Pods-WinIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinIt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WinIt/Pods-WinIt.debug.xcconfig"; sourceTree = "<group>"; };
 		2588A7861D340CA8009C1C0B /* ArchivedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArchivedViewController.swift; path = Archived/ArchivedViewController.swift; sourceTree = "<group>"; };
+		2588A7891D341173009C1C0B /* ArchivedPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArchivedPost.swift; path = WinIt/Archived/ArchivedPost.swift; sourceTree = SOURCE_ROOT; };
 		25DB24791D29C3E70050B2D8 /* WinIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WinIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25DB247C1D29C3E70050B2D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25DB24881D29C3E70050B2D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -104,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				E2976AEE1D31A55C00FCF694 /* GameViewController.swift */,
-				2588A7861D340CA8009C1C0B /* ArchivedViewController.swift */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -133,6 +134,14 @@
 				E2976AEC1D31A4F400FCF694 /* CreatePostViewController.swift */,
 			);
 			name = "Create Post";
+			sourceTree = "<group>";
+		};
+		2588A7881D341081009C1C0B /* Archived */ = {
+			isa = PBXGroup;
+			children = (
+				2588A7861D340CA8009C1C0B /* ArchivedViewController.swift */,
+			);
+			name = Archived;
 			sourceTree = "<group>";
 		};
 		25DB24701D29C3E70050B2D8 = {
@@ -164,6 +173,7 @@
 				250E55561D2EF824006C3A22 /* Search Posts */,
 				250E55531D2EBCC0006C3A22 /* Game */,
 				250E554A1D2C7282006C3A22 /* Helpers */,
+				2588A7881D341081009C1C0B /* Archived */,
 				25DB24B01D2C33DD0050B2D8 /* Data Model */,
 				E27B674C1D316D97006F2951 /* Extensions */,
 				E27B674F1D317949006F2951 /* Constants */,
@@ -176,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				E261258A1D30B96E00BB1274 /* Post.swift */,
+				2588A7891D341173009C1C0B /* ArchivedPost.swift */,
 			);
 			name = "Data Model";
 			path = Offers;
@@ -379,6 +390,7 @@
 				E2976B191D3409DD00FCF694 /* Constants.swift in Sources */,
 				E2976AF21D31A58C00FCF694 /* LikedPostTableViewCell.swift in Sources */,
 				E261257E1D30B6AE00BB1274 /* WelcomeViewController.swift in Sources */,
+				2588A78A1D341173009C1C0B /* ArchivedPost.swift in Sources */,
 				E261257D1D30B6AE00BB1274 /* SignupViewController.swift in Sources */,
 				E261258B1D30B96E00BB1274 /* Post.swift in Sources */,
 				E27B67511D317962006F2951 /* Global.swift in Sources */,
