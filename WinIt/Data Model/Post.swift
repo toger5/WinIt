@@ -5,6 +5,7 @@
 //  Created by Timo on 05/07/16.
 //  Copyright © 2016 Timo. All rights reserved.
 //
+
 enum EventStatus: Int{
     case Waiting, Running, Complete, Archived
 }
@@ -79,19 +80,21 @@ class Post {
     
     func getState() -> EventStatus{
         if Global.getTimeStamp() < eventTime{
-            return EventStatus.Waiting
+            return .Waiting
         }else if Int(Global.getTimeStamp()) < Int(eventTime) + eventLength{
-            return EventStatus.Running
+            return .Running
         }else if Int(Global.getTimeStamp()) > Int(eventTime) + outDatedTime{
-            return EventStatus.Archived
+            return .Archived
         }else{
-            return EventStatus.Complete
+            return .Complete
         }
     }
-
+    
     func getTimeLeftHoursMinutesSecondsArray() -> [Int]{
         let timeLeft = getTimeLeftInSeconds()
-        let array = [Int(timeLeft / 60 / 60),Int((timeLeft%(60 * 60)) / 60),Int(timeLeft%60)]
+        let array = [Int(timeLeft / 60 / 60),
+                     Int((timeLeft % (60 * 60)) / 60),
+                     Int(timeLeft % 60)]
         return array
     }
     
@@ -108,18 +111,14 @@ class Post {
     
     func setLiked(liked: Bool) {
         
-        if self.liked != liked {
-            
-            self.liked=liked
-            
-            if liked {
-                
-                FirebaseHelper.addLike(self)
-                
-            } else {
-                
-                FirebaseHelper.removeLike(self)
-            }
+        guard self.liked != liked else { return }
+        
+        self.liked = liked
+        
+        if liked {
+            FirebaseHelper.addLike(self)
+        } else {
+            FirebaseHelper.removeLike(self)
         }
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 typealias PhotoTakingHelperCallback = UIImage? -> Void
 
 class ImageHelper: NSObject{
@@ -34,7 +35,6 @@ class ImageHelper: NSObject{
         self.viewController = viewController
         self.callback = callback
         super.init()
-        
         
         showPhotoSourceSelection()
     }
