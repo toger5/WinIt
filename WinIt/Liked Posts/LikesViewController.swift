@@ -97,24 +97,26 @@ extension LikesViewController: UITableViewDataSource {
 extension LikesViewController: UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-
+        print("cell \(indexPath.row) ot clicked")
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         let clickedPost: Post = likedPosts[indexPath.row]
         switch clickedPost.getState(){
         case EventStatus.Waiting:
-
+            print("waiting")
             let animation = CustomAnimation(view: cell!, delay: 0, direction: .Left, repetitions: 3, maxRotation: 0, maxPosition: 20, duration: 0.1)
             animation.shakeAnimation()
         
         case EventStatus.Running:
+            print("runnning")
             selectedPost = clickedPost
             self.performSegueWithIdentifier("toGame", sender: self)
         //will be needed as soon as the View Controller for the EventOverview is created
-//        case EventStatus.Complete:
+        case EventStatus.Complete:
+            print("completed")
 //            selectedPost = clickedPost
 //            self.performSegueWithIdentifier("toEventOverview", sender: self)
         default:
-            break
+            print("cell in default state (archieved)")
         }
     }
 }

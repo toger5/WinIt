@@ -41,7 +41,7 @@ class FirebaseHelper {
         }
     }
     
-    static func addPost(post:Post){
+    static func addPost(post:Post, callbackAfterUpload: (FIRStorageTaskSnapshot) -> Void){
         
         if post.image == nil{
             post.image = UIImage(named: "NoImage")
@@ -51,11 +51,13 @@ class FirebaseHelper {
         post.key = newPostRef.key
         newPostRef.setValue(post.toDict())
         
-        FirebaseHelper.uploadImage(UIImageJPEGRepresentation(post.image!,0.3)!, postID: post.key, uploadDone: FirebaseHelper.printSth)
+        FirebaseHelper.uploadImage(post.image!, postID: post.key, uploadDone: callbackAfterUpload)
     }
+    
     static func printSth(t: FIRStorageTaskSnapshot){
         print("UPLOADED")
     }
+    
     static func addLike(post: Post) {
         
         let userKey = (FIRAuth.auth()?.currentUser?.uid)!
@@ -207,24 +209,27 @@ class FirebaseHelper {
             }
         }
     }
-    
-    
-    static func uploadImage(image: NSData, postID: String, uploadDone: (FIRStorageTaskSnapshot) -> Void){
-        
+
+    static func uploadImage(image: UIImage, postID: String, uploadDone: (FIRStorageTaskSnapshot) -> Void){
+
         let storageRef = FirebaseHelper.storageRef
         let path = "PostImages/\(postID).jpg"
-        let uploadTask = storageRef.child(path).putData(image, metadata: nil) { metadata, error in
+        let resizedImage = ImageHelper.resize(image, newWidth: 750)
+        let smallerImage = UIImageJPEGRepresentation(resizedImage,0.3)!
+        print("resized Image size: width\(resizedImage.size.width) height: \(resizedImage.size.height)")
+        let uploadTask = storageRef.child(path).putData(smallerImage, metadata: nil) { metadata, error in
             if (error != nil) {
                 // Uh-oh, an error occurred!
-                print("error during upload \(error)")
+                print("error during upload \(error?.localizedDescription)")
             } else {
                 // Metadata contains file metadata such as size, content-type, and download URL.
                 //                let downloadURL = metadata!.downloadURL
             }
         }
-        uploadTask.observeStatus(.Resume,handler: uploadDone)
         
-        //        //the returnvalue should be saved inside of a upoad Task Variable
-        //        //there shoulb also be a handler which makes sure that files are uploaded before other people could try download
+        uploadTask.observeStatus(.Success, handler: uploadDone)
+
+//        //the returnvalue should be saved inside of a upoad Task Variable
+//        //there shoulb also be a handler which makes sure that files are uploaded before other people could try download
     }
 }

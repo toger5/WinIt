@@ -28,7 +28,7 @@ class LikedPostCell: UITableViewCell{
     var post: Post? = nil
     // MARK: - IBOutlets
     @IBOutlet weak var posterName: UILabel!
-    @IBOutlet weak var countDownTimer: UILabel!
+    @IBOutlet weak var countDownTimer: UITextView!
     @IBOutlet weak var postName: UILabel!
     @IBOutlet weak var postImage: UIImageView!
     

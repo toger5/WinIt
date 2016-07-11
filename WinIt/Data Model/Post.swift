@@ -18,6 +18,7 @@ class Post{
     var name: String
     var eventTime: Double
     let uploadTime: Double
+    let eventLength = 60 //in seconds
     var image: UIImage?
     var description: String
     var liked: Bool {
@@ -25,7 +26,7 @@ class Post{
             cell?.updateLiked()
         }
     }
-    let eventLength = 60 //in seconds
+    
     let outDatedTime = 60 * 10
     var cell: MainTableViewCell?
     
@@ -41,10 +42,10 @@ class Post{
         liked = false
     }
     
-    init(name: String, image:UIImage?, description: String, eventTime: Double, user: String){
+    init(name: String, image:UIImage?, description: String, eventWaitTime: Double, user: String){
         print("new")
         self.uploadTime = Global.getTimeStamp()
-        self.eventTime = NSDate(timeIntervalSince1970: uploadTime).dateByAddingTimeInterval(eventTime).timeIntervalSince1970
+        self.eventTime = uploadTime + eventWaitTime
         self.name = name
         self.user = user
         self.description = description
