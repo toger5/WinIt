@@ -12,6 +12,7 @@ import FirebaseAuth
 
 class GameViewController: UIViewController{
     
+    @IBOutlet weak var clickButton: UIButton!
     @IBOutlet weak var livePointUpdate: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var name1: UILabel!
@@ -37,9 +38,7 @@ class GameViewController: UIViewController{
     override func viewDidLoad() {
         pathToGame = FirebaseHelper.rootRef.child("gameByPost/\(post!.key)")
         super.viewDidLoad()
-        clock = CountDownLabelHelper(timeInSeconds: (post?.getTimeLeftInSeconds())!, countDownCallback: { () in
-            self.timerLabel.text = self.clock!.getTimeString()
-        })
+        clock = CountDownLabelHelper(timeInSeconds: (post?.getTimeLeftInSeconds())!, countDownCallback: clockTick)
         setPointsIfAlredyPlayed()
         labelArray = [p1,p2,p3,p4,p5]
         nameArray = [name1,name2,name3,name4,name5]
@@ -66,6 +65,18 @@ class GameViewController: UIViewController{
         //        print("uid by getUid: \(getuid()) uid by FIRAuth: \(FIRAuth.auth()?.currentUser?.uid)")
         let pathToGameThisUser = pathToGame!.child((FIRAuth.auth()?.currentUser?.uid)!)
         pathToGameThisUser.setValue(points)
+    }
+    func clockTick(){
+        self.timerLabel.text = self.clock!.getTimeString()
+        if self.clock?.wholeTimeInSeconds() <= 0{
+            eventStop()
+        }
+    }
+    
+    func eventStop(){
+        clock?.stop()
+        clickButton.enabled = false
+        
     }
     
     func startOtherPlayersObserver(){

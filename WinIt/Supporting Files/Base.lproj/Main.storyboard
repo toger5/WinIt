@@ -325,6 +325,24 @@
             </objects>
             <point key="canvasLocation" x="1364" y="-301"/>
         </scene>
+        <!--Event Finished View Controller-->
+        <scene sceneID="6cX-hi-w3L">
+            <objects>
+                <viewController id="xwQ-aE-IPd" customClass="EventFinishedViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="txY-c8-e7n"/>
+                        <viewControllerLayoutGuide type="bottom" id="CMx-Ze-Ahe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jNX-Iw-22E">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6lc-40-3hc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1950" y="464"/>
+        </scene>
         <!--Likes View Controller-->
         <scene sceneID="Prk-w5-9So">
             <objects>
@@ -714,6 +732,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="clickButton" destination="7p1-2r-0eU" id="lcv-XQ-rm1"/>
                         <outlet property="livePointUpdate" destination="74r-ly-Exd" id="X6b-ad-wP3"/>
                         <outlet property="name1" destination="055-ol-weo" id="X2Q-Qv-aGn"/>
                         <outlet property="name2" destination="iL5-sy-kAo" id="qZK-VN-QsN"/>
