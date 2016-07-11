@@ -44,7 +44,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.login), name: "Login", object: nil)
     }
     
-    func prepareInitialViewController() {        
+    func prepareInitialViewController() {
+        
+//        do {
+//            try FIRAuth.auth()?.signOut()
+//        } catch {
+//            
+//        }
+        
         if FIRAuth.auth()?.currentUser != nil {
             // User is signed in.
             let storyboard = UIStoryboard(name: "Main", bundle: nil)

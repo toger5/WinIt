@@ -11,7 +11,8 @@ enum EventStatus: Int{
 
 import UIKit
 import Firebase
-class Post{
+
+class Post {
     
     var key: String
     var user: String

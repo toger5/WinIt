@@ -12,3 +12,7 @@ struct CellIdentifiers {
     static let SearchPostsTableViewCell = "SearchPostsCell"
     static let LikedPostTableViewCell = "LikedPostCell"
 }
+
+struct SegueIdentifiers {
+    static let UnwindAfterUpload = "unwindAfterUpload"
+}
