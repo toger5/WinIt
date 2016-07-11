@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class ArchivedPost: Post{
-    var participatedUsers: [String: String] // dictionary with Keys and names
+    var participatedUsers: [String: (String,Int)] // dictionary with Keys and (names,Points)
     var winner: (String, String)
     var amountOfLikes: Int
     override init(snapshot: FIRDataSnapshot) {
@@ -25,4 +25,7 @@ class ArchivedPost: Post{
         self.winner = winner
         super.init(post: post)
     }
+    
+    
+    
 }
