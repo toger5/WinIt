@@ -10,4 +10,5 @@ import Foundation
 
 struct CellIdentifiers {
     static let SearchPostsTableViewCell = "SearchPostsCell"
+    static let LikedPostTableViewCell = "LikedPostCell"
 }

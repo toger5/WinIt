@@ -25,7 +25,7 @@
 		E27B67511D317962006F2951 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27B67501D317962006F2951 /* Global.swift */; };
 		E2976AED1D31A4F400FCF694 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2976AEC1D31A4F400FCF694 /* CreatePostViewController.swift */; };
 		E2976AEF1D31A55C00FCF694 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2976AEE1D31A55C00FCF694 /* GameViewController.swift */; };
-		E2976AF21D31A58C00FCF694 /* LikedPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2976AF01D31A58C00FCF694 /* LikedPostCell.swift */; };
+		E2976AF21D31A58C00FCF694 /* LikedPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2976AF01D31A58C00FCF694 /* LikedPostTableViewCell.swift */; };
 		E2976AF31D31A58C00FCF694 /* LikesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2976AF11D31A58C00FCF694 /* LikesViewController.swift */; };
 		E2976AF61D31A5C900FCF694 /* SearchPostsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2976AF41D31A5C900FCF694 /* SearchPostsTableViewCell.swift */; };
 		E2976AF71D31A5C900FCF694 /* SearchPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2976AF51D31A5C900FCF694 /* SearchPostsViewController.swift */; };
@@ -58,7 +58,7 @@
 		E27B67501D317962006F2951 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Global.swift; path = Constants/Global.swift; sourceTree = "<group>"; };
 		E2976AEC1D31A4F400FCF694 /* CreatePostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreatePostViewController.swift; path = "Create Post/CreatePostViewController.swift"; sourceTree = "<group>"; };
 		E2976AEE1D31A55C00FCF694 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = Game/GameViewController.swift; sourceTree = "<group>"; };
-		E2976AF01D31A58C00FCF694 /* LikedPostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LikedPostCell.swift; path = "Liked Posts/LikedPostCell.swift"; sourceTree = "<group>"; };
+		E2976AF01D31A58C00FCF694 /* LikedPostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LikedPostTableViewCell.swift; path = "Liked Posts/LikedPostTableViewCell.swift"; sourceTree = "<group>"; };
 		E2976AF11D31A58C00FCF694 /* LikesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LikesViewController.swift; path = "Liked Posts/LikesViewController.swift"; sourceTree = "<group>"; };
 		E2976AF41D31A5C900FCF694 /* SearchPostsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchPostsTableViewCell.swift; path = "Search Posts/SearchPostsTableViewCell.swift"; sourceTree = "<group>"; };
 		E2976AF51D31A5C900FCF694 /* SearchPostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchPostsViewController.swift; path = "Search Posts/SearchPostsViewController.swift"; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 		250E55581D2EF890006C3A22 /* Liked Posts */ = {
 			isa = PBXGroup;
 			children = (
-				E2976AF01D31A58C00FCF694 /* LikedPostCell.swift */,
+				E2976AF01D31A58C00FCF694 /* LikedPostTableViewCell.swift */,
 				E2976AF11D31A58C00FCF694 /* LikesViewController.swift */,
 			);
 			name = "Liked Posts";
@@ -358,7 +358,7 @@
 			files = (
 				E261258E1D30B9F800BB1274 /* FirebaseHelper.swift in Sources */,
 				E2976B191D3409DD00FCF694 /* Constants.swift in Sources */,
-				E2976AF21D31A58C00FCF694 /* LikedPostCell.swift in Sources */,
+				E2976AF21D31A58C00FCF694 /* LikedPostTableViewCell.swift in Sources */,
 				E261257E1D30B6AE00BB1274 /* WelcomeViewController.swift in Sources */,
 				E261257D1D30B6AE00BB1274 /* SignupViewController.swift in Sources */,
 				E261258B1D30B96E00BB1274 /* Post.swift in Sources */,

@@ -16,10 +16,7 @@
 
 import UIKit
 
-class LikedPostCell: UITableViewCell{
-    
-    
-    
+class LikedPostTableViewCell: UITableViewCell{
     
     // MARK: - Properties
     var eventIsOnline = false

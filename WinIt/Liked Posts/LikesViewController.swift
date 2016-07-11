@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 
 class LikesViewController: UIViewController {
+    
     // MARK: - Properties
     var likedPosts: [Post] = []
     var selectedPost:Post? = nil
@@ -35,12 +36,11 @@ class LikesViewController: UIViewController {
         tableView.delegate = self
     }
     
-    // MARK: - IBActions
+    // MARK: - Segues
     @IBAction func unwindToYourLikes(segue: UIStoryboardSegue) {
         
     }
-    
-    // MARK: - Segues
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let dvc = segue.destinationViewController as! GameViewController
         dvc.post = selectedPost
@@ -75,7 +75,8 @@ extension LikesViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("likedPostCell") as! LikedPostCell
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifiers.LikedPostTableViewCell) as! LikedPostTableViewCell
         let post = likedPosts[indexPath.row]
         
         guard post.isPlaceHolderImage() || post.image == nil else {
