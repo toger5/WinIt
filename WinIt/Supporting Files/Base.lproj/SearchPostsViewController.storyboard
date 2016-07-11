@@ -100,7 +100,7 @@
                                     <navigationItem title="Offers" id="2QP-3t-nda">
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="sIh-bX-oxd">
                                             <connections>
-                                                <segue destination="azP-6J-uB7" kind="show" id="Qq0-2d-1ed"/>
+                                                <segue destination="azP-6J-uB7" kind="show" identifier="CreatePostViewController" id="Qq0-2d-1ed"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>

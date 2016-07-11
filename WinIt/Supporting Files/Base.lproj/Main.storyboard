@@ -182,7 +182,7 @@
                 <viewControllerPlaceholder storyboardName="CreatePostViewController" id="azP-6J-uB7" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rdG-8B-h5r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1364" y="-301"/>
+            <point key="canvasLocation" x="732" y="93"/>
         </scene>
         <!--SearchPostsViewController-->
         <scene sceneID="Hhk-fx-xZ5">

@@ -47,13 +47,15 @@ class SearchPostsViewController: UIViewController {
                 }
             }
             self.postList = newPostArray
-            
             self.tableView.reloadData()
-            
         })
     }
 	
-	@IBAction func unwindToVC(segue: UIStoryboardSegue) {
+    @IBAction func cancelCreatePost(segue: UIStoryboardSegue) {
+        
+    }
+    
+	@IBAction func unwindAfterUpload(segue: UIStoryboardSegue) {
 		
 	}
     

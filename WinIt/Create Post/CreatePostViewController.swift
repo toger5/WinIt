@@ -22,21 +22,12 @@ class CreatePostViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextView!
+    @IBOutlet weak var uploadPostButton: UIButton!
     
     // MARK: - View Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        do{
-            try FIRAuth.auth()?.signOut()
-        }catch{
-            print("error by sign out")
-        }
-        
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
     }
     
     // MARK: - IBActions
@@ -47,10 +38,12 @@ class CreatePostViewController: UIViewController {
         }
     }
     @IBAction func postUploadButtonPressed(sender: AnyObject) {
-        let name = nameTextField.text ?? "noName"
-        let description = descriptionTextField.text ?? "noDescription"
+        uploadPostButton.enabled = false
+        let name = nameTextField.text ?? "No name"
+        let description = descriptionTextField.text ?? "No description"
         let time = Double(seconds + (mins + (hours + days*24)*60)*60)
         let user = FIRAuth.auth()!.currentUser
+        
         if user == nil {
             print("user is nil")
             return
@@ -59,7 +52,7 @@ class CreatePostViewController: UIViewController {
         FirebaseHelper.addPost(Post(name: name, image: postImage, description: description, eventWaitTime: time, user: user!.uid)) { (storageObj) in
             
             
-            self.performSegueWithIdentifier("unwindAfterUpload", sender: self)
+            self.performSegueWithIdentifier(SegueIdentifiers.UnwindAfterUpload, sender: self)
         }
     }
     

@@ -125,7 +125,11 @@
                                 </constraints>
                                 <items>
                                     <navigationItem title="New Contest" id="8fF-Ub-O9U">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="E5a-cm-r7E"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="E5a-cm-r7E">
+                                            <connections>
+                                                <segue destination="zij-u3-PaY" kind="unwind" identifier="cancelCreatePost" unwindAction="cancelCreatePost:" id="m7v-VN-foi"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -177,7 +181,8 @@
                         <outlet property="descriptionTextField" destination="P7j-Zs-8cc" id="V8K-xX-75m"/>
                         <outlet property="imageView" destination="O9R-ht-MV3" id="CC2-h2-Mqf"/>
                         <outlet property="nameTextField" destination="hco-vz-4zA" id="MzK-7R-wf7"/>
-                        <segue destination="zij-u3-PaY" kind="unwind" identifier="unwindAfterUpload" unwindAction="unwindToVC:" id="I30-qC-GZf"/>
+                        <outlet property="uploadPostButton" destination="v4b-1z-APy" id="e2k-5A-wRh"/>
+                        <segue destination="zij-u3-PaY" kind="unwind" identifier="unwindAfterUpload" unwindAction="unwindAfterUpload:" id="I30-qC-GZf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Bn-6t-5pz" userLabel="First Responder" sceneMemberID="firstResponder"/>
