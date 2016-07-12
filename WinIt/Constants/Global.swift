@@ -7,9 +7,12 @@
 //
 
 import Foundation
-class Global{
+
+class Global {
+    
     static var timeOffset: Double = 0.0
-    static func getTimeStamp() -> Double{
+    
+    static func getTimeStamp() -> Double {
         return NSDate().timeIntervalSince1970 + timeOffset
     }
 }

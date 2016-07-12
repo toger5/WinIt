@@ -12,29 +12,18 @@ import Firebase
 class LikesViewController: UIViewController {
     
     // MARK: - Properties
-    lazy var likedPosts: [Post] = []
-    lazy var selectedPost:Post? = nil
+    var likedPosts: [Post] = []
+    var selectedPost:Post? = nil
     
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - View Lifecycles
-    override func viewDidLoad(){
-        super.viewDidLoad()
-        prepareTableView()
-    }
-    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
         FirebaseHelper.getLikedPosts(likesLoaded)
         tableView.reloadData()
-    }
-    
-    // MARK: - Preparations
-    func prepareTableView() {
-        tableView.dataSource = self
-        tableView.delegate = self
-    }
+    } 
     
     // MARK: - Segues
     @IBAction func unwindToYourLikes(segue: UIStoryboardSegue) {
@@ -47,22 +36,24 @@ class LikesViewController: UIViewController {
     }
     
     // MARK: - Helper Methods
-    func likesLoaded(serverPostList: [Post]){
-        var newPostArray: [Post] = []
+    func likesLoaded(posts: [Post]) {
         
-        for o in serverPostList{
-            var exist = false
+        var newPosts: [Post] = []
+        
+        for i in posts {
+            var doesExist = false
             for p in self.likedPosts{
-                if o.key == p.key{
-                    exist = true
-                    newPostArray.append(p)
+                if i.key == p.key {
+                    doesExist = true
+                    newPosts.append(p)
                 }
             }
-            if !exist{
-                newPostArray.append(o)
+            
+            if !doesExist{
+                newPosts.append(i)
             }
         }
-        likedPosts = newPostArray
+        likedPosts = newPosts
         tableView.reloadData()
     }
 }
@@ -98,26 +89,28 @@ extension LikesViewController: UITableViewDataSource {
 extension LikesViewController: UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("cell \(indexPath.row) ot clicked")
+        print("Cell: \(indexPath.row)")
+        
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         let clickedPost: Post = likedPosts[indexPath.row]
-        switch clickedPost.getState(){
+        
+        switch clickedPost.getState() {
         case EventStatus.Waiting:
-            print("waiting")
+            print("Waiting")
             let animation = CustomAnimation(view: cell!, delay: 0, direction: .Left, repetitions: 3, maxRotation: 0, maxPosition: 20, duration: 0.1)
             animation.shakeAnimation()
         
         case EventStatus.Running:
-            print("runnning")
+            print("Running")
             selectedPost = clickedPost
             self.performSegueWithIdentifier("toGame", sender: self)
         //will be needed as soon as the View Controller for the EventOverview is created
         case EventStatus.Complete:
-            print("completed")
+            print("Completed")
 //            selectedPost = clickedPost
 //            self.performSegueWithIdentifier("toEventOverview", sender: self)
         default:
-            print("cell in default state (archieved)")
+            print("Cell in default state - Archived")
         }
     }
 }

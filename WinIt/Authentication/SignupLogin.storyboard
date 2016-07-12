@@ -31,8 +31,8 @@
                                     <segue destination="eBe-qc-EpY" kind="show" id="THN-bH-MqP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y53-1X-oIO">
-                                <rect key="frame" x="37" y="350" width="300" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y53-1X-oIO">
+                                <rect key="frame" x="37" y="342" width="300" height="44"/>
                                 <color key="backgroundColor" red="0.14117647058823529" green="0.61568627450980395" blue="0.83529411764705885" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="4er-Rq-FHT"/>
@@ -51,8 +51,8 @@
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="heart_selected" translatesAutoresizingMaskIntoConstraints="NO" id="22P-Up-JGe">
                                 <rect key="frame" x="116" y="120" width="143" height="68"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvP-QY-UgG">
-                                <rect key="frame" x="125" y="402" width="124" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvP-QY-UgG">
+                                <rect key="frame" x="125" y="394" width="124" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="BM7-Bk-red"/>
                                     <constraint firstAttribute="width" constant="124" id="ygq-AF-xSn"/>
@@ -66,8 +66,8 @@
                                     <segue destination="MdJ-lo-fUy" kind="show" id="f30-UG-aPA"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MSf-7S-fsf">
-                                <rect key="frame" x="37" y="246" width="300" height="44"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MSf-7S-fsf">
+                                <rect key="frame" x="37" y="238" width="300" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="5wm-Z1-5tY"/>
                                     <constraint firstAttribute="width" constant="300" id="8OC-QE-yaW"/>
@@ -78,8 +78,8 @@
                                     <outlet property="delegate" destination="eBe-qc-EpY" id="eQI-mE-H3b"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Qs-If-nBs">
-                                <rect key="frame" x="37" y="298" width="300" height="44"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Qs-If-nBs">
+                                <rect key="frame" x="37" y="290" width="300" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="5yP-mP-72M"/>
                                     <constraint firstAttribute="height" constant="44" id="oc3-Jy-cNX"/>

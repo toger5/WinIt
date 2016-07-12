@@ -8,11 +8,13 @@
 
 import Foundation
 
+// MARK: - Cell Identifiers
 struct CellIdentifiers {
     static let SearchPostsTableViewCell = "SearchPostsCell"
     static let LikedPostTableViewCell = "LikedPostCell"
 }
 
+// MARK: - Segue Identifiers
 struct SegueIdentifiers {
     static let UnwindAfterUpload = "unwindAfterUpload"
 }

@@ -10,25 +10,25 @@ import UIKit
 
 typealias CountDownFunc = () -> Void
 
-class CountDownLabelHelper: NSObject{
+class CountDownLabelHelper: NSObject {
     
-    
+    // MARK: - Properties
     var time: Int = 0
     var countDownCallback: CountDownFunc? = nil
     
-    
     var countDown: NSTimer?
     
-    init(timeInSeconds: Double, countDownCallback: CountDownFunc){
+    // MARK: - Initializers
+    init(timeInSeconds: Double, countDownCallback: CountDownFunc) {
         super.init()
         time = Int(timeInSeconds)
         self.countDownCallback = countDownCallback
         countDown = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(CountDownLabelHelper.countdown), userInfo: nil, repeats: true)
     }
     
-    init(timeArray: [Int], countDownCallback: CountDownFunc){
+    init(timeArray: [Int], countDownCallback: CountDownFunc) {
         super.init()
-        if timeArray.count >= 3{
+        if timeArray.count >= 3 {
             time = (timeArray[0] * 60 * 60) + (timeArray[1] * 60) + (timeArray[2])
             if timeArray.count == 4{
                 time = time + (timeArray[3] * 60 * 60 * 24)
@@ -37,19 +37,19 @@ class CountDownLabelHelper: NSObject{
         countDown = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(CountDownLabelHelper.countdown), userInfo: nil, repeats: true)
     }
     
-    override init(){
+    override init() {
         super.init()
         time = 0
         countDown = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(CountDownLabelHelper.countdown), userInfo: nil, repeats: true)
     }
     
-    func countdown(){
+    // MARK: - Helper Methods
+    func countdown() {
         time -= 1
         countDownCallback!()
-        
     }
     
-    func getTimeString() -> String{
+    func getTimeString() -> String {
         return "\(toTwoFieldString(hours())):\(toTwoFieldString(minutes())):\(toTwoFieldString(seconds()))"
     }
     
@@ -58,27 +58,31 @@ class CountDownLabelHelper: NSObject{
     }
     
     func toTwoFieldString(time: Int) -> String{
-        if abs(time) < 10{
+        if abs(time) < 10 {
             return "0\(abs(time))"
-        }else{
+        } else {
             return "\(abs(time))"
         }
     }
     
-    //MARK: functions to get the time
-    func days() -> Int{
+    // MARK: - Get Time
+    func days() -> Int {
         return time / (60 * 60 * 24)
     }
-    func hours() -> Int{
+    
+    func hours() -> Int {
         return (time / (60 * 60)) % (60 * 60 * 24)
     }
-    func minutes() -> Int{
+    
+    func minutes() -> Int {
         return (time / (60)) % (60 * 60)
     }
-    func seconds() -> Int{
+    
+    func seconds() -> Int {
         return time % 60
     }
-    func wholeTimeInSeconds() -> Int{
+    
+    func wholeTimeInSeconds() -> Int {
         return time
     }
     
