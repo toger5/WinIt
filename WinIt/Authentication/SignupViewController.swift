@@ -14,6 +14,7 @@ class SignupViewController : UIViewController {
     // MARK: - Properties
     let passwordGood = "Your password is valid"
     let passwordTooShort = "Your password is too short. Please type atleast 6 characters"
+    let passwordTooWeak = "Your password needs to be greater than 6 characters, with one number, and one capital letter"
     
     // MARK: - IBOutlets
     @IBOutlet weak var signUpButton: UIButton!
@@ -28,7 +29,9 @@ class SignupViewController : UIViewController {
     // MARK: - View Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        usernameTextField.delegate = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
     // MARK: - Preparations
@@ -119,12 +122,14 @@ class SignupViewController : UIViewController {
         animation.shakeAnimation()
     }
     
+    /// Dismisses keyboard on tap in view
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         view.endEditing(true)
     }
 }
 
 extension SignupViewController: UITextFieldDelegate {
+    
     func textFieldDidBeginEditing(textField: UITextField) {
         let password = passwordTextField.text ?? ""
         
@@ -134,13 +139,14 @@ extension SignupViewController: UITextFieldDelegate {
             passwordLabel.text = passwordTooShort
         case PasswordValidator.passwordTooWeak(password):
             passwordLabel.textColor = .redColor()
-            passwordLabel.text = "Password too weak"
+            passwordLabel.text = passwordTooWeak
         default:
             passwordLabel.textColor = .greenColor()
             passwordLabel.text = passwordGood
         }
     }
     
+    /// Dismisses keyboard when return pressed
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         view.endEditing(true)
         return true
