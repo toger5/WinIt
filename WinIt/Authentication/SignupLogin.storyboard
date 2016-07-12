@@ -66,18 +66,6 @@
                                     <segue destination="MdJ-lo-fUy" kind="show" id="f30-UG-aPA"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MSf-7S-fsf">
-                                <rect key="frame" x="37" y="238" width="300" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="5wm-Z1-5tY"/>
-                                    <constraint firstAttribute="width" constant="300" id="8OC-QE-yaW"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="eBe-qc-EpY" id="eQI-mE-H3b"/>
-                                </connections>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Qs-If-nBs">
                                 <rect key="frame" x="37" y="290" width="300" height="44"/>
                                 <constraints>
@@ -88,6 +76,18 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="eBe-qc-EpY" id="BSr-2g-MqU"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MSf-7S-fsf">
+                                <rect key="frame" x="37" y="238" width="300" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="5wm-Z1-5tY"/>
+                                    <constraint firstAttribute="width" constant="300" id="8OC-QE-yaW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <connections>
+                                    <outlet property="delegate" destination="eBe-qc-EpY" id="eQI-mE-H3b"/>
                                 </connections>
                             </textField>
                         </subviews>
@@ -174,7 +174,7 @@
                                     <constraint firstAttribute="width" constant="300" id="p4J-Vn-UbR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 <connections>
                                     <outlet property="delegate" destination="MdJ-lo-fUy" id="l1g-4h-7AT"/>
                                 </connections>
@@ -260,7 +260,7 @@
                                     <constraint firstAttribute="height" constant="44" id="hN5-yx-ZNE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 <connections>
                                     <outlet property="delegate" destination="eBe-qc-EpY" id="gLI-e4-wFR"/>
                                 </connections>
@@ -271,8 +271,8 @@
                                     <constraint firstAttribute="height" constant="200" id="8b6-Gb-Ls0"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="at3-gN-N17">
-                                <rect key="frame" x="127" y="512" width="120" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="at3-gN-N17">
+                                <rect key="frame" x="36" y="512" width="303" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -300,6 +300,7 @@
                             <constraint firstItem="bwY-3s-jYB" firstAttribute="top" secondItem="TF4-v5-HP3" secondAttribute="bottom" constant="8" id="D5e-Eu-Whu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3vi-bL-z30" secondAttribute="trailing" constant="-20" id="E5Y-ny-S8Q"/>
                             <constraint firstItem="3vi-bL-z30" firstAttribute="top" secondItem="YIt-vQ-e5C" secondAttribute="bottom" id="EUf-20-Vmh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="at3-gN-N17" secondAttribute="trailing" constant="20" id="G5o-Cf-OAw"/>
                             <constraint firstItem="3Jd-CI-4Sf" firstAttribute="trailing" secondItem="WRz-A1-tyU" secondAttribute="trailing" id="HLK-3X-mhT"/>
                             <constraint firstItem="at3-gN-N17" firstAttribute="top" secondItem="bwY-3s-jYB" secondAttribute="bottom" constant="12" id="JHj-Nz-b9o"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bwY-3s-jYB" secondAttribute="trailing" constant="20" id="JQu-SA-i03"/>
@@ -308,9 +309,9 @@
                             <constraint firstItem="dRi-lQ-tYo" firstAttribute="top" secondItem="bwY-3s-jYB" secondAttribute="bottom" constant="151" id="PMx-Uo-qNT"/>
                             <constraint firstItem="0Pe-dm-qm1" firstAttribute="centerX" secondItem="rQZ-dB-78K" secondAttribute="centerX" id="QLe-z8-Vb3"/>
                             <constraint firstItem="3Jd-CI-4Sf" firstAttribute="leading" secondItem="rQZ-dB-78K" secondAttribute="leadingMargin" constant="20" id="Vdn-Po-ZJv"/>
-                            <constraint firstItem="at3-gN-N17" firstAttribute="centerX" secondItem="rQZ-dB-78K" secondAttribute="centerX" id="XwF-RG-ihW"/>
                             <constraint firstItem="0Pe-dm-qm1" firstAttribute="leading" secondItem="rQZ-dB-78K" secondAttribute="leadingMargin" constant="61" id="fPS-XG-LoL"/>
                             <constraint firstItem="3Jd-CI-4Sf" firstAttribute="top" secondItem="0Pe-dm-qm1" secondAttribute="bottom" constant="20" id="nSI-23-PxG"/>
+                            <constraint firstItem="at3-gN-N17" firstAttribute="leading" secondItem="rQZ-dB-78K" secondAttribute="leadingMargin" constant="20" id="oQM-TA-4eL"/>
                             <constraint firstItem="WRz-A1-tyU" firstAttribute="leading" secondItem="rQZ-dB-78K" secondAttribute="leadingMargin" constant="20" id="p8D-9w-u0j"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3Jd-CI-4Sf" secondAttribute="trailing" constant="20" id="xf2-Ce-gLR"/>
                         </constraints>

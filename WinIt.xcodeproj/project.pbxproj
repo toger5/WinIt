@@ -13,6 +13,11 @@
 		25DB24B41D2C4FF50050B2D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25DB24B31D2C4FF50050B2D8 /* GoogleService-Info.plist */; };
 		CEC604F9F64D01811A48B9AA /* Pods_WinIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B3DC8257723FF200B9347B /* Pods_WinIt.framework */; };
 		E2309CEB1D35A20600158943 /* CountDownLabelHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2309CEA1D35A20600158943 /* CountDownLabelHelper.swift */; };
+		E25DF6FA1D35AAD100A33017 /* ErrorAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DF6F51D35AAD100A33017 /* ErrorAlertService.swift */; };
+		E25DF6FB1D35AAD100A33017 /* FieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DF6F61D35AAD100A33017 /* FieldValidator.swift */; };
+		E25DF6FC1D35AAD100A33017 /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DF6F71D35AAD100A33017 /* EmailValidator.swift */; };
+		E25DF6FD1D35AAD100A33017 /* UsernameValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DF6F81D35AAD100A33017 /* UsernameValidator.swift */; };
+		E25DF6FE1D35AAD100A33017 /* PasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25DF6F91D35AAD100A33017 /* PasswordValidator.swift */; };
 		E261257B1D30B6AE00BB1274 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26125771D30B6AE00BB1274 /* ForgotPasswordViewController.swift */; };
 		E261257C1D30B6AE00BB1274 /* SignupLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E26125781D30B6AE00BB1274 /* SignupLogin.storyboard */; };
 		E261257D1D30B6AE00BB1274 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26125791D30B6AE00BB1274 /* SignupViewController.swift */; };
@@ -52,6 +57,11 @@
 		CC9F23DE59BC2A81513BCE18 /* Pods_WinItUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WinItUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E140941445475B5E27B6E232 /* Pods-WinItTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinItTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WinItTests/Pods-WinItTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E2309CEA1D35A20600158943 /* CountDownLabelHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CountDownLabelHelper.swift; path = Helpers/CountDownLabelHelper.swift; sourceTree = "<group>"; };
+		E25DF6F51D35AAD100A33017 /* ErrorAlertService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorAlertService.swift; sourceTree = "<group>"; };
+		E25DF6F61D35AAD100A33017 /* FieldValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldValidator.swift; sourceTree = "<group>"; };
+		E25DF6F71D35AAD100A33017 /* EmailValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
+		E25DF6F81D35AAD100A33017 /* UsernameValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsernameValidator.swift; sourceTree = "<group>"; };
+		E25DF6F91D35AAD100A33017 /* PasswordValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordValidator.swift; sourceTree = "<group>"; };
 		E26125771D30B6AE00BB1274 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForgotPasswordViewController.swift; path = Authentication/ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		E26125781D30B6AE00BB1274 /* SignupLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SignupLogin.storyboard; path = Authentication/SignupLogin.storyboard; sourceTree = "<group>"; };
 		E26125791D30B6AE00BB1274 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupViewController.swift; path = Authentication/SignupViewController.swift; sourceTree = "<group>"; };
@@ -202,13 +212,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E25DF6FF1D35AAD600A33017 /* Validators */ = {
+			isa = PBXGroup;
+			children = (
+				E25DF6F51D35AAD100A33017 /* ErrorAlertService.swift */,
+				E25DF6F61D35AAD100A33017 /* FieldValidator.swift */,
+				E25DF6F71D35AAD100A33017 /* EmailValidator.swift */,
+				E25DF6F81D35AAD100A33017 /* UsernameValidator.swift */,
+				E25DF6F91D35AAD100A33017 /* PasswordValidator.swift */,
+			);
+			name = Validators;
+			sourceTree = "<group>";
+		};
 		E26125761D30B6A200BB1274 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				E25DF6FF1D35AAD600A33017 /* Validators */,
+				E261257A1D30B6AE00BB1274 /* WelcomeViewController.swift */,
+				E26125791D30B6AE00BB1274 /* SignupViewController.swift */,
 				E26125771D30B6AE00BB1274 /* ForgotPasswordViewController.swift */,
 				E26125781D30B6AE00BB1274 /* SignupLogin.storyboard */,
-				E26125791D30B6AE00BB1274 /* SignupViewController.swift */,
-				E261257A1D30B6AE00BB1274 /* WelcomeViewController.swift */,
 			);
 			name = Authentication;
 			sourceTree = "<group>";
@@ -392,15 +415,20 @@
 				E261257E1D30B6AE00BB1274 /* WelcomeViewController.swift in Sources */,
 				E2309CEB1D35A20600158943 /* CountDownLabelHelper.swift in Sources */,
 				2588A78A1D341173009C1C0B /* ArchivedPost.swift in Sources */,
+				E25DF6FB1D35AAD100A33017 /* FieldValidator.swift in Sources */,
 				E261257D1D30B6AE00BB1274 /* SignupViewController.swift in Sources */,
 				E261258B1D30B96E00BB1274 /* Post.swift in Sources */,
+				E25DF6FC1D35AAD100A33017 /* EmailValidator.swift in Sources */,
 				E27B67511D317962006F2951 /* Global.swift in Sources */,
+				E25DF6FA1D35AAD100A33017 /* ErrorAlertService.swift in Sources */,
 				E27B674E1D316DB4006F2951 /* CustomAnimation.swift in Sources */,
 				E2976AED1D31A4F400FCF694 /* CreatePostViewController.swift in Sources */,
 				E2976AEF1D31A55C00FCF694 /* GameViewController.swift in Sources */,
 				E2976AF71D31A5C900FCF694 /* SearchPostsViewController.swift in Sources */,
+				E25DF6FD1D35AAD100A33017 /* UsernameValidator.swift in Sources */,
 				2588A7871D340CA8009C1C0B /* ArchivedViewController.swift in Sources */,
 				E2976AF31D31A58C00FCF694 /* LikesViewController.swift in Sources */,
+				E25DF6FE1D35AAD100A33017 /* PasswordValidator.swift in Sources */,
 				E2976AF61D31A5C900FCF694 /* SearchPostsTableViewCell.swift in Sources */,
 				E261258F1D30B9F800BB1274 /* ImageHelper.swift in Sources */,
 				E261257B1D30B6AE00BB1274 /* ForgotPasswordViewController.swift in Sources */,

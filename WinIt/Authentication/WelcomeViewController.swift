@@ -12,7 +12,6 @@ import Firebase
 class WelcomeViewController : UIViewController {
     
     // MARK:- Properties
-    let titleLabel: UILabel = UILabel()
     var buttonShake: CustomAnimation!
     
     // MARK:- Outlets
@@ -37,12 +36,22 @@ class WelcomeViewController : UIViewController {
         return true
     }
     
-    // MARK:- Actions
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    // MARK:- IBActions
     @IBAction func loginButtonPressed(sender: AnyObject) {
         
-        let email = emailTextField.text ?? ""
-        let password = passwordTextField.text ?? ""
-        
+        if FieldValidator.emptyFieldExists(emailTextField, passwordTextField) {
+            ErrorAlertService.displayAlertFor(.EmptyField, withPresenter: self)
+        } else {
+            attemptLoginWith(emailTextField.text!, andPassword: passwordTextField.text!)
+        }
+    }
+    
+    // MARK: - Helper Methods
+    func attemptLoginWith(email: String, andPassword password: String) {
         FIRAuth.auth()?.signInWithEmail(email, password: password) { (user, error) in
             guard error == nil else {
                 print(error?.localizedDescription)
@@ -50,7 +59,6 @@ class WelcomeViewController : UIViewController {
             }
             
             NSNotificationCenter.defaultCenter().postNotificationName("Login", object: nil)
-            
         }
     }
 }
