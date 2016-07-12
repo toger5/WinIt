@@ -73,7 +73,7 @@
                                     <constraint firstAttribute="width" constant="300" id="8OC-QE-yaW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 <connections>
                                     <outlet property="delegate" destination="eBe-qc-EpY" id="eQI-mE-H3b"/>
                                 </connections>
@@ -174,7 +174,7 @@
                                     <constraint firstAttribute="width" constant="300" id="p4J-Vn-UbR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 <connections>
                                     <outlet property="delegate" destination="MdJ-lo-fUy" id="l1g-4h-7AT"/>
                                 </connections>
