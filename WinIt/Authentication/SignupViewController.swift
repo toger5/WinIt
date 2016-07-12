@@ -124,14 +124,18 @@ extension SignupViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(textField: UITextField) {
         let password = passwordTextField.text ?? ""
         
-        if password.characters.count > 5 {
-            passwordLabel.text = passwordGood
-            passwordLabel.textColor = .greenColor()
-            
-        } else {
-            passwordLabel.text = passwordTooShort
+        switch true {
+        case PasswordValidator.passwordInvalidLength(password):
             passwordLabel.textColor = .redColor()
+            passwordLabel.text = passwordTooShort
+        case PasswordValidator.passwordTooWeak(password):
+            passwordLabel.textColor = .redColor()
+            passwordLabel.text = "Password too weak"
+        default:
+            passwordLabel.textColor = .greenColor()
+            passwordLabel.text = passwordGood
         }
+        
     }
 }
 
