@@ -23,6 +23,7 @@ class LikedPostTableViewCell: UITableViewCell{
 
     var clock: CountDownLabelHelper? = nil
     var post: Post? = nil
+    
     // MARK: - IBOutlets
     @IBOutlet weak var posterName: UILabel!
     @IBOutlet weak var countDownTimer: UITextView!
@@ -30,7 +31,7 @@ class LikedPostTableViewCell: UITableViewCell{
     @IBOutlet weak var postImage: UIImageView!
     
     // MARK: - Helper Methods
-    func populate(post: Post){
+    func populate(post: Post) {
         self.post = post
         postName.text = post.name
         postImage.image = post.image
@@ -50,7 +51,7 @@ class LikedPostTableViewCell: UITableViewCell{
             switch post.getState(){
                 
             case EventStatus.Waiting:
-                handelCellDuringWait()
+                handleCellDuringWait()
                 
             case EventStatus.Running:
                 handleCellDuringGame()
@@ -61,18 +62,18 @@ class LikedPostTableViewCell: UITableViewCell{
             case EventStatus.Archived:
                 break
             }
-        }else{
-            print("The requested post object is nil")
+        } else {
+            print("The requested post object is nil.")
         }
     }
 
-    func handelCellDuringWait(){
+    func handleCellDuringWait() {
         countDownTimer.text = clock?.getTimeString()
     }
-    func handleCellDuringComplete(){
+    func handleCellDuringComplete() {
         countDownTimer.text = "Completed \n Winner: Jake"
     }
-    func handleCellDuringGame(){
+    func handleCellDuringGame() {
         countDownTimer.text = "Event Is Running\n \(clock?.getTimeString())"
     }
 

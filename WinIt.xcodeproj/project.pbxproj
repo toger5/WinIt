@@ -122,8 +122,8 @@
 		250E55581D2EF890006C3A22 /* Liked Posts */ = {
 			isa = PBXGroup;
 			children = (
-				E2976AF01D31A58C00FCF694 /* LikedPostTableViewCell.swift */,
 				E2976AF11D31A58C00FCF694 /* LikesViewController.swift */,
+				E2976AF01D31A58C00FCF694 /* LikedPostTableViewCell.swift */,
 			);
 			name = "Liked Posts";
 			sourceTree = "<group>";

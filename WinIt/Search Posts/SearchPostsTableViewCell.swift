@@ -16,9 +16,7 @@ class SearchPostsTableViewCell: UITableViewCell{
     // MARK: - IBOutlets
 	@IBOutlet weak var nameLabel: UILabel!
 	@IBOutlet weak var imageViewProduct: UIImageView!
-	
 	@IBOutlet weak var descriptionLabel: UILabel!
-	
 	@IBOutlet weak var likeSwitch: UISwitch!
 	
     // MARK: - IBActions

@@ -16,36 +16,32 @@ class SearchPostsViewController: UIViewController {
     let currentUser = FIRAuth.auth()!.currentUser
     let rootRef = FIRDatabase.database().reference()
     
-    lazy var postList: [Post] = []
+    var postList: [Post] = []
     
     // MARK: IBOutlets
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - View Lifecycles
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.dataSource = self
-    }
-    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        FirebaseHelper.downloadPosts(0, rangeMax: 20, callback: { (offerArray) in
+        FirebaseHelper.downloadPosts(0, rangeMax: 20, callback: { (offers) in
             
-            var newPostArray: [Post] = []
-            for o in offerArray{
-                var exist = false
-                for p in self.postList{
-                    if o.key == p.key{
-                        exist = true
-                        newPostArray.append(p)
+            var newPosts: [Post] = []
+            
+            for i in offers {
+                var doesExist = false
+                for p in self.postList {
+                    if i.key == p.key {
+                        doesExist = true
+                        newPosts.append(p)
                     }
                 }
-                if !exist {
-                    newPostArray.append(o)
+                if !doesExist {
+                    newPosts.append(i)
                 }
             }
-            self.postList = newPostArray
+            self.postList = newPosts
             self.tableView.reloadData()
         })
     }
@@ -71,7 +67,7 @@ extension SearchPostsViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
         //maybe It works as lazy load
-        if indexPath.row >= postList.count - 2{
+        if indexPath.row >= postList.count - 2 {
 		//self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: self.comments.count-1, inSection: 1)], withRowAnimation: UITableViewRowAnimation.Automatic)
         }
 		
@@ -79,7 +75,8 @@ extension SearchPostsViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifiers.SearchPostsTableViewCell) as! SearchPostsTableViewCell
         
         let post = postList[postList.count-indexPath.row-1]
-        if post.image == nil{
+        
+        if post.image == nil {
             FirebaseHelper.downloadImage(post) { (productImage) in
                 post.image = productImage
                 tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)

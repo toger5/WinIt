@@ -6,6 +6,7 @@
 //  Copyright © 2016 Timo. All rights reserved.
 //
 
+// MARK: - Enumerations
 enum EventStatus: Int{
     case Waiting, Running, Complete, Archived
 }
@@ -14,7 +15,8 @@ import UIKit
 import Firebase
 
 class Post {
-    
+
+    // MARK: - Properties
     var key: String
     var user: String
     var name: String
@@ -32,7 +34,7 @@ class Post {
     let outDatedTime = 60 * 10
     var cell: SearchPostsTableViewCell?
     
-    
+    // MARK: - Initializers
     init() {
         eventTime = 0
         uploadTime = 0
@@ -79,28 +81,33 @@ class Post {
         self.liked = false
     }
     
+    // MARK: - Helper Methods
     func isPlaceHolderImage() -> Bool {
         return image == UIImage(named: "NoImage")
     }
     
-    func getTimeLeftInSeconds() -> Double{
+    func getTimeLeftInSeconds() -> Double {
         let currentTime = Global.getTimeStamp()
         return eventTime - currentTime
     }
     
-    func getState() -> EventStatus{
-        if Global.getTimeStamp() < eventTime{
+    func getState() -> EventStatus {
+        
+        let timeStamp = Int(Global.getTimeStamp())
+        let eventTime = Int(self.eventTime)
+        
+        if timeStamp < eventTime {
             return .Waiting
-        }else if Int(Global.getTimeStamp()) < Int(eventTime) + eventLength{
+        } else if timeStamp < eventTime + eventLength {
             return .Running
-        }else if Int(Global.getTimeStamp()) > Int(eventTime) + outDatedTime{
+        } else if timeStamp > eventTime + outDatedTime{
             return .Archived
-        }else{
+        } else {
             return .Complete
         }
     }
     
-    func getTimeLeftHoursMinutesSecondsArray() -> [Int]{
+    func getTimeLeftHoursMinutesSecondsArray() -> [Int] {
         let timeLeft = getTimeLeftInSeconds()
         let array = [Int(timeLeft / 60 / 60),
                      Int((timeLeft % (60 * 60)) / 60),
@@ -108,8 +115,8 @@ class Post {
         return array
     }
     
-    func toDict() -> [String:AnyObject]{
-        let dictionary: [String:AnyObject] = [
+    func toDict() -> [String: AnyObject] {
+        let dictionary: [String: AnyObject] = [
             "name" : name,
             "user" : user,
             "eventTime" : eventTime,

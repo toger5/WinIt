@@ -10,12 +10,30 @@ import UIKit
 
 typealias PhotoTakingHelperCallback = UIImage? -> Void
 
-class ImageHelper: NSObject{
+class ImageHelper: NSObject {
     
-    static func resize(image: UIImage, newWidth: CGFloat) -> UIImage{
+    // MARK: - Properties
+    // View controller on which AlertViewController and UIImagePickerController are presented
+    weak var viewController: UIViewController!
+    var callback: PhotoTakingHelperCallback
+    var imagePickerController: UIImagePickerController?
+    
+    // MARK: - Initializers
+    init(viewController: UIViewController, callback: PhotoTakingHelperCallback) {
+        self.viewController = viewController
+        self.callback = callback
+        super.init()
+        showPhotoSourceSelection()
+    }
+    
+    // MARK: - Helper Methods
+    // Resize Image
+    static func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
         let scale = newWidth / image.size.width
         let newHeight = image.size.height * scale
-        print("supposed size with scale \(scale): width \(newWidth), height \(newHeight)")
+        
+//        print("supposed size with scale \(scale): width \(newWidth), height \(newHeight)")
+        
         UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight))
         image.drawInRect(CGRectMake(0, 0, newWidth, newHeight))
         
@@ -23,20 +41,6 @@ class ImageHelper: NSObject{
         UIGraphicsEndImageContext()
         
         return newImage
-        
-    }
-    // View controller on which AlertViewController and UIImagePickerController are presented
-    weak var viewController: UIViewController!
-    var callback: PhotoTakingHelperCallback
-    var imagePickerController: UIImagePickerController?
-    
-    init(viewController: UIViewController, callback: PhotoTakingHelperCallback) {
-        
-        self.viewController = viewController
-        self.callback = callback
-        super.init()
-        
-        showPhotoSourceSelection()
     }
     
     func showPhotoSourceSelection() {
@@ -62,7 +66,6 @@ class ImageHelper: NSObject{
         
         alertController.addAction(photoLibraryAction)
         
-        
         viewController.presentViewController(alertController, animated: true, completion: nil)
     }
     
@@ -74,13 +77,14 @@ class ImageHelper: NSObject{
     }
 }
 
+// MARK: - Image Picker Controller Delegates
 extension ImageHelper: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
         viewController.dismissViewControllerAnimated(false, completion: nil)
-        
         callback(image)
     }
+    
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         viewController.dismissViewControllerAnimated(true, completion: nil)
     }

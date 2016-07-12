@@ -63,7 +63,7 @@
                                                         <action selector="likeTriggered:" destination="QnQ-ls-WAk" eventType="primaryActionTriggered" id="lJY-ii-rWr"/>
                                                     </connections>
                                                 </switch>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXT-Pe-NrG">
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXT-Pe-NrG">
                                                     <rect key="frame" x="495" y="371" width="24" height="43"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                     <size key="titleShadowOffset" width="2.2250738585072014e-308" height="0.0"/>
@@ -90,6 +90,9 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="QaF-i8-Jqk"/>
+                                </connections>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5j9-H8-13J">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="65"/>

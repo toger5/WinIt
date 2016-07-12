@@ -109,6 +109,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="LA6-gn-w0g" id="SHx-AO-cL6"/>
+                                    <outlet property="delegate" destination="LA6-gn-w0g" id="EF6-jL-NQk"/>
+                                </connections>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TCd-WQ-RDU">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="65"/>
@@ -116,7 +120,7 @@
                                     <constraint firstAttribute="height" constant="65" id="ZP1-Zt-F7Q"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="your Likes" id="qUI-4Z-2nZ"/>
+                                    <navigationItem title="Your Likes" id="qUI-4Z-2nZ"/>
                                 </items>
                             </navigationBar>
                         </subviews>
