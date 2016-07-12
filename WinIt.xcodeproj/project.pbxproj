@@ -11,8 +11,8 @@
 		2588A78A1D341173009C1C0B /* ArchivedPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2588A7891D341173009C1C0B /* ArchivedPost.swift */; };
 		25DB247D1D29C3E70050B2D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DB247C1D29C3E70050B2D8 /* AppDelegate.swift */; };
 		25DB24B41D2C4FF50050B2D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25DB24B31D2C4FF50050B2D8 /* GoogleService-Info.plist */; };
-		25E440691D3216FD005999C6 /* CountDownLabelHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E440671D3207EA005999C6 /* CountDownLabelHelper.swift */; };
 		CEC604F9F64D01811A48B9AA /* Pods_WinIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B3DC8257723FF200B9347B /* Pods_WinIt.framework */; };
+		E2309CEB1D35A20600158943 /* CountDownLabelHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2309CEA1D35A20600158943 /* CountDownLabelHelper.swift */; };
 		E261257B1D30B6AE00BB1274 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26125771D30B6AE00BB1274 /* ForgotPasswordViewController.swift */; };
 		E261257C1D30B6AE00BB1274 /* SignupLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E26125781D30B6AE00BB1274 /* SignupLogin.storyboard */; };
 		E261257D1D30B6AE00BB1274 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26125791D30B6AE00BB1274 /* SignupViewController.swift */; };
@@ -46,12 +46,12 @@
 		25DB247C1D29C3E70050B2D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25DB24881D29C3E70050B2D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25DB24B31D2C4FF50050B2D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		25E440671D3207EA005999C6 /* CountDownLabelHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountDownLabelHelper.swift; sourceTree = "<group>"; };
 		46B75B5978AA09B6C111D698 /* Pods_WinItTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WinItTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75F1B09707F1A42668133BBE /* Pods-WinIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinIt.release.xcconfig"; path = "Pods/Target Support Files/Pods-WinIt/Pods-WinIt.release.xcconfig"; sourceTree = "<group>"; };
 		93B3DC8257723FF200B9347B /* Pods_WinIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WinIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC9F23DE59BC2A81513BCE18 /* Pods_WinItUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WinItUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E140941445475B5E27B6E232 /* Pods-WinItTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinItTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WinItTests/Pods-WinItTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E2309CEA1D35A20600158943 /* CountDownLabelHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CountDownLabelHelper.swift; path = Helpers/CountDownLabelHelper.swift; sourceTree = "<group>"; };
 		E26125771D30B6AE00BB1274 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForgotPasswordViewController.swift; path = Authentication/ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		E26125781D30B6AE00BB1274 /* SignupLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SignupLogin.storyboard; path = Authentication/SignupLogin.storyboard; sourceTree = "<group>"; };
 		E26125791D30B6AE00BB1274 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupViewController.swift; path = Authentication/SignupViewController.swift; sourceTree = "<group>"; };
@@ -97,7 +97,7 @@
 			children = (
 				E261258C1D30B9F800BB1274 /* FirebaseHelper.swift */,
 				E261258D1D30B9F800BB1274 /* ImageHelper.swift */,
-				25E440671D3207EA005999C6 /* CountDownLabelHelper.swift */,
+				E2309CEA1D35A20600158943 /* CountDownLabelHelper.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -390,11 +390,11 @@
 				E2976B191D3409DD00FCF694 /* Constants.swift in Sources */,
 				E2976AF21D31A58C00FCF694 /* LikedPostTableViewCell.swift in Sources */,
 				E261257E1D30B6AE00BB1274 /* WelcomeViewController.swift in Sources */,
+				E2309CEB1D35A20600158943 /* CountDownLabelHelper.swift in Sources */,
 				2588A78A1D341173009C1C0B /* ArchivedPost.swift in Sources */,
 				E261257D1D30B6AE00BB1274 /* SignupViewController.swift in Sources */,
 				E261258B1D30B96E00BB1274 /* Post.swift in Sources */,
 				E27B67511D317962006F2951 /* Global.swift in Sources */,
-				25E440691D3216FD005999C6 /* CountDownLabelHelper.swift in Sources */,
 				E27B674E1D316DB4006F2951 /* CustomAnimation.swift in Sources */,
 				E2976AED1D31A4F400FCF694 /* CreatePostViewController.swift in Sources */,
 				E2976AEF1D31A55C00FCF694 /* GameViewController.swift in Sources */,
