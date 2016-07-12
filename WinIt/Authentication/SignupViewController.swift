@@ -118,6 +118,10 @@ class SignupViewController : UIViewController {
         let animation = CustomAnimation(view: signUpButton, delay: 0, direction: .Left, repetitions: 4, maxRotation: 0, maxPosition: 40, duration: 0.06)
         animation.shakeAnimation()
     }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        view.endEditing(true)
+    }
 }
 
 extension SignupViewController: UITextFieldDelegate {
@@ -135,7 +139,11 @@ extension SignupViewController: UITextFieldDelegate {
             passwordLabel.textColor = .greenColor()
             passwordLabel.text = passwordGood
         }
-        
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return true
     }
 }
 
