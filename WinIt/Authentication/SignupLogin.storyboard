@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -73,7 +73,7 @@
                                     <constraint firstAttribute="width" constant="300" id="8OC-QE-yaW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 <connections>
                                     <outlet property="delegate" destination="eBe-qc-EpY" id="eQI-mE-H3b"/>
                                 </connections>
@@ -168,13 +168,13 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N0e-kg-a7x">
-                                <rect key="frame" x="37.5" y="70" width="300" height="44"/>
+                                <rect key="frame" x="38" y="70" width="300" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="VkK-wC-jc4"/>
                                     <constraint firstAttribute="width" constant="300" id="p4J-Vn-UbR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 <connections>
                                     <outlet property="delegate" destination="MdJ-lo-fUy" id="l1g-4h-7AT"/>
                                 </connections>
@@ -260,7 +260,7 @@
                                     <constraint firstAttribute="height" constant="44" id="hN5-yx-ZNE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 <connections>
                                     <outlet property="delegate" destination="eBe-qc-EpY" id="gLI-e4-wFR"/>
                                 </connections>
@@ -271,10 +271,10 @@
                                     <constraint firstAttribute="height" constant="200" id="8b6-Gb-Ls0"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="at3-gN-N17">
-                                <rect key="frame" x="127" y="512" width="120" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="at3-gN-N17">
+                                <rect key="frame" x="20" y="512" width="335" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TF4-v5-HP3">
@@ -295,6 +295,7 @@
                             <constraint firstItem="0Pe-dm-qm1" firstAttribute="top" secondItem="YIt-vQ-e5C" secondAttribute="bottom" constant="60" id="1NT-Dx-XRe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="TF4-v5-HP3" secondAttribute="trailing" constant="20" id="60E-vz-hFw"/>
                             <constraint firstItem="TF4-v5-HP3" firstAttribute="top" secondItem="WRz-A1-tyU" secondAttribute="bottom" constant="8" id="6kF-dn-LyV"/>
+                            <constraint firstItem="at3-gN-N17" firstAttribute="leading" secondItem="rQZ-dB-78K" secondAttribute="leading" constant="20" id="76m-YD-PFi"/>
                             <constraint firstItem="TF4-v5-HP3" firstAttribute="leading" secondItem="rQZ-dB-78K" secondAttribute="leadingMargin" constant="20" id="7ee-tb-T7O"/>
                             <constraint firstItem="bwY-3s-jYB" firstAttribute="leading" secondItem="rQZ-dB-78K" secondAttribute="leadingMargin" constant="20" id="8fA-iU-i5b"/>
                             <constraint firstItem="bwY-3s-jYB" firstAttribute="top" secondItem="TF4-v5-HP3" secondAttribute="bottom" constant="8" id="D5e-Eu-Whu"/>
@@ -309,15 +310,21 @@
                             <constraint firstItem="0Pe-dm-qm1" firstAttribute="centerX" secondItem="rQZ-dB-78K" secondAttribute="centerX" id="QLe-z8-Vb3"/>
                             <constraint firstItem="3Jd-CI-4Sf" firstAttribute="leading" secondItem="rQZ-dB-78K" secondAttribute="leadingMargin" constant="20" id="Vdn-Po-ZJv"/>
                             <constraint firstItem="at3-gN-N17" firstAttribute="centerX" secondItem="rQZ-dB-78K" secondAttribute="centerX" id="XwF-RG-ihW"/>
+                            <constraint firstAttribute="trailing" secondItem="at3-gN-N17" secondAttribute="trailing" id="Zyr-nl-SGE"/>
                             <constraint firstItem="0Pe-dm-qm1" firstAttribute="leading" secondItem="rQZ-dB-78K" secondAttribute="leadingMargin" constant="61" id="fPS-XG-LoL"/>
                             <constraint firstItem="3Jd-CI-4Sf" firstAttribute="top" secondItem="0Pe-dm-qm1" secondAttribute="bottom" constant="20" id="nSI-23-PxG"/>
+                            <constraint firstAttribute="trailing" secondItem="at3-gN-N17" secondAttribute="trailing" constant="20" id="oqz-Rl-ib7"/>
                             <constraint firstItem="WRz-A1-tyU" firstAttribute="leading" secondItem="rQZ-dB-78K" secondAttribute="leadingMargin" constant="20" id="p8D-9w-u0j"/>
+                            <constraint firstItem="at3-gN-N17" firstAttribute="leading" secondItem="rQZ-dB-78K" secondAttribute="leading" id="qNh-Ra-dzQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3Jd-CI-4Sf" secondAttribute="trailing" constant="20" id="xf2-Ce-gLR"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="0Cj-rS-vsf"/>
                                 <exclude reference="HLK-3X-mhT"/>
+                                <exclude reference="XwF-RG-ihW"/>
+                                <exclude reference="Zyr-nl-SGE"/>
+                                <exclude reference="qNh-Ra-dzQ"/>
                                 <exclude reference="PMx-Uo-qNT"/>
                             </mask>
                         </variation>

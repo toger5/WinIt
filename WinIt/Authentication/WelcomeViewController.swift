@@ -37,12 +37,9 @@ class WelcomeViewController : UIViewController {
         return true
     }
     
-    // MARK:- Actions
-    @IBAction func loginButtonPressed(sender: AnyObject) {
-        
-        let email = emailTextField.text ?? ""
-        let password = passwordTextField.text ?? ""
-        
+    // MARK: - Helpers
+    
+    func attemptLoginWith(email: String, andPassword password: String) {
         FIRAuth.auth()?.signInWithEmail(email, password: password) { (user, error) in
             guard error == nil else {
                 print(error?.localizedDescription)
@@ -50,7 +47,21 @@ class WelcomeViewController : UIViewController {
             }
             
             NSNotificationCenter.defaultCenter().postNotificationName("Login", object: nil)
-            
+        }
+    }
+    
+    /// Dismisses keyboard on tap in view
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    // MARK:- Actions
+    @IBAction func loginButtonPressed(sender: AnyObject) {
+        
+        if FieldValidator.emptyFieldExists(emailTextField, passwordTextField) {
+            ErrorAlertService.displayAlertFor(.EmptyField, withPresenter: self)
+        } else {
+            attemptLoginWith(emailTextField.text!, andPassword: passwordTextField.text!)
         }
     }
 }
