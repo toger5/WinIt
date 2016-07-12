@@ -49,8 +49,43 @@ class SignupViewController : UIViewController {
         let email = emailTextField.text ?? ""
         let password = passwordTextField.text ?? ""
         
-        guard username.characters.count > 0 && password.characters.count > 5 && email.containsString("@") else {return}
-        
+        switch true {
+        case FieldValidator.emptyFieldExists(usernameTextField, passwordTextField, emailTextField):
+            ErrorAlertService.displayAlertFor(.EmptyField, withPresenter: self)
+            
+        case EmailValidator.invalidEmail(email):
+            ErrorAlertService.displayAlertFor(.InvalidEmail, withPresenter: self)
+            
+        case PasswordValidator.passwordInvalidLength(password):
+            ErrorAlertService.displayAlertFor(.PasswordLength, withPresenter: self)
+            
+        case PasswordValidator.passwordTooWeak(password):
+            ErrorAlertService.displayAlertFor(.InvalidPassword, withPresenter: self)
+            
+        case UsernameValidator.usernameInvalidLength(username):
+            ErrorAlertService.displayAlertFor(.UsernameLength, withPresenter: self)
+            
+        case UsernameValidator.invalidCharactersIn(username):
+            ErrorAlertService.displayAlertFor(.InvalidUsername, withPresenter: self)
+            
+        default:
+            self.signUpUserWith(email, username: username, password: password)
+        }
+    }
+    
+    // MARK: - Helper Methods
+    func checkAndSignOutCurrentUser() {
+        if FIRAuth.auth()?.currentUser != nil{
+            do {
+                try FIRAuth.auth()?.signOut()
+            } catch {
+                print("error")
+            }
+            
+        }
+    }
+    
+    func signUpUserWith(email: String, username: String, password: String) {
         FIRAuth.auth()?.createUserWithEmail(email, password: password) { (user, error) in
             
             guard error == nil else {
@@ -74,18 +109,6 @@ class SignupViewController : UIViewController {
                     
                     NSNotificationCenter.defaultCenter().postNotificationName("Login", object: nil)
                 }
-            }
-            
-        }
-    }
-    
-    // MARK: - Helper Methods
-    func checkAndSignOutCurrentUser() {
-        if FIRAuth.auth()?.currentUser != nil{
-            do {
-                try FIRAuth.auth()?.signOut()
-            } catch {
-                print("error")
             }
             
         }
