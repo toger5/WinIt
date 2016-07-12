@@ -52,7 +52,6 @@ class SignupViewController : UIViewController {
         let email = emailTextField.text ?? ""
         let password = passwordTextField.text ?? ""
         
-<<<<<<< HEAD
         switch true {
         case FieldValidator.emptyFieldExists(usernameTextField, passwordTextField, emailTextField):
             ErrorAlertService.displayAlertFor(.EmptyField, withPresenter: self)
@@ -90,10 +89,7 @@ class SignupViewController : UIViewController {
     }
     
     func signUpUserWith(email: String, username: String, password: String) {
-=======
-        guard username.characters.count > 0 && password.characters.count > 5 && email.containsString("@") else { return }
         
->>>>>>> 9ee839dfb86cd41979210ace3440e049875ec380
         FIRAuth.auth()?.createUserWithEmail(email, password: password) { (user, error) in
             
             guard error == nil else {
